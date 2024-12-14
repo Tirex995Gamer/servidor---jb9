@@ -1,0 +1,815 @@
+loaded: 'true'
+Barbarian: 
+  name: 'Barbarian'
+  'action-bar': ''
+  prefix: '&6Barbarian'
+  group: 'class'
+  mana: '&2Mana'
+  'max-level': 500
+  parent: ''
+  'needs-permission': 'false'
+  attributes: 
+    'health-base': '40'
+    'health-scale': '1'
+    'mana-base': '50'
+    'mana-scale': '1'
+    'dexterity-base': '7'
+    'dexterity-scale': '1'
+    'intelligence-base': '5'
+    'intelligence-scale': '1'
+    'spirit-base': '6'
+    'spirit-scale': '1'
+    'strength-base': '10'
+    'strength-scale': '1'
+    'vitality-base': '8'
+    'vitality-scale': '1'
+  'mana-regen': 5.0
+  'skill-tree': 'REQUIREMENT'
+  blacklist: []
+  skills: 
+  - 'Maelstrom'
+  - 'Roar'
+  - 'Stomp'
+  - 'Stampede'
+  - 'Pulverize'
+  icon: 'NETHERITE_AXE'
+  'icon-data': 0
+  'icon-durability': 0
+  'icon-lore': 
+  - 'Barbarian'
+  'exp-source': 447
+  'combo-starters': 
+    Q: 
+      inverted: 'true'
+      whitelist: []
+    LS: 
+      inverted: 'true'
+      whitelist: []
+    RS: 
+      inverted: 'true'
+      whitelist: []
+    F: 
+      inverted: 'true'
+      whitelist: []
+    S: 
+      inverted: 'true'
+      whitelist: []
+    R: 
+      inverted: 'true'
+      whitelist: []
+    L: 
+      inverted: 'true'
+      whitelist: []
+    P: 
+      inverted: 'true'
+      whitelist: []
+Warrior: 
+  name: 'Warrior'
+  'action-bar': ''
+  prefix: '&2Warrior'
+  group: 'class'
+  mana: '&6Brave'
+  'max-level': '500'
+  parent: ''
+  'needs-permission': 'false'
+  attributes: 
+    'health-base': '30'
+    'health-scale': '1'
+    'mana-base': '40'
+    'mana-scale': '1'
+    'vitality-base': '10'
+    'vitality-scale': '1'
+    'spirit-base': '3'
+    'spirit-scale': '1'
+    'intelligence-base': '3'
+    'intelligence-scale': '1'
+    'dexterity-base': '3'
+    'dexterity-scale': '1'
+    'strength-base': '6'
+    'strength-scale': '1'
+  'mana-regen': '1.0'
+  'skill-tree': 'REQUIREMENT'
+  blacklist: []
+  skills: 
+  - 'WallOfForce'
+  - 'Invigoration'
+  icon: 'JACK_O_LANTERN'
+  'icon-data': '0'
+  'icon-durability': '0'
+  'icon-lore': 
+  - '&6[&2Magic&6]'
+  - '&2Versatille Close-Quarter Class with Stable Damage and Average &2Defense, capable of blowing enemy apart. Ravish your playstyle with &2this class build. Both Full-Defensive and Full-Aggressive are &2acceptable. '
+  - '&2Recommended Weapons : Sword, Axe, Spear'
+  'exp-source': '447'
+  'combo-starters': 
+    L: 
+      inverted: 'true'
+      whitelist: []
+    P: 
+      inverted: 'true'
+      whitelist: []
+    S: 
+      inverted: 'true'
+      whitelist: []
+    Q: 
+      inverted: 'true'
+      whitelist: []
+    R: 
+      inverted: 'true'
+      whitelist: []
+    RS: 
+      inverted: 'true'
+      whitelist: []
+    LS: 
+      inverted: 'true'
+      whitelist: []
+    F: 
+      inverted: 'true'
+      whitelist: []
+Assassin: 
+  name: 'Assassin'
+  'action-bar': ''
+  prefix: '&6Assassin'
+  group: 'class'
+  mana: '&2Mana'
+  'max-level': 500
+  parent: ''
+  'needs-permission': 'false'
+  attributes: 
+    'health-base': '30'
+    'health-scale': '1'
+    'mana-base': '40'
+    'mana-scale': '1'
+    'dexterity-base': '8'
+    'dexterity-scale': '1'
+    'intelligence-base': '8'
+    'intelligence-scale': '1'
+    'spirit-base': '5'
+    'spirit-scale': '1'
+    'strength-base': '6'
+    'strength-scale': '1'
+    'vitality-base': '6'
+    'vitality-scale': '1'
+  'mana-regen': 5.0
+  'skill-tree': 'REQUIREMENT'
+  blacklist: []
+  skills: 
+  - 'Puncture'
+  - 'ExploitWeakness'
+  - 'ExplosiveArrow'
+  - 'TrueShot'
+  - 'Salvo'
+  - 'WhirlingSlash'
+  - 'SmokeScreen'
+  icon: 'ENDER_PEARL'
+  'icon-data': 0
+  'icon-durability': 0
+  'icon-lore': 
+  - 'Assassin'
+  'exp-source': 447
+  'combo-starters': 
+    Q: 
+      inverted: 'true'
+      whitelist: []
+    LS: 
+      inverted: 'true'
+      whitelist: []
+    RS: 
+      inverted: 'true'
+      whitelist: []
+    F: 
+      inverted: 'true'
+      whitelist: []
+    S: 
+      inverted: 'true'
+      whitelist: []
+    R: 
+      inverted: 'true'
+      whitelist: []
+    L: 
+      inverted: 'true'
+      whitelist: []
+    P: 
+      inverted: 'true'
+      whitelist: []
+Paladin: 
+  name: 'Paladin'
+  'action-bar': ''
+  prefix: '&6Paladin'
+  group: 'class'
+  mana: '&2Mana'
+  'max-level': 500
+  parent: ''
+  'needs-permission': 'false'
+  attributes: 
+    'health-base': '30'
+    'health-scale': '1'
+    'mana-base': '50'
+    'mana-scale': '1'
+    'dexterity-base': '9'
+    'dexterity-scale': '1'
+    'intelligence-base': '6'
+    'intelligence-scale': '1'
+    'spirit-base': '7'
+    'spirit-scale': '1'
+    'strength-base': '6'
+    'strength-scale': '1'
+    'vitality-base': '8'
+    'vitality-scale': '1'
+  'mana-regen': 3.0
+  'skill-tree': 'REQUIREMENT'
+  blacklist: []
+  skills: 
+  - 'VirtuousWrath'
+  - 'PrimalSurge'
+  - 'Invigoration'
+  - 'Bastion'
+  - 'WallOfForce'
+  icon: 'NETHERITE_SWORD'
+  'icon-data': 0
+  'icon-durability': 0
+  'icon-lore': 
+  - 'Paladin'
+  'exp-source': 447
+  'combo-starters': 
+    Q: 
+      inverted: 'true'
+      whitelist: []
+    LS: 
+      inverted: 'true'
+      whitelist: []
+    RS: 
+      inverted: 'true'
+      whitelist: []
+    F: 
+      inverted: 'true'
+      whitelist: []
+    S: 
+      inverted: 'true'
+      whitelist: []
+    R: 
+      inverted: 'true'
+      whitelist: []
+    L: 
+      inverted: 'true'
+      whitelist: []
+    P: 
+      inverted: 'true'
+      whitelist: []
+AirMage: 
+  name: 'AirMage'
+  'action-bar': ''
+  prefix: '&6AirMage'
+  group: 'class'
+  mana: '&2Mana'
+  'max-level': 500
+  parent: ''
+  'needs-permission': 'false'
+  attributes: 
+    'health-base': '30'
+    'health-scale': '1'
+    'mana-base': '60'
+    'mana-scale': '1'
+    'strength-base': '4'
+    'strength-scale': '1'
+    'dexterity-base': '4'
+    'dexterity-scale': '1'
+    'intelligence-base': '8'
+    'intelligence-scale': '1'
+    'spirit-base': '6'
+    'spirit-scale': '1'
+    'vitality-base': '8'
+    'vitality-scale': '1'
+  'mana-regen': 8.0
+  'skill-tree': 'REQUIREMENT'
+  blacklist: []
+  skills: 
+  - 'AttunementToAir'
+  - 'Thunderbolt'
+  - 'LightningStorm'
+  - 'Whirlwind'
+  - 'StaticField'
+  icon: 'FEATHER'
+  'icon-data': 0
+  'icon-durability': 0
+  'icon-lore': 
+  - '&6AirMage'
+  - '&7The Air Mage is a master of wind'
+  - '&7and lightning.'
+  - ''
+  - '&6Skill: &cThunderbolt'
+  - '&7Short range damage spell with'
+  - '&7a small knockback to targets.'
+  - ''
+  - '&6Skill: &cAttunement to Air'
+  - '&7Gives the caster a defense buff'
+  - '&7to air damage.'
+  - ''
+  - '&6Skill: &cLightning Storm'
+  - '&7A bolt of lightning that goes'
+  - '&7straight through its targets and'
+  - '&7causes blindness.'
+  - ''
+  - '&6Skill: &cWhirlwind'
+  - '&7Anyone that gets close will be'
+  - '&7pushed back and take damage.'
+  - ''
+  - '&6Ultimate: &cStatic Field'
+  - '&7Anyone that gets close will be'
+  - '&7electricuted and causes slowness.'
+  'exp-source': 447
+  'combo-starters': 
+    Q: 
+      inverted: 'false'
+      whitelist: []
+    LS: 
+      inverted: 'false'
+      whitelist: []
+    RS: 
+      inverted: 'false'
+      whitelist: []
+    F: 
+      inverted: 'false'
+      whitelist: []
+    S: 
+      inverted: 'false'
+      whitelist: []
+    R: 
+      inverted: 'false'
+      whitelist: []
+    L: 
+      inverted: 'false'
+      whitelist: []
+    P: 
+      inverted: 'false'
+      whitelist: []
+FireMage: 
+  name: 'FireMage'
+  'action-bar': ''
+  prefix: '&6FireMage'
+  group: 'class'
+  mana: '&2Mana'
+  'max-level': 500
+  parent: ''
+  'needs-permission': 'false'
+  attributes: 
+    'health-base': '30'
+    'health-scale': '1'
+    'mana-base': '60'
+    'mana-scale': '1'
+    'dexterity-base': '4'
+    'dexterity-scale': '1'
+    'intelligence-base': '8'
+    'intelligence-scale': '1'
+    'spirit-base': '6'
+    'spirit-scale': '1'
+    'strength-base': '5'
+    'strength-scale': '1'
+    'vitality-base': '8'
+    'vitality-scale': '1'
+  'mana-regen': 8.0
+  'skill-tree': 'REQUIREMENT'
+  blacklist: []
+  skills: 
+  - 'AttunementToFire'
+  - 'Fireball'
+  - 'MagmaBomb'
+  - 'HeatStroke'
+  icon: 'FIRE_CHARGE'
+  'icon-data': 0
+  'icon-durability': 0
+  'icon-lore': 
+  - 'FireMage'
+  'exp-source': 447
+  'combo-starters': 
+    Q: 
+      inverted: 'true'
+      whitelist: []
+    LS: 
+      inverted: 'true'
+      whitelist: []
+    RS: 
+      inverted: 'true'
+      whitelist: []
+    F: 
+      inverted: 'true'
+      whitelist: []
+    S: 
+      inverted: 'true'
+      whitelist: []
+    R: 
+      inverted: 'true'
+      whitelist: []
+    L: 
+      inverted: 'true'
+      whitelist: []
+    P: 
+      inverted: 'true'
+      whitelist: []
+BattleBrand: 
+  name: 'BattleBrand'
+  'action-bar': ''
+  prefix: '&6BattleBrand'
+  group: 'class'
+  mana: '&2Mana'
+  'max-level': 500
+  parent: ''
+  'needs-permission': 'false'
+  attributes: 
+    'health-base': '40'
+    'health-scale': '1'
+    'mana-base': '60'
+    'mana-scale': '1'
+    'strength-base': '8'
+    'strength-scale': '1'
+    'dexterity-base': '6'
+    'dexterity-scale': '1'
+    'intelligence-base': '5'
+    'intelligence-scale': '1'
+    'vitality-base': '6'
+    'vitality-scale': '1'
+    'spirit-base': '6'
+    'spirit-scale': '1'
+  'mana-regen': 5.0
+  'skill-tree': 'REQUIREMENT'
+  blacklist: []
+  skills: 
+  - 'Bringforth'
+  - 'Spellbane'
+  - 'Bandage'
+  - 'Needles'
+  - 'Invincible'
+  icon: 'NETHERITE_CHESTPLATE'
+  'icon-data': 0
+  'icon-durability': 0
+  'icon-lore': 
+  - '&6BattleBrand'
+  - '&7This class specializes in close'
+  - '&7combat tactics and defensive'
+  - '&7skills.'
+  - ''
+  - '&6Skill: &cBringforth'
+  - '&7Pulls everyone in a radius'
+  - '&7towards the Battle Brand.'
+  - ''
+  - '&6Skill: &cSpell Bane'
+  - '&7Give yourself resistance'
+  - '&7to all magic.'
+  - ''
+  - '&6Skill: &cBandage'
+  - '&7Heals wounds quickly by restoring'
+  - '&7health.'
+  - ''
+  - '&6Skill: &cNeedles'
+  - '&7Players that strike the Battle'
+  - '&7Brand recieve damage back to'
+  - "&7themselves.'"
+  - ''
+  - '&6Ultimate: &cInvincible'
+  - '&7The Battle Brand becomes immunte'
+  - '&7to all damage for a short time.'
+  'exp-source': 447
+  'combo-starters': 
+    Q: 
+      inverted: 'false'
+      whitelist: []
+    LS: 
+      inverted: 'false'
+      whitelist: []
+    RS: 
+      inverted: 'false'
+      whitelist: []
+    F: 
+      inverted: 'false'
+      whitelist: []
+    S: 
+      inverted: 'false'
+      whitelist: []
+    R: 
+      inverted: 'false'
+      whitelist: []
+    L: 
+      inverted: 'false'
+      whitelist: []
+    P: 
+      inverted: 'false'
+      whitelist: []
+Cleric: 
+  name: 'Cleric'
+  'action-bar': ''
+  prefix: '&6Cleric'
+  group: 'class'
+  mana: '&2Mana'
+  'max-level': 500
+  parent: ''
+  'needs-permission': 'false'
+  attributes: 
+    'health-base': '30'
+    'health-scale': '1'
+    'mana-base': '60'
+    'mana-scale': '1'
+    'dexterity-base': '4'
+    'dexterity-scale': '1'
+    'intelligence-base': '8'
+    'intelligence-scale': '1'
+    'spirit-base': '6'
+    'spirit-scale': '1'
+    'strength-base': '5'
+    'strength-scale': '1'
+    'vitality-base': '4'
+    'vitality-scale': '1'
+  'mana-regen': 8.0
+  'skill-tree': 'REQUIREMENT'
+  blacklist: []
+  skills: 
+  - 'Divinebolt'
+  - 'HealingBlast'
+  - 'Sacrifice'
+  - 'Consecrate'
+  - 'SpiritBond'
+  icon: 'POTION'
+  'icon-data': 0
+  'icon-durability': 0
+  'icon-lore': 
+  - 'Cleric'
+  'exp-source': 447
+  'combo-starters': 
+    Q: 
+      inverted: 'true'
+      whitelist: []
+    LS: 
+      inverted: 'true'
+      whitelist: []
+    RS: 
+      inverted: 'true'
+      whitelist: []
+    F: 
+      inverted: 'true'
+      whitelist: []
+    S: 
+      inverted: 'true'
+      whitelist: []
+    R: 
+      inverted: 'true'
+      whitelist: []
+    L: 
+      inverted: 'true'
+      whitelist: []
+    P: 
+      inverted: 'true'
+      whitelist: []
+Archer: 
+  name: 'Archer'
+  'action-bar': ''
+  prefix: '&aArcher'
+  group: 'class'
+  mana: '&2Prestige'
+  'max-level': 500
+  parent: ''
+  'needs-permission': 'false'
+  attributes: 
+    'health-base': '30'
+    'health-scale': '1'
+    'mana-base': '60'
+    'mana-scale': '1'
+    'vitality-base': '4'
+    'vitality-scale': '1'
+    'spirit-base': '4'
+    'spirit-scale': '1'
+    'intelligence-base': '5'
+    'intelligence-scale': '1'
+    'dexterity-base': '8'
+    'dexterity-scale': '1'
+    'strength-base': '3'
+    'strength-scale': '1'
+  'mana-regen': 2.0
+  'skill-tree': 'REQUIREMENT'
+  blacklist: []
+  skills: 
+  - 'StunningShot'
+  - 'PowerShot'
+  - 'ExplosiveArrow'
+  icon: 'BOW'
+  'icon-data': 0
+  'icon-durability': 0
+  'icon-lore': 
+  - '&6[&2Magic&6]'
+  - '&2Ranged Archetype Class with Sharpshooter Adept Skill. Using &2Various Arrow and Trait to Exploits enemy Weakness. Grind and &2block their sight with Blinding Shot, and Cripple them with legshot.'
+  - '&2Recommended Weapons : Bows, Dagger'
+  'exp-source': 447
+  'combo-starters': 
+    Q: 
+      inverted: 'true'
+      whitelist: []
+    LS: 
+      inverted: 'true'
+      whitelist: []
+    RS: 
+      inverted: 'true'
+      whitelist: []
+    F: 
+      inverted: 'true'
+      whitelist: []
+    S: 
+      inverted: 'true'
+      whitelist: []
+    R: 
+      inverted: 'true'
+      whitelist: []
+    L: 
+      inverted: 'true'
+      whitelist: []
+    P: 
+      inverted: 'true'
+      whitelist: []
+Sorcerer: 
+  name: 'Sorcerer'
+  'action-bar': ''
+  prefix: '&6Sorcerer'
+  group: 'class'
+  mana: '&1Mana'
+  'max-level': 500
+  parent: ''
+  'needs-permission': 'false'
+  attributes: 
+    'health-base': '40'
+    'health-scale': '1'
+    'mana-base': '80'
+    'mana-scale': '1'
+    'vitality-base': '6'
+    'vitality-scale': '1'
+    'spirit-base': '2'
+    'spirit-scale': '1'
+    'intelligence-base': '7'
+    'intelligence-scale': '1'
+    'dexterity-base': '3'
+    'dexterity-scale': '1'
+    'strength-base': '6'
+    'strength-scale': '1'
+  'mana-regen': 8.0
+  'skill-tree': 'REQUIREMENT'
+  blacklist: []
+  skills: 
+  - 'Assasinated'
+  - 'Assasination'
+  - 'Bloodbath'
+  - 'Bloodborne'
+  - 'Bloodrage'
+  icon: 'ENCHANTING_TABLE'
+  'icon-data': 0
+  'icon-durability': 0
+  'icon-lore': 
+  - 'Sorcerer'
+  'exp-source': 447
+  'combo-starters': 
+    Q: 
+      inverted: 'true'
+      whitelist: []
+    LS: 
+      inverted: 'true'
+      whitelist: []
+    RS: 
+      inverted: 'true'
+      whitelist: []
+    F: 
+      inverted: 'true'
+      whitelist: []
+    S: 
+      inverted: 'true'
+      whitelist: []
+    R: 
+      inverted: 'true'
+      whitelist: []
+    L: 
+      inverted: 'true'
+      whitelist: []
+    P: 
+      inverted: 'true'
+      whitelist: []
+Duelist: 
+  name: 'Duelist'
+  'action-bar': ''
+  prefix: '&6Duelist'
+  group: 'class'
+  mana: '&2Mana'
+  'max-level': 500
+  parent: ''
+  'needs-permission': 'false'
+  attributes: 
+    'health-base': '30'
+    'health-scale': '1'
+    'mana-base': '60'
+    'mana-scale': '1'
+    'dexterity-base': '8'
+    'dexterity-scale': '1'
+    'intelligence-base': '9'
+    'intelligence-scale': '1'
+    'spirit-base': '5'
+    'spirit-scale': '1'
+    'strength-base': '5'
+    'strength-scale': '1'
+    'vitality-base': '5'
+    'vitality-scale': '1'
+  'mana-regen': 8.0
+  'skill-tree': 'REQUIREMENT'
+  blacklist: []
+  skills: 
+  - 'Flurry'
+  - 'Lacerate'
+  - 'Lunge'
+  - 'Pummel'
+  - 'ExtremeFocus'
+  icon: 'ENCHANTED_BOOK'
+  'icon-data': 0
+  'icon-durability': 0
+  'icon-lore': 
+  - 'Duelist'
+  'exp-source': 447
+  'combo-starters': 
+    Q: 
+      inverted: 'true'
+      whitelist: []
+    LS: 
+      inverted: 'true'
+      whitelist: []
+    RS: 
+      inverted: 'true'
+      whitelist: []
+    F: 
+      inverted: 'true'
+      whitelist: []
+    S: 
+      inverted: 'true'
+      whitelist: []
+    R: 
+      inverted: 'true'
+      whitelist: []
+    L: 
+      inverted: 'true'
+      whitelist: []
+    P: 
+      inverted: 'true'
+      whitelist: []
+'Warrior (1)': 
+  name: 'Warrior'
+  'action-bar': ''
+  prefix: '&2Warrior'
+  group: 'class'
+  mana: '&6Brave'
+  'max-level': 500
+  parent: ''
+  'needs-permission': 'false'
+  attributes: 
+    'health-base': '30'
+    'health-scale': '1'
+    'mana-base': '40'
+    'mana-scale': '1'
+    'vitality-base': '10'
+    'vitality-scale': '1'
+    'spirit-base': '3'
+    'spirit-scale': '1'
+    'intelligence-base': '3'
+    'intelligence-scale': '1'
+    'dexterity-base': '3'
+    'dexterity-scale': '1'
+    'strength-base': '6'
+    'strength-scale': '1'
+  'mana-regen': 1.0
+  'skill-tree': 'REQUIREMENT'
+  blacklist: []
+  skills: 
+  - 'WallOfForce'
+  - 'Invigoration'
+  icon: 'SHIELD'
+  'icon-data': 0
+  'icon-durability': 0
+  'icon-lore': 
+  - '&6[&2Magic&6]'
+  - '&2Versatille Close-Quarter Class with Stable Damage and Average &2Defense, capable of blowing enemy apart. Ravish your playstyle with &2this class build. Both Full-Defensive and Full-Aggressive are &2acceptable. '
+  - '&2Recommended Weapons : Sword, Axe, Spear'
+  'exp-source': 447
+  'combo-starters': 
+    Q: 
+      inverted: 'true'
+      whitelist: []
+    LS: 
+      inverted: 'true'
+      whitelist: []
+    RS: 
+      inverted: 'true'
+      whitelist: []
+    F: 
+      inverted: 'true'
+      whitelist: []
+    S: 
+      inverted: 'true'
+      whitelist: []
+    R: 
+      inverted: 'true'
+      whitelist: []
+    L: 
+      inverted: 'true'
+      whitelist: []
+    P: 
+      inverted: 'true'
+      whitelist: []

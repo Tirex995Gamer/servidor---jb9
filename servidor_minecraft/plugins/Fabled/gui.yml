@@ -1,0 +1,132 @@
+ATTRIBUTES: 
+  rows: 1
+  pages: 1
+  slots: 
+    1: 
+      dexterity: 3
+      strength: 4
+      vitality: 0
+      spirit: 1
+      intelligence: 2
+stCleric: 
+  rows: 5
+  pages: 1
+  slots: 
+    1: 
+      healingblast: 27
+      sacrifice: 0
+      divinebolt: 18
+      spiritbond: 9
+      consecrate: 36
+stAssassin: 
+  rows: 4
+  pages: 1
+  slots: 
+    1: 
+      explosivearrow: 19
+      trueshot: 27
+      puncture: 0
+      salvo: 1
+      whirlingslash: 9
+      smokescreen: 10
+      exploitweakness: 18
+stWarrior: 
+  rows: 2
+  pages: 1
+  slots: 
+    1: 
+      invigoration: 9
+      wallofforce: 0
+stDuelist: 
+  rows: 5
+  pages: 1
+  slots: 
+    1: 
+      lacerate: 9
+      lunge: 18
+      flurry: 0
+      pummel: 27
+      extremefocus: 36
+stSorcerer: 
+  rows: 5
+  pages: 1
+  slots: 
+    1: 
+      assasinated: 9
+      bloodborne: 0
+      assasination: 18
+      bloodrage: 36
+      bloodbath: 27
+stAirMage: 
+  rows: 5
+  pages: 1
+  slots: 
+    1: 
+      whirlwind: 18
+      thunderbolt: 9
+      attunementtoair: 27
+      lightningstorm: 36
+      staticfield: 0
+stBattleBrand: 
+  rows: 5
+  pages: 1
+  slots: 
+    1: 
+      needles: 27
+      invincible: 36
+      spellbane: 0
+      bringforth: 18
+      bandage: 9
+stBarbarian: 
+  rows: 5
+  pages: 1
+  slots: 
+    1: 
+      pulverize: 36
+      maelstrom: 27
+      stampede: 9
+      roar: 0
+      stomp: 18
+stFireMage: 
+  rows: 4
+  pages: 1
+  slots: 
+    1: 
+      attunementtofire: 9
+      magmabomb: 18
+      heatstroke: 27
+      fireball: 0
+stPaladin: 
+  rows: 5
+  pages: 1
+  slots: 
+    1: 
+      primalsurge: 0
+      bastion: 36
+      invigoration: 27
+      wallofforce: 18
+      virtuouswrath: 9
+CLASS_SELECTION: 
+  rows: 3
+  pages: 1
+  slots: 
+    1: 
+      battlebrand: 11
+      sorcerer: 3
+      cleric: 5
+      barbarian: 12
+      warrior: 21
+      archer: 4
+      firemage: 15
+      duelist: 14
+      paladin: 13
+      assassin: 22
+      airmage: 23
+stArcher: 
+  rows: 4
+  pages: 1
+  slots: 
+    1: 
+      explosivearrow: 0
+      powershot: 18
+      stunningshot: 9

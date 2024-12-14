@@ -1,0 +1,234 @@
+MagmaBomb: 
+  name: 'MagmaBomb'
+  type: 'Dynamic'
+  'max-level': 100
+  'skill-req-lvl': 0
+  'needs-permission': 'false'
+  'cooldown-message': 'true'
+  attributes: 
+    'level-base': '75'
+    'level-scale': '0'
+    'cost-base': '1'
+    'cost-scale': '0'
+    'cooldown-base': '1.5'
+    'cooldown-scale': '0'
+    'mana-base': '3'
+    'mana-scale': '0'
+    'points-spent-req-base': '0'
+    'points-spent-req-scale': '0'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'MAGMA_CREAM'
+  'icon-data': 0
+  'icon-durability': 0
+  'icon-lore': 
+  - '&d{name} &7({level}/{max})'
+  - '&7Launches a large ball of magma'
+  - '&7with a long range and AOE damage.'
+  - ''
+  - '{req:level}Level: {attr:level}'
+  - '{req:cost}Cost: {attr:cost}'
+  - ''
+  - '&2Mana: {attr:mana}'
+  - '&2Cooldown: {attr:cooldown}'
+  desc: []
+  components: 
+    'Cast-0': 
+      type: 'trigger'
+      data: {}
+      preview: 
+        enabled: 'false'
+      children: 
+        Sound: 
+          type: 'mechanic'
+          data: 
+            'icon-key': ''
+            counts: 'true'
+            sound: 'Entity ghast shoot'
+            'volume-base': '100'
+            'volume-scale': '0'
+            'pitch-base': '1'
+            'pitch-scale': '0'
+          preview: 
+            enabled: 'false'
+          children: {}
+        'Particle Projectile': 
+          type: 'mechanic'
+          data: 
+            'icon-key': ''
+            counts: 'true'
+            pierce: 'false'
+            group: 'Enemy'
+            steps: '2'
+            'collision-radius-base': '0'
+            'collision-radius-scale': '0'
+            'gravity-base': '0'
+            'gravity-scale': '0'
+            'drag-base': '0'
+            'drag-scale': '0'
+            period: '2'
+            homing: 'false'
+            'velocity-base': '1'
+            'velocity-scale': '0'
+            'lifespan-base': '5'
+            'lifespan-scale': '0'
+            'distance-base': '0'
+            'distance-scale': '0'
+            'on-expire': 'false'
+            spread: 'Cone'
+            'amount-base': '1'
+            'amount-scale': '0'
+            'angle-base': '30'
+            'angle-scale': '0'
+            'forward-base': '0'
+            'forward-scale': '0'
+            'upward-base': '0'
+            'upward-scale': '0'
+            'right-base': '0'
+            'right-scale': '0'
+            particle: 'Smoke large'
+            arrangement: 'Sphere'
+            'radius-base': '0.5'
+            'radius-scale': '0'
+            'particles-base': '10'
+            'particles-scale': '0'
+            'visible-radius': '48'
+            dx: '0'
+            dy: '0'
+            dz: '0'
+            amount: '1'
+            speed: '0.01'
+            'use-effect': 'false'
+          preview: 
+            enabled: 'false'
+            period: '5'
+            'per-target': 'false'
+            path: 'false'
+          children: 
+            Particle: 
+              type: 'mechanic'
+              data: 
+                'icon-key': ''
+                counts: 'true'
+                particle: 'Ash'
+                arrangement: 'Sphere'
+                'radius-base': '1'
+                'radius-scale': '0'
+                'particles-base': '2'
+                'particles-scale': '0'
+                'visible-radius': '48'
+                dx: '0'
+                dy: '0'
+                dz: '0'
+                amount: '1'
+                speed: '1'
+                forward: '0'
+                upward: '0'
+                right: '0'
+              preview: 
+                enabled: 'false'
+              children: {}
+            'Particle-b': 
+              type: 'mechanic'
+              data: 
+                'icon-key': ''
+                counts: 'true'
+                particle: 'Falling lava'
+                arrangement: 'Sphere'
+                'radius-base': '0.25'
+                'radius-scale': '0'
+                'particles-base': '15'
+                'particles-scale': '0'
+                'visible-radius': '48'
+                dx: '0'
+                dy: '0'
+                dz: '0'
+                amount: '1'
+                speed: '0.2'
+                forward: '0'
+                upward: '0.5'
+                right: '0'
+              preview: 
+                enabled: 'false'
+              children: {}
+            'Particle-c': 
+              type: 'mechanic'
+              data: 
+                'icon-key': ''
+                counts: 'true'
+                particle: 'Flame'
+                arrangement: 'Sphere'
+                'radius-base': '2.5'
+                'radius-scale': '0'
+                'particles-base': '20'
+                'particles-scale': '0'
+                'visible-radius': '48'
+                dx: '0'
+                dy: '0'
+                dz: '0'
+                amount: '1'
+                speed: '0.1'
+                forward: '0'
+                upward: '0.2'
+                right: '0'
+              preview: 
+                enabled: 'false'
+              children: {}
+            Explosion: 
+              type: 'mechanic'
+              data: 
+                'icon-key': ''
+                counts: 'true'
+                'power-base': '1'
+                'power-scale': '0'
+                damage: 'false'
+                fire: 'false'
+              preview: 
+                enabled: 'false'
+              children: {}
+            Area: 
+              type: 'target'
+              data: 
+                'icon-key': ''
+                'radius-base': '5'
+                'radius-scale': '0'
+                group: 'Enemy'
+                wall: 'false'
+                invulnerable: 'false'
+                caster: 'false'
+                'max-base': '99'
+                'max-scale': '0'
+                random: 'false'
+              preview: 
+                enabled: 'false'
+                'per-target': 'false'
+                circle: 'false'
+                sphere: 'false'
+              children: 
+                Fire: 
+                  type: 'mechanic'
+                  data: 
+                    'icon-key': ''
+                    counts: 'true'
+                    'damage-base': '1'
+                    'damage-scale': '0'
+                    'seconds-base': '3'
+                    'seconds-scale': '0'
+                  preview: 
+                    enabled: 'false'
+                  children: {}
+                Damage: 
+                  type: 'mechanic'
+                  data: 
+                    'icon-key': ''
+                    counts: 'true'
+                    type: 'Damage'
+                    'value-base': '25'
+                    'value-scale': '0.22'
+                    true: 'false'
+                    classifier: 'fire'
+                    knockback: 'false'
+                    'ignore-divinity': 'false'
+                    cause: 'Entity Attack'
+                  preview: 
+                    enabled: 'false'
+                  children: {}

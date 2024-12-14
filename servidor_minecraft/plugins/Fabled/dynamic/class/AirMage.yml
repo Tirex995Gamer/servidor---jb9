@@ -1,0 +1,87 @@
+AirMage: 
+  name: 'AirMage'
+  'action-bar': ''
+  prefix: '&6AirMage'
+  group: 'class'
+  mana: '&2Mana'
+  'max-level': 500
+  parent: ''
+  'needs-permission': 'false'
+  attributes: 
+    'health-base': '30'
+    'health-scale': '1'
+    'mana-base': '60'
+    'mana-scale': '1'
+    'strength-base': '4'
+    'strength-scale': '1'
+    'dexterity-base': '4'
+    'dexterity-scale': '1'
+    'intelligence-base': '8'
+    'intelligence-scale': '1'
+    'spirit-base': '6'
+    'spirit-scale': '1'
+    'vitality-base': '8'
+    'vitality-scale': '1'
+  'mana-regen': 8.0
+  'skill-tree': 'REQUIREMENT'
+  blacklist: []
+  skills: 
+  - 'AttunementToAir'
+  - 'Thunderbolt'
+  - 'LightningStorm'
+  - 'Whirlwind'
+  - 'StaticField'
+  icon: 'FEATHER'
+  'icon-data': 0
+  'icon-durability': 0
+  'icon-lore': 
+  - '&6AirMage'
+  - '&7The Air Mage is a master of wind'
+  - '&7and lightning.'
+  - ''
+  - '&6Skill: &cThunderbolt'
+  - '&7Short range damage spell with'
+  - '&7a small knockback to targets.'
+  - ''
+  - '&6Skill: &cAttunement to Air'
+  - '&7Gives the caster a defense buff'
+  - '&7to air damage.'
+  - ''
+  - '&6Skill: &cLightning Storm'
+  - '&7A bolt of lightning that goes'
+  - '&7straight through its targets and'
+  - '&7causes blindness.'
+  - ''
+  - '&6Skill: &cWhirlwind'
+  - '&7Anyone that gets close will be'
+  - '&7pushed back and take damage.'
+  - ''
+  - '&6Ultimate: &cStatic Field'
+  - '&7Anyone that gets close will be'
+  - '&7electricuted and causes slowness.'
+  'exp-source': 447
+  'combo-starters': 
+    Q: 
+      inverted: 'false'
+      whitelist: []
+    LS: 
+      inverted: 'false'
+      whitelist: []
+    RS: 
+      inverted: 'false'
+      whitelist: []
+    F: 
+      inverted: 'false'
+      whitelist: []
+    S: 
+      inverted: 'false'
+      whitelist: []
+    R: 
+      inverted: 'false'
+      whitelist: []
+    L: 
+      inverted: 'false'
+      whitelist: []
+    P: 
+      inverted: 'false'
+      whitelist: []

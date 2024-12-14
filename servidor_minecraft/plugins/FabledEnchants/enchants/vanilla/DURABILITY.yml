@@ -1,0 +1,112 @@
+name: 'DURABILITY'
+description: 'DURABILITY vanilla enchantment'
+enabled: 'true'
+
+# Max attainable level from anvils
+'max-level': 3
+
+# Max attainable level from enchanting
+'max-table-level': 3
+
+# When something other than default, prevents multiple enchantments
+# in the same group being on the same item
+group: 'Default'
+
+# Items that can receive the enchantment from enchanting or anvils
+'natural-items': 
+- 'NETHERITE_HELMET'
+- 'GOLDEN_SWORD'
+- 'CHAINMAIL_CHESTPLATE'
+- 'GOLDEN_CHESTPLATE'
+- 'BOW'
+- 'LEATHER_LEGGINGS'
+- 'TURTLE_HELMET'
+- 'LEATHER_CHESTPLATE'
+- 'STONE_SWORD'
+- 'DIAMOND_BOOTS'
+- 'IRON_HELMET'
+- 'IRON_SWORD'
+- 'DIAMOND_SWORD'
+- 'DIAMOND_PICKAXE'
+- 'WOODEN_SHOVEL'
+- 'STONE_AXE'
+- 'LEATHER_BOOTS'
+- 'CHAINMAIL_HELMET'
+- 'WOODEN_AXE'
+- 'DIAMOND_SHOVEL'
+- 'GOLDEN_SHOVEL'
+- 'NETHERITE_LEGGINGS'
+- 'GOLDEN_AXE'
+- 'DIAMOND_LEGGINGS'
+- 'IRON_PICKAXE'
+- 'FISHING_ROD'
+- 'DIAMOND_AXE'
+- 'NETHERITE_SWORD'
+- 'DIAMOND_CHESTPLATE'
+- 'IRON_LEGGINGS'
+- 'DIAMOND_HELMET'
+- 'IRON_CHESTPLATE'
+- 'STONE_PICKAXE'
+- 'GOLDEN_BOOTS'
+- 'LEATHER_HELMET'
+- 'IRON_AXE'
+- 'NETHERITE_AXE'
+- 'GOLDEN_HELMET'
+- 'CHAINMAIL_LEGGINGS'
+- 'IRON_BOOTS'
+- 'NETHERITE_PICKAXE'
+- 'NETHERITE_BOOTS'
+- 'STONE_SHOVEL'
+- 'CROSSBOW'
+- 'CHAINMAIL_BOOTS'
+- 'WOODEN_SWORD'
+- 'WOODEN_PICKAXE'
+- 'GOLDEN_LEGGINGS'
+- 'IRON_SHOVEL'
+- 'NETHERITE_SHOVEL'
+- 'GOLDEN_PICKAXE'
+- 'NETHERITE_CHESTPLATE'
+
+# Additional items that can only receive the enchantment through anvils
+'anvil-items': 
+- 'DIAMOND_HOE'
+- 'IRON_HOE'
+- 'NETHERITE_HOE'
+- 'CARROT_ON_A_STICK'
+- 'FLINT_AND_STEEL'
+- 'SHEARS'
+- 'GOLDEN_HOE'
+- 'ELYTRA'
+- 'SHIELD'
+- 'WOODEN_HOE'
+- 'STONE_HOE'
+
+# How common the enchantment is. Higher numbers are more common.
+weight: 5.0
+
+# Weights for specific materials
+'material-weights': {}
+
+# Minimum enchanting level to receive the enchantment.
+# Negatives make it easier to get higher ranks
+'min-enchanting-level': 5.0
+
+# Higher numbers result in requiring higher enchanting levels
+# to get higher ranks
+'enchants-level-scale-factor': 8.0
+
+# How many enchantment levels beyond the max can still yield the enchantment
+'enchants-level-buffer': 42.0
+
+# Level cost per level of the enchantment
+'combine-cost-per-level': 2
+
+# Whether or not the same enchantment stacks if on multiple items.
+# When false, the highest level is applied
+stacks: 'false'
+
+# Whether or not this enchantment can be achieved from enchanting
+'table-enabled': 'true'
+
+# Extra settings specific to the enchantment
+effect: {}

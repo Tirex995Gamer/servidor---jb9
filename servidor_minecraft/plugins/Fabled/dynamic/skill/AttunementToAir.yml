@@ -1,0 +1,75 @@
+AttunementToAir: 
+  name: 'AttunementToAir'
+  type: 'Dynamic'
+  'max-level': 100
+  'skill-req-lvl': 0
+  'needs-permission': 'false'
+  'cooldown-message': 'true'
+  attributes: 
+    'level-base': '25'
+    'level-scale': '0'
+    'cost-base': '1'
+    'cost-scale': '1'
+    'cooldown-base': '3'
+    'cooldown-scale': '1'
+    'mana-base': '5'
+    'mana-scale': '1'
+    'points-spent-req-base': '0'
+    'points-spent-req-scale': '0'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'FEATHER'
+  'icon-data': 0
+  'icon-durability': 0
+  'icon-lore': 
+  - '&6{name} &7({level}/{max})'
+  - '&7Gives the caster a defense buff'
+  - '&7to air damage.'
+  - ''
+  - '{req:level}Level: {attr:level}'
+  - '{req:cost}Cost: {attr:cost}'
+  - ''
+  - '&2Mana: {attr:mana}'
+  - '&2Cooldown: {attr:cooldown}'
+  desc: []
+  components: 
+    'Cast-0': 
+      type: 'trigger'
+      data: {}
+      preview: 
+        enabled: 'false'
+      children: 
+        Area: 
+          type: 'target'
+          data: 
+            'icon-key': ''
+            'radius-base': '5'
+            'radius-scale': '0'
+            group: 'Ally'
+            wall: 'false'
+            invulnerable: 'false'
+            caster: 'true'
+            'max-base': '99'
+            'max-scale': '0'
+            random: 'false'
+          preview: 
+            enabled: 'false'
+            'per-target': 'false'
+            circle: 'false'
+            sphere: 'false'
+          children: 
+            Buff: 
+              type: 'mechanic'
+              data: 
+                'icon-key': ''
+                counts: 'true'
+                immediate: 'false'
+                type: 'SKILL_DEFENSE'
+                modifier: 'Multiplier'
+                category: 'air'
+                'value-base': '15'
+                'value-scale': '0.25'
+                'seconds-base': '60'
+                'seconds-scale': '0.6'
+              preview: 
+                enabled: 'false'
+              children: {}

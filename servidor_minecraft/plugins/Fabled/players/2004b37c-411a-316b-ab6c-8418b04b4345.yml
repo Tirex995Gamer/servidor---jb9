@@ -1,0 +1,28 @@
+limit: 3
+active: 1
+health: 334.0
+mana: 364.0
+accounts: 
+  acc1: 
+    classes: 
+      Archer: 
+        level: 151
+        points: 131
+        exp: 0.0
+    skills: 
+      PowerShot: 
+        level: 7
+      ExplosiveArrow: 
+        level: 6
+      StunningShot: 
+        level: 7
+    binds: {}
+    'attrib-points': 150
+    attribs: {}
+    attrstages: {}
+    'text-layout': 
+      0: 'StunningShot'
+      1: 'PowerShot'
+      2: 'ExplosiveArrow'
+    hunger: 1.0
+    persistent: {}

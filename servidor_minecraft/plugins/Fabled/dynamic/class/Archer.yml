@@ -1,0 +1,64 @@
+Archer: 
+  name: 'Archer'
+  'action-bar': ''
+  prefix: '&aArcher'
+  group: 'class'
+  mana: '&2Prestige'
+  'max-level': 500
+  parent: ''
+  'needs-permission': 'false'
+  attributes: 
+    'health-base': '30'
+    'health-scale': '1'
+    'mana-base': '60'
+    'mana-scale': '1'
+    'vitality-base': '4'
+    'vitality-scale': '1'
+    'spirit-base': '4'
+    'spirit-scale': '1'
+    'intelligence-base': '5'
+    'intelligence-scale': '1'
+    'dexterity-base': '8'
+    'dexterity-scale': '1'
+    'strength-base': '3'
+    'strength-scale': '1'
+  'mana-regen': 2.0
+  'skill-tree': 'REQUIREMENT'
+  blacklist: []
+  skills: 
+  - 'StunningShot'
+  - 'PowerShot'
+  - 'ExplosiveArrow'
+  icon: 'BOW'
+  'icon-data': 0
+  'icon-durability': 0
+  'icon-lore': 
+  - '&6[&2Magic&6]'
+  - '&2Ranged Archetype Class with Sharpshooter Adept Skill. Using &2Various Arrow and Trait to Exploits enemy Weakness. Grind and &2block their sight with Blinding Shot, and Cripple them with legshot.'
+  - '&2Recommended Weapons : Bows, Dagger'
+  'exp-source': 447
+  'combo-starters': 
+    Q: 
+      inverted: 'true'
+      whitelist: []
+    LS: 
+      inverted: 'true'
+      whitelist: []
+    RS: 
+      inverted: 'true'
+      whitelist: []
+    F: 
+      inverted: 'true'
+      whitelist: []
+    S: 
+      inverted: 'true'
+      whitelist: []
+    R: 
+      inverted: 'true'
+      whitelist: []
+    L: 
+      inverted: 'true'
+      whitelist: []
+    P: 
+      inverted: 'true'
+      whitelist: []

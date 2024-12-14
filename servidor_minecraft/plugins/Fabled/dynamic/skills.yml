@@ -1,0 +1,5531 @@
+loaded: 'true'
+Assasination: 
+  name: 'Assasination'
+  type: 'Single Target'
+  'max-level': 100
+  'skill-req-lvl': 1
+  'needs-permission': 'false'
+  'cooldown-message': 'true'
+  combo: 'R R R'
+  attributes: 
+    'level-base': '50'
+    'level-scale': '0'
+    'cost-base': '1'
+    'cost-scale': '0'
+    'cooldown-base': '5'
+    'cooldown-scale': '0'
+    'mana-base': '12'
+    'mana-scale': '0'
+    'points-spent-req-base': '0'
+    'points-spent-req-scale': '0'
+  msg: '&6{player} &2has gone invisible with &6{skill}'
+  icon: 'IRON_SWORD'
+  'icon-data': 0
+  'icon-durability': 0
+  'icon-lore': 
+  - '&d{name} &7({level}/{max})'
+  - '&2Type: &6{type}'
+  - ''
+  - '{req:level}&2Level: {attr:level}'
+  - '{req:cost}&2Cost: {attr:cost}'
+  - ''
+  - '&2Warping to target and dealt massive damage.'
+  - ''
+  - '&2Damage: {attr:damage.value}'
+  - '&2Mana: {attr:mana}'
+  - '&2Cooldown: {attr:cooldown}'
+  desc: []
+  components: 
+    'Cast-0': 
+      type: 'trigger'
+      data: {}
+      preview: 
+        enabled: 'false'
+      children: 
+        Item: 
+          type: 'condition'
+          data: 
+            'icon-key': ''
+            'check-mat': 'false'
+            'check-data': 'false'
+            'check-custom-data': 'false'
+            'check-lore': 'false'
+            'check-name': 'false'
+            regex: 'false'
+          preview: 
+            enabled: 'false'
+          children: 
+            Single: 
+              type: 'target'
+              data: 
+                'icon-key': ''
+                'range-base': '20'
+                'range-scale': '0'
+                'tolerance-base': '4'
+                'tolerance-scale': '0'
+                group: 'Enemy'
+                wall: 'false'
+                invulnerable: 'false'
+                caster: 'false'
+              preview: 
+                enabled: 'false'
+                'per-target': 'false'
+                line: 'false'
+                cylinder: 'false'
+              children: 
+                'Warp Target': 
+                  type: 'mechanic'
+                  data: 
+                    'icon-key': ''
+                    counts: 'True'
+                    type: 'Caster to Target'
+                    preserve: 'false'
+                    setYaw: 'false'
+                    setPitch: 'false'
+                  preview: 
+                    enabled: 'false'
+                  children: {}
+                'Particle Projectile': 
+                  type: 'mechanic'
+                  data: 
+                    'icon-key': ''
+                    counts: 'True'
+                    pierce: 'false'
+                    group: 'Enemy'
+                    steps: '0'
+                    'collision-radius-base': '0'
+                    'collision-radius-scale': '0'
+                    'gravity-base': '0'
+                    'gravity-scale': '0'
+                    'drag-base': '0'
+                    'drag-scale': '0'
+                    period: '0'
+                    homing: 'false'
+                    'velocity-base': '3'
+                    'velocity-scale': '0'
+                    'lifespan-base': '0'
+                    'lifespan-scale': '0'
+                    'distance-base': '0'
+                    'distance-scale': '0'
+                    'on-expire': 'false'
+                    spread: 'Cone'
+                    'amount-base': '1'
+                    'amount-scale': '0'
+                    'angle-base': '30'
+                    'angle-scale': '0'
+                    'forward-base': '0'
+                    'forward-scale': '0'
+                    'upward-base': '0'
+                    'upward-scale': '0'
+                    'right-base': '0'
+                    'right-scale': '0'
+                    particle: 'Crit'
+                    arrangement: 'Sphere'
+                    'radius-base': '4'
+                    'radius-scale': '0'
+                    'particles-base': '20'
+                    'particles-scale': '0'
+                    'visible-radius': '25'
+                    dx: '0'
+                    dy: '0'
+                    dz: '0'
+                    amount: '1'
+                    speed: '1'
+                    'use-effect': 'false'
+                  preview: 
+                    enabled: 'false'
+                    period: '5'
+                    'per-target': 'false'
+                    path: 'false'
+                  children: 
+                    Damage: 
+                      type: 'mechanic'
+                      data: 
+                        'icon-key': ''
+                        counts: 'True'
+                        type: 'Multiplier'
+                        'value-base': '70'
+                        'value-scale': '1'
+                        true: 'false'
+                        classifier: 'default'
+                        knockback: 'false'
+                        'ignore-divinity': 'false'
+                      preview: 
+                        enabled: 'false'
+                      children: {}
+                    Push: 
+                      type: 'mechanic'
+                      data: 
+                        'icon-key': ''
+                        counts: 'True'
+                        type: 'Fixed'
+                        'speed-base': '5'
+                        'speed-scale': '1'
+                        source: ''
+                      preview: 
+                        enabled: 'false'
+                      children: {}
+                    Sound: 
+                      type: 'mechanic'
+                      data: 
+                        'icon-key': ''
+                        counts: 'True'
+                        'volume-base': '100'
+                        'volume-scale': '0'
+                        'pitch-base': '1'
+                        'pitch-scale': '0'
+                      preview: 
+                        enabled: 'false'
+                      children: {}
+                    Self: 
+                      type: 'target'
+                      data: 
+                        'icon-key': ''
+                        group: 'enemy'
+                        wall: 'false'
+                        invulnerable: 'false'
+                        caster: 'false'
+                      preview: 
+                        enabled: 'false'
+                      children: 
+                        Launch: 
+                          type: 'mechanic'
+                          data: 
+                            'icon-key': ''
+                            counts: 'True'
+                            relative: 'Target'
+                            'reset-y': 'false'
+                            'forward-base': '1'
+                            'forward-scale': '0'
+                            'upward-base': '2'
+                            'upward-scale': '0.5'
+                            'right-base': '0'
+                            'right-scale': '0'
+                          preview: 
+                            enabled: 'false'
+                          children: {}
+                        Delay: 
+                          type: 'mechanic'
+                          data: 
+                            'icon-key': ''
+                            counts: 'True'
+                            'delay-base': '2'
+                            'delay-scale': '0'
+                            cleanup: 'false'
+                            'single-instance': 'false'
+                          preview: 
+                            enabled: 'false'
+                          children: 
+                            Warp: 
+                              type: 'mechanic'
+                              data: 
+                                'icon-key': ''
+                                counts: 'True'
+                                walls: 'false'
+                                open: 'false'
+                                'forward-base': '30'
+                                'forward-scale': '1'
+                                'upward-base': '0'
+                                'upward-scale': '0'
+                                'right-base': '0'
+                                'right-scale': '0'
+                                preserve: 'false'
+                                setYaw: 'false'
+                                setPitch: 'false'
+                              preview: 
+                                enabled: 'false'
+                                'per-target': 'false'
+                              children: {}
+        'Item-b': 
+          type: 'condition'
+          data: 
+            'icon-key': ''
+            'check-mat': 'false'
+            'check-data': 'false'
+            'check-custom-data': 'false'
+            'check-lore': 'false'
+            'check-name': 'false'
+            regex: 'false'
+          preview: 
+            enabled: 'false'
+          children: 
+            Single: 
+              type: 'target'
+              data: 
+                'icon-key': ''
+                'range-base': '20'
+                'range-scale': '0'
+                'tolerance-base': '4'
+                'tolerance-scale': '0'
+                group: 'Enemy'
+                wall: 'false'
+                invulnerable: 'false'
+                caster: 'false'
+              preview: 
+                enabled: 'false'
+                'per-target': 'false'
+                line: 'false'
+                cylinder: 'false'
+              children: 
+                'Warp Target': 
+                  type: 'mechanic'
+                  data: 
+                    'icon-key': ''
+                    counts: 'True'
+                    type: 'Caster to Target'
+                    preserve: 'false'
+                    setYaw: 'false'
+                    setPitch: 'false'
+                  preview: 
+                    enabled: 'false'
+                  children: {}
+                'Particle Projectile': 
+                  type: 'mechanic'
+                  data: 
+                    'icon-key': ''
+                    counts: 'True'
+                    pierce: 'false'
+                    group: 'Enemy'
+                    steps: '0'
+                    'collision-radius-base': '0'
+                    'collision-radius-scale': '0'
+                    'gravity-base': '0'
+                    'gravity-scale': '0'
+                    'drag-base': '0'
+                    'drag-scale': '0'
+                    period: '0'
+                    homing: 'false'
+                    'velocity-base': '3'
+                    'velocity-scale': '0'
+                    'lifespan-base': '0'
+                    'lifespan-scale': '0'
+                    'distance-base': '0'
+                    'distance-scale': '0'
+                    'on-expire': 'false'
+                    spread: 'Cone'
+                    'amount-base': '1'
+                    'amount-scale': '0'
+                    'angle-base': '30'
+                    'angle-scale': '0'
+                    'forward-base': '0'
+                    'forward-scale': '0'
+                    'upward-base': '0'
+                    'upward-scale': '0'
+                    'right-base': '0'
+                    'right-scale': '0'
+                    particle: 'Crit'
+                    arrangement: 'Sphere'
+                    'radius-base': '4'
+                    'radius-scale': '0'
+                    'particles-base': '20'
+                    'particles-scale': '0'
+                    'visible-radius': '25'
+                    dx: '0'
+                    dy: '0'
+                    dz: '0'
+                    amount: '1'
+                    speed: '1'
+                    'use-effect': 'false'
+                  preview: 
+                    enabled: 'false'
+                    period: '5'
+                    'per-target': 'false'
+                    path: 'false'
+                  children: 
+                    Damage: 
+                      type: 'mechanic'
+                      data: 
+                        'icon-key': ''
+                        counts: 'True'
+                        type: 'Multiplier'
+                        'value-base': '70'
+                        'value-scale': '1'
+                        true: 'false'
+                        classifier: 'default'
+                        knockback: 'false'
+                        'ignore-divinity': 'false'
+                      preview: 
+                        enabled: 'false'
+                      children: {}
+                    Push: 
+                      type: 'mechanic'
+                      data: 
+                        'icon-key': ''
+                        counts: 'True'
+                        type: 'Fixed'
+                        'speed-base': '5'
+                        'speed-scale': '1'
+                        source: ''
+                      preview: 
+                        enabled: 'false'
+                      children: {}
+                    Sound: 
+                      type: 'mechanic'
+                      data: 
+                        'icon-key': ''
+                        counts: 'True'
+                        'volume-base': '100'
+                        'volume-scale': '0'
+                        'pitch-base': '1'
+                        'pitch-scale': '0'
+                      preview: 
+                        enabled: 'false'
+                      children: {}
+                    Self: 
+                      type: 'target'
+                      data: 
+                        'icon-key': ''
+                        group: 'enemy'
+                        wall: 'false'
+                        invulnerable: 'false'
+                        caster: 'false'
+                      preview: 
+                        enabled: 'false'
+                      children: 
+                        Launch: 
+                          type: 'mechanic'
+                          data: 
+                            'icon-key': ''
+                            counts: 'True'
+                            relative: 'Target'
+                            'reset-y': 'false'
+                            'forward-base': '1'
+                            'forward-scale': '0'
+                            'upward-base': '2'
+                            'upward-scale': '0.5'
+                            'right-base': '0'
+                            'right-scale': '0'
+                          preview: 
+                            enabled: 'false'
+                          children: {}
+                        Delay: 
+                          type: 'mechanic'
+                          data: 
+                            'icon-key': ''
+                            counts: 'True'
+                            'delay-base': '2'
+                            'delay-scale': '0'
+                            cleanup: 'false'
+                            'single-instance': 'false'
+                          preview: 
+                            enabled: 'false'
+                          children: 
+                            Warp: 
+                              type: 'mechanic'
+                              data: 
+                                'icon-key': ''
+                                counts: 'True'
+                                walls: 'false'
+                                open: 'false'
+                                'forward-base': '30'
+                                'forward-scale': '1'
+                                'upward-base': '0'
+                                'upward-scale': '0'
+                                'right-base': '0'
+                                'right-scale': '0'
+                                preserve: 'false'
+                                setYaw: 'false'
+                                setPitch: 'false'
+                              preview: 
+                                enabled: 'false'
+                                'per-target': 'false'
+                              children: {}
+AttunementToFire: 
+  name: 'AttunementToFire'
+  type: 'Dynamic'
+  'max-level': 100
+  'skill-req-lvl': 0
+  'needs-permission': 'false'
+  'cooldown-message': 'true'
+  attributes: 
+    'level-base': '25'
+    'level-scale': '0'
+    'cost-base': '1'
+    'cost-scale': '1'
+    'cooldown-base': '3'
+    'cooldown-scale': '0'
+    'mana-base': '5'
+    'mana-scale': '1'
+    'points-spent-req-base': '0'
+    'points-spent-req-scale': '0'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'BLAZE_ROD'
+  'icon-data': 0
+  'icon-durability': 0
+  'icon-lore': 
+  - '&d{name} &7({level}/{max})'
+  - '&2Type: &6{type}&7Gives the caster a defense buff'
+  - '&7to air damage.'
+  - ''
+  - '{req:level}Level: {attr:level}'
+  - '{req:cost}Cost: {attr:cost}'
+  - ''
+  - '&2Mana: {attr:mana}'
+  - '&2Cooldown: {attr:cooldown}'
+  desc: []
+  components: 
+    'Cast-0': 
+      type: 'trigger'
+      data: {}
+      preview: 
+        enabled: 'false'
+      children: 
+        Buff: 
+          type: 'mechanic'
+          data: 
+            'icon-key': ''
+            counts: 'true'
+            immediate: 'false'
+            type: 'SKILL_DAMAGE'
+            modifier: 'Flat'
+            category: ''
+            'value-base': '10'
+            'value-scale': '5'
+            'seconds-base': '15'
+            'seconds-scale': '5'
+          preview: 
+            enabled: 'false'
+          children: {}
+        Particle: 
+          type: 'mechanic'
+          data: 
+            'icon-key': ''
+            counts: 'true'
+            particle: 'Drip lava'
+            arrangement: 'Sphere'
+            'radius-base': '2'
+            'radius-scale': '1'
+            'particles-base': '10'
+            'particles-scale': '1'
+            'visible-radius': '20'
+            dx: '0'
+            dy: '0'
+            dz: '0'
+            amount: '1'
+            speed: '0.1'
+            forward: '0'
+            upward: '0'
+            right: '0'
+          preview: 
+            enabled: 'false'
+          children: {}
+        Immunity: 
+          type: 'mechanic'
+          data: 
+            'icon-key': ''
+            counts: 'true'
+            type: 'Fire tick'
+            'seconds-base': '15'
+            'seconds-scale': '5'
+            'multiplier-base': '0'
+            'multiplier-scale': '0'
+          preview: 
+            enabled: 'false'
+          children: {}
+        'Immunity-b': 
+          type: 'mechanic'
+          data: 
+            'icon-key': ''
+            counts: 'true'
+            type: 'Fire'
+            'seconds-base': '15'
+            'seconds-scale': '5'
+            'multiplier-base': '0'
+            'multiplier-scale': '0'
+          preview: 
+            enabled: 'false'
+          children: {}
+        'Immunity-c': 
+          type: 'mechanic'
+          data: 
+            'icon-key': ''
+            counts: 'true'
+            type: 'Hot floor'
+            'seconds-base': '15'
+            'seconds-scale': '5'
+            'multiplier-base': '0'
+            'multiplier-scale': '0'
+          preview: 
+            enabled: 'false'
+          children: {}
+        'Immunity-d': 
+          type: 'mechanic'
+          data: 
+            'icon-key': ''
+            counts: 'true'
+            type: 'Lava'
+            'seconds-base': '15'
+            'seconds-scale': '5'
+            'multiplier-base': '0'
+            'multiplier-scale': '0'
+          preview: 
+            enabled: 'false'
+          children: {}
+SmokeScreen: 
+  name: 'SmokeScreen'
+  type: 'Debuff + Buff'
+  'max-level': 100
+  'skill-req-lvl': 1
+  'needs-permission': 'false'
+  'cooldown-message': 'true'
+  combo: 'L L L'
+  attributes: 
+    'level-base': '15'
+    'level-scale': '0'
+    'cost-base': '1'
+    'cost-scale': '1'
+    'cooldown-base': '6'
+    'cooldown-scale': '1'
+    'mana-base': '6'
+    'mana-scale': '0'
+    'points-spent-req-base': '0'
+    'points-spent-req-scale': '0'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'FIREWORK_STAR'
+  'icon-data': 0
+  'icon-durability': 0
+  'icon-lore': 
+  - '&d{name} &7({level}/{max})'
+  - '&2Type: &6{type}'
+  - ''
+  - '{req:level}Level: {attr:level}'
+  - '{req:cost}Cost: {attr:cost}'
+  - ''
+  - '&2Cast A Bomb of Smoke to Block Enemy Sight'
+  - '&2Duration: {attr:blind.seconds}'
+  - '&2Radius: {attr:radius.radius}'
+  - ''
+  - '&2Mana: {attr:mana}'
+  - '&2Cooldown: {attr:cooldown}'
+  desc: []
+  components: 
+    'Cast-0': 
+      type: 'trigger'
+      data: {}
+      preview: 
+        enabled: 'false'
+      children: 
+        Area: 
+          type: 'target'
+          data: 
+            'icon-key': 'radius'
+            'radius-base': '3'
+            'radius-scale': '1'
+            group: 'Enemy'
+            wall: 'false'
+            invulnerable: 'false'
+            caster: 'In area'
+            'max-base': '99'
+            'max-scale': '0'
+            random: 'false'
+          preview: 
+            enabled: 'false'
+            'per-target': 'false'
+            circle: 'false'
+            sphere: 'false'
+          children: 
+            Potion: 
+              type: 'mechanic'
+              data: 
+                'icon-key': 'blind'
+                counts: 'True'
+                potion: 'Blindness'
+                ambient: 'false'
+                'tier-base': '2'
+                'tier-scale': '0'
+                'seconds-base': '5'
+                'seconds-scale': '1'
+              preview: 
+                enabled: 'false'
+              children: {}
+            'Particle Animation': 
+              type: 'mechanic'
+              data: 
+                'icon-key': ''
+                counts: 'True'
+                steps: '1'
+                frequency: '0.05'
+                angle: '0'
+                start: '0'
+                'duration-base': '5'
+                'duration-scale': '0'
+                'h-translation-base': '0'
+                'h-translation-scale': '0'
+                'v-translation-base': '0'
+                'v-translation-scale': '0'
+                'h-cycles': '1'
+                'v-cycles': '1'
+                particle: 'Smoke'
+                arrangement: 'Circle'
+                direction: 'XZ'
+                'radius-base': '10'
+                'radius-scale': '0'
+                'particles-base': '30'
+                'particles-scale': '0'
+                data: '0'
+                'visible-radius': '0'
+                dx: '0'
+                dy: '0'
+                dz: '0'
+                amount: '0'
+                speed: '0'
+                forward: '0'
+                upward: '0'
+                right: '0'
+                '-with-rotation': 'false'
+              preview: 
+                enabled: 'false'
+              children: {}
+            Sound: 
+              type: 'mechanic'
+              data: 
+                'icon-key': ''
+                counts: 'True'
+                'volume-base': '100'
+                'volume-scale': '0'
+                'pitch-base': '1'
+                'pitch-scale': '0'
+              preview: 
+                enabled: 'false'
+              children: {}
+Pulverize: 
+  name: 'Pulverize'
+  type: 'Dynamic'
+  'max-level': 100
+  'skill-req-lvl': 0
+  'needs-permission': 'false'
+  'cooldown-message': 'true'
+  attributes: 
+    'level-base': '100'
+    'level-scale': '0'
+    'cost-base': '1'
+    'cost-scale': '0'
+    'cooldown-base': '120'
+    'cooldown-scale': '-0.3'
+    'mana-base': '100'
+    'mana-scale': '0'
+    'points-spent-req-base': '0'
+    'points-spent-req-scale': '0'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'BLAZE_POWDER'
+  'icon-data': 0
+  'icon-durability': 0
+  'icon-lore': 
+  - '&f{name} &e({level}/{max})'
+  - '&7Deals damage in a radius, knocks'
+  - '&7targets back, and causes blindness.'
+  - ''
+  - '&3Mana: {attr:mana}'
+  - '&3Cooldown: {attr:cooldown}'
+  - ''
+  - '&2Unlock this skill at {req:level}level {attr:level}'
+  - '&2Each point {req:cost}costs {attr:cost} &2SP'
+  desc: []
+  components: 
+    'Cast-0': 
+      type: 'trigger'
+      data: {}
+      preview: 
+        enabled: 'false'
+      children: 
+        Sound: 
+          type: 'mechanic'
+          data: 
+            'icon-key': ''
+            counts: 'true'
+            sound: 'Entity blaze shoot'
+            'volume-base': '100'
+            'volume-scale': '0'
+            'pitch-base': '1'
+            'pitch-scale': '0'
+          preview: 
+            enabled: 'false'
+          children: {}
+        Cone: 
+          type: 'target'
+          data: 
+            'icon-key': ''
+            'range-base': '3'
+            'range-scale': '0'
+            'angle-base': '90'
+            'angle-scale': '0'
+            'rotation-base': '0'
+            'rotation-scale': '0'
+            'reset-y': 'false'
+            group: 'Enemy'
+            wall: 'false'
+            invulnerable: 'false'
+            caster: 'false'
+            'max-base': '99'
+            'max-scale': '0'
+          preview: 
+            enabled: 'false'
+            'per-target': 'false'
+            triangle: 'false'
+            cone: 'false'
+          children: 
+            Damage: 
+              type: 'mechanic'
+              data: 
+                'icon-key': ''
+                counts: 'true'
+                type: 'Damage'
+                'value-base': '20'
+                'value-scale': '0.4'
+                true: 'false'
+                classifier: 'physical'
+                knockback: 'false'
+                'ignore-divinity': 'false'
+                cause: 'Entity Attack'
+              preview: 
+                enabled: 'false'
+              children: {}
+            Launch: 
+              type: 'mechanic'
+              data: 
+                'icon-key': ''
+                counts: 'true'
+                relative: 'Caster'
+                'reset-y': 'false'
+                'forward-base': '1'
+                'forward-scale': '0.005'
+                'upward-base': '1'
+                'upward-scale': '0.005'
+                'right-base': '0'
+                'right-scale': '0'
+              preview: 
+                enabled: 'false'
+              children: {}
+            Potion: 
+              type: 'mechanic'
+              data: 
+                'icon-key': ''
+                counts: 'true'
+                potion: 'Blindness'
+                ambient: 'false'
+                'tier-base': '1'
+                'tier-scale': '0'
+                'seconds-base': '4'
+                'seconds-scale': '0.03'
+              preview: 
+                enabled: 'false'
+              children: {}
+WhirlingSlash: 
+  name: 'WhirlingSlash'
+  type: 'Dynamic'
+  'max-level': 100
+  'skill-req-lvl': 0
+  'needs-permission': 'false'
+  'cooldown-message': 'true'
+  attributes: 
+    'level-base': '1'
+    'level-scale': '0'
+    'cost-base': '1'
+    'cost-scale': '0'
+    'cooldown-base': '1'
+    'cooldown-scale': '0'
+    'mana-base': '0'
+    'mana-scale': '0'
+    'points-spent-req-base': '0'
+    'points-spent-req-scale': '0'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'FEATHER'
+  'icon-data': 0
+  'icon-durability': 0
+  'icon-lore': 
+  - '&d{name} &7({level}/{max})'
+  - '&2Type: &6{type}'
+  - ''
+  - '{req:level}Level: {attr:level}'
+  - '{req:cost}Cost: {attr:cost}'
+  - ''
+  - '&2Mana: {attr:mana}'
+  - '&2Cooldown: {attr:cooldown}'
+  desc: []
+  components: {}
+Lunge: 
+  name: 'Lunge'
+  type: 'Dynamic'
+  'max-level': 100
+  'skill-req-lvl': 0
+  'needs-permission': 'false'
+  'cooldown-message': 'true'
+  attributes: 
+    'level-base': '50'
+    'level-scale': '0'
+    'cost-base': '1'
+    'cost-scale': '0'
+    'cooldown-base': '3'
+    'cooldown-scale': '0'
+    'mana-base': '0'
+    'mana-scale': '0'
+    'points-spent-req-base': '0'
+    'points-spent-req-scale': '0'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'SLIME_BALL'
+  'icon-data': 0
+  'icon-durability': 0
+  'icon-lore': 
+  - '&d{name} &7({level}/{max})'
+  - '&7Leap forward and cause AOE'
+  - '&7damage, then another leap'
+  - '&7to escape damage.'
+  - ''
+  - '{req:level}Level: {attr:level}'
+  - '{req:cost}Cost: {attr:cost}'
+  - ''
+  - '&2Mana: {attr:mana}'
+  - '&2Cooldown: {attr:cooldown}'
+  desc: []
+  components: 
+    'Cast-0': 
+      type: 'trigger'
+      data: {}
+      preview: 
+        enabled: 'false'
+      children: 
+        Self: 
+          type: 'target'
+          data: 
+            'icon-key': ''
+            group: 'enemy'
+            wall: 'false'
+            invulnerable: 'false'
+            caster: 'false'
+          preview: 
+            enabled: 'false'
+          children: 
+            Launch: 
+              type: 'mechanic'
+              data: 
+                'icon-key': ''
+                counts: 'true'
+                relative: 'Target'
+                'reset-y': 'false'
+                'forward-base': '1.5'
+                'forward-scale': '0'
+                'upward-base': '0.5'
+                'upward-scale': '0'
+                'right-base': '0'
+                'right-scale': '0'
+              preview: 
+                enabled: 'false'
+              children: {}
+            Status: 
+              type: 'mechanic'
+              data: 
+                'icon-key': ''
+                counts: 'true'
+                status: 'Invincible'
+                'duration-base': '3'
+                'duration-scale': '0'
+              preview: 
+                enabled: 'false'
+              children: {}
+        Delay: 
+          type: 'mechanic'
+          data: 
+            'icon-key': ''
+            counts: 'true'
+            'delay-base': '1'
+            'delay-scale': '0'
+            cleanup: 'false'
+            'single-instance': 'false'
+          preview: 
+            enabled: 'false'
+          children: 
+            Area: 
+              type: 'target'
+              data: 
+                'icon-key': ''
+                'radius-base': '5'
+                'radius-scale': '0'
+                group: 'Enemy'
+                wall: 'false'
+                invulnerable: 'false'
+                caster: 'false'
+                'max-base': '99'
+                'max-scale': '0'
+                random: 'false'
+              preview: 
+                enabled: 'false'
+                'per-target': 'false'
+                circle: 'false'
+                sphere: 'false'
+              children: 
+                Damage: 
+                  type: 'mechanic'
+                  data: 
+                    'icon-key': ''
+                    counts: 'true'
+                    type: 'Damage'
+                    'value-base': '15'
+                    'value-scale': '0'
+                    true: 'false'
+                    classifier: 'physical'
+                    knockback: 'false'
+                    'ignore-divinity': 'false'
+                    cause: 'Entity Attack'
+                  preview: 
+                    enabled: 'false'
+                  children: {}
+        'Delay-b': 
+          type: 'mechanic'
+          data: 
+            'icon-key': ''
+            counts: 'true'
+            'delay-base': '1.5'
+            'delay-scale': '0'
+            cleanup: 'false'
+            'single-instance': 'false'
+          preview: 
+            enabled: 'false'
+          children: 
+            Launch: 
+              type: 'mechanic'
+              data: 
+                'icon-key': ''
+                counts: 'true'
+                relative: 'Target'
+                'reset-y': 'false'
+                'forward-base': '2'
+                'forward-scale': '0'
+                'upward-base': '1'
+                'upward-scale': '0'
+                'right-base': '0'
+                'right-scale': '0'
+              preview: 
+                enabled: 'false'
+              children: {}
+PowerShot: 
+  name: 'PowerShot'
+  type: 'Single Target'
+  'max-level': 100
+  'skill-req-lvl': 1
+  'needs-permission': 'false'
+  'cooldown-message': 'true'
+  combo: 'L L L'
+  attributes: 
+    'level-base': '75'
+    'level-scale': '0'
+    'cost-base': '1'
+    'cost-scale': '0'
+    'cooldown-base': '10'
+    'cooldown-scale': '0'
+    'mana-base': '13'
+    'mana-scale': '0'
+    'points-spent-req-base': '0'
+    'points-spent-req-scale': '0'
+  msg: '&6{player} &2has Launch A &6{skill}'
+  icon: 'IRON_INGOT'
+  'icon-data': 0
+  'icon-durability': 0
+  'icon-lore': 
+  - '&d{name} &7({level}/{max})'
+  - '&2Type: &6{type}'
+  - ''
+  - '{req:level}&2Level: {attr:level}'
+  - '{req:cost}&2Cost: {attr:cost}'
+  - ''
+  - '&2Once you get hit, you better run.....'
+  - '&2Launch a Straight Powered Shot'
+  - ''
+  - '&2Damage: {attr:damage.value}'
+  - '&2Range: {attr:range.range}'
+  - '&2Slow Duration: {attr:duration.seconds}'
+  - '&2Mana: {attr:mana}'
+  - '&2Cooldown: {attr:cooldown}'
+  desc: []
+  components: 
+    'Cast-0': 
+      type: 'trigger'
+      data: {}
+      preview: 
+        enabled: 'false'
+      children: 
+        Sound: 
+          type: 'mechanic'
+          data: 
+            'icon-key': ''
+            counts: 'true'
+            sound: 'Ambient Cave'
+            'volume-base': '100'
+            'volume-scale': '0'
+            'pitch-base': '1'
+            'pitch-scale': '0'
+          preview: 
+            enabled: 'false'
+          children: {}
+        Location: 
+          type: 'target'
+          data: 
+            'icon-key': ''
+            'range-base': '5'
+            'range-scale': '0'
+            entities: 'true'
+            fluids: 'false'
+            passable: 'true'
+            center: 'false'
+            group: 'enemy'
+            wall: 'false'
+            invulnerable: 'false'
+            caster: 'false'
+          preview: 
+            enabled: 'false'
+            'per-target': 'false'
+          children: 
+            Projectile: 
+              type: 'mechanic'
+              data: 
+                'icon-key': ''
+                counts: 'true'
+                projectile: 'Arrow'
+                flaming: 'false'
+                cost: 'None'
+                'override-item': 'false'
+                homing: 'true'
+                target: 'Nearest'
+                'homing-distance-base': '10'
+                'homing-distance-scale': '0'
+                'correction-base': '0.5'
+                'correction-scale': '0'
+                wall: 'true'
+                'velocity-base': '10'
+                'velocity-scale': '0'
+                'lifespan-base': '5'
+                'lifespan-scale': '0'
+                'distance-base': '50'
+                'distance-scale': '0'
+                'on-expire': 'false'
+                spread: 'Cone'
+                'amount-base': '1'
+                'amount-scale': '0'
+                'angle-base': '30'
+                'angle-scale': '0'
+                'forward-base': '1'
+                'forward-scale': '0'
+                'upward-base': '0'
+                'upward-scale': '0'
+                'right-base': '0'
+                'right-scale': '0'
+                particle: 'Ash'
+                arrangement: 'Sphere'
+                'radius-base': '1'
+                'radius-scale': '0'
+                'particles-base': '20'
+                'particles-scale': '0'
+                'visible-radius': '25'
+                dx: '0'
+                dy: '0'
+                dz: '0'
+                amount: '1'
+                speed: '0.1'
+                'use-effect': 'false'
+              preview: 
+                enabled: 'false'
+                period: '5'
+                'per-target': 'false'
+                path: 'false'
+              children: {}
+Salvo: 
+  name: 'Salvo'
+  type: 'Dynamic'
+  'max-level': 100
+  'skill-req-lvl': 0
+  'needs-permission': 'false'
+  'cooldown-message': 'true'
+  attributes: 
+    'level-base': '1'
+    'level-scale': '0'
+    'cost-base': '1'
+    'cost-scale': '0'
+    'cooldown-base': '1'
+    'cooldown-scale': '0'
+    'mana-base': '0'
+    'mana-scale': '0'
+    'points-spent-req-base': '0'
+    'points-spent-req-scale': '0'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'SPECTRAL_ARROW'
+  'icon-data': 0
+  'icon-durability': 0
+  'icon-lore': 
+  - '&d{name} &7({level}/{max})'
+  - '&2Type: &6{type}'
+  - ''
+  - '{req:level}Level: {attr:level}'
+  - '{req:cost}Cost: {attr:cost}'
+  - ''
+  - '&2Mana: {attr:mana}'
+  - '&2Cooldown: {attr:cooldown}'
+  desc: []
+  components: {}
+ExploitWeakness: 
+  name: 'ExploitWeakness'
+  type: 'Dynamic'
+  'max-level': 100
+  'skill-req-lvl': 0
+  'needs-permission': 'false'
+  'cooldown-message': 'true'
+  attributes: 
+    'level-base': '25'
+    'level-scale': '0'
+    'cost-base': '1'
+    'cost-scale': '0'
+    'cooldown-base': '2'
+    'cooldown-scale': '0'
+    'mana-base': '0'
+    'mana-scale': '0'
+    'points-spent-req-base': '0'
+    'points-spent-req-scale': '0'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'POTION'
+  'icon-data': 0
+  'icon-durability': 0
+  'icon-lore': 
+  - '&f{name} &e({level}/{max})'
+  - '&7Arrow attack that debuffs the'
+  - '&7targets defense.'
+  - ''
+  - '&3Mana: {attr:mana}'
+  - '&3Cooldown: {attr:cooldown}'
+  - ''
+  - '&2Unlock this skill at {req:level}level {attr:level}'
+  - '&2Each point {req:cost}costs {attr:cost} &2SP'
+  desc: []
+  components: 
+    'Cast-0': 
+      type: 'trigger'
+      data: {}
+      preview: 
+        enabled: 'false'
+      children: 
+        Sound: 
+          type: 'mechanic'
+          data: 
+            'icon-key': ''
+            counts: 'true'
+            sound: 'Entity arrow shoot'
+            'volume-base': '100'
+            'volume-scale': '0'
+            'pitch-base': '1'
+            'pitch-scale': '0'
+          preview: 
+            enabled: 'false'
+          children: {}
+        Single: 
+          type: 'target'
+          data: 
+            'icon-key': ''
+            'range-base': '24'
+            'range-scale': '0'
+            'tolerance-base': '0.5'
+            'tolerance-scale': '0'
+            group: 'Enemy'
+            wall: 'false'
+            invulnerable: 'false'
+            caster: 'false'
+          preview: 
+            enabled: 'false'
+            'per-target': 'false'
+            line: 'false'
+            cylinder: 'false'
+          children: 
+            'Defense Buff': 
+              type: 'mechanic'
+              data: 
+                'icon-key': ''
+                counts: 'true'
+                type: 'Multiplier'
+                skill: 'false'
+                'value-base': '20'
+                'value-scale': '0.1'
+                'seconds-base': '20'
+                'seconds-scale': '0.1'
+              preview: 
+                enabled: 'false'
+              children: {}
+            Message: 
+              type: 'mechanic'
+              data: 
+                'icon-key': ''
+                counts: 'true'
+                message: '&cYour physical defense has been reduced!'
+              preview: 
+                enabled: 'false'
+              children: {}
+            Delay: 
+              type: 'mechanic'
+              data: 
+                'icon-key': ''
+                counts: 'true'
+                'delay-base': '20'
+                'delay-scale': '0.1'
+                cleanup: 'false'
+                'single-instance': 'false'
+              preview: 
+                enabled: 'false'
+              children: 
+                Message: 
+                  type: 'mechanic'
+                  data: 
+                    'icon-key': ''
+                    counts: 'true'
+                    message: '&aYour physical defense has been restored.'
+                  preview: 
+                    enabled: 'false'
+                  children: {}
+LightningStorm: 
+  name: 'LightningStorm'
+  type: 'Dynamic'
+  'max-level': 100
+  'skill-req-lvl': 50
+  'needs-permission': 'false'
+  'cooldown-message': 'true'
+  attributes: 
+    'level-base': '50'
+    'level-scale': '0'
+    'cost-base': '1'
+    'cost-scale': '0'
+    'cooldown-base': '1.5'
+    'cooldown-scale': '0'
+    'mana-base': '3'
+    'mana-scale': '0'
+    'points-spent-req-base': '0'
+    'points-spent-req-scale': '0'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'LIGHTNING_ROD'
+  'icon-data': 0
+  'icon-durability': 0
+  'icon-lore': 
+  - '&d{name} &7({level}/{max})'
+  - '&7Lightning storm causes AOE'
+  - '&7damage.'
+  - ''
+  - '{req:level}Level: {attr:level}'
+  - '{req:cost}Cost: {attr:cost}'
+  - ''
+  - '&2Mana: {attr:mana}'
+  - '&2Cooldown: {attr:cooldown}'
+  desc: []
+  components: 
+    'Cast-0': 
+      type: 'trigger'
+      data: {}
+      preview: 
+        enabled: 'false'
+      children: 
+        Sound: 
+          type: 'mechanic'
+          data: 
+            'icon-key': ''
+            counts: 'true'
+            sound: 'Entity lightning bolt thunder'
+            'volume-base': '100'
+            'volume-scale': '0'
+            'pitch-base': '2'
+            'pitch-scale': '0'
+          preview: 
+            enabled: 'false'
+          children: {}
+        'Particle Projectile': 
+          type: 'mechanic'
+          data: 
+            'icon-key': ''
+            counts: 'true'
+            pierce: 'false'
+            group: 'Enemy'
+            steps: '2'
+            'collision-radius-base': '0'
+            'collision-radius-scale': '0'
+            'gravity-base': '0'
+            'gravity-scale': '0'
+            'drag-base': '0'
+            'drag-scale': '0'
+            period: '2'
+            homing: 'false'
+            'velocity-base': '3'
+            'velocity-scale': '0'
+            'lifespan-base': '5'
+            'lifespan-scale': '0'
+            'distance-base': '0'
+            'distance-scale': '0'
+            'on-expire': 'false'
+            spread: 'Cone'
+            'amount-base': '1'
+            'amount-scale': '0'
+            'angle-base': '0'
+            'angle-scale': '0'
+            'forward-base': '0'
+            'forward-scale': '0'
+            'upward-base': '0'
+            'upward-scale': '0'
+            'right-base': '0'
+            'right-scale': '0'
+            particle: 'Fireworks spark'
+            arrangement: 'Sphere'
+            'radius-base': '0.1'
+            'radius-scale': '0'
+            'particles-base': '10'
+            'particles-scale': '0'
+            'visible-radius': '48'
+            dx: '0'
+            dy: '0'
+            dz: '0'
+            amount: '1'
+            speed: '0.01'
+            'use-effect': 'false'
+          preview: 
+            enabled: 'false'
+            period: '5'
+            'per-target': 'false'
+            path: 'false'
+          children: 
+            Particle: 
+              type: 'mechanic'
+              data: 
+                'icon-key': ''
+                counts: 'true'
+                particle: 'End rod'
+                arrangement: 'Sphere'
+                'radius-base': '1'
+                'radius-scale': '0'
+                'particles-base': '2'
+                'particles-scale': '0'
+                'visible-radius': '48'
+                dx: '0'
+                dy: '0'
+                dz: '0'
+                amount: '1'
+                speed: '1'
+                forward: '0'
+                upward: '0'
+                right: '0'
+              preview: 
+                enabled: 'false'
+              children: {}
+            'Particle-b': 
+              type: 'mechanic'
+              data: 
+                'icon-key': ''
+                counts: 'true'
+                particle: 'Drip water'
+                arrangement: 'Sphere'
+                'radius-base': '2.5'
+                'radius-scale': '0'
+                'particles-base': '10'
+                'particles-scale': '0'
+                'visible-radius': '48'
+                dx: '0'
+                dy: '0'
+                dz: '0'
+                amount: '1'
+                speed: '0.1'
+                forward: '0'
+                upward: '0.2'
+                right: '0'
+              preview: 
+                enabled: 'false'
+              children: {}
+            Sound: 
+              type: 'mechanic'
+              data: 
+                'icon-key': ''
+                counts: 'true'
+                sound: 'Entity lightning bolt impact'
+                'volume-base': '100'
+                'volume-scale': '0'
+                'pitch-base': '1'
+                'pitch-scale': '0'
+              preview: 
+                enabled: 'false'
+              children: {}
+            Area: 
+              type: 'target'
+              data: 
+                'icon-key': ''
+                'radius-base': '5'
+                'radius-scale': '0'
+                group: 'Enemy'
+                wall: 'false'
+                invulnerable: 'false'
+                caster: 'false'
+                'max-base': '99'
+                'max-scale': '0'
+                random: 'true'
+              preview: 
+                enabled: 'false'
+                'per-target': 'false'
+                circle: 'false'
+                sphere: 'false'
+              children: 
+                Damage: 
+                  type: 'mechanic'
+                  data: 
+                    'icon-key': ''
+                    counts: 'true'
+                    type: 'Damage'
+                    'value-base': '25'
+                    'value-scale': '0.22'
+                    true: 'false'
+                    classifier: 'air'
+                    knockback: 'false'
+                    'ignore-divinity': 'false'
+                    cause: 'Entity Attack'
+                  preview: 
+                    enabled: 'false'
+                  children: {}
+                Lightning: 
+                  type: 'mechanic'
+                  data: 
+                    'icon-key': ''
+                    counts: 'true'
+                    'damage-base': '5'
+                    'damage-scale': '0'
+                    group: 'Enemy'
+                    caster: 'false'
+                    fire: 'false'
+                    'forward-base': '0'
+                    'forward-scale': '0'
+                    'right-base': '0'
+                    'right-scale': '0'
+                  preview: 
+                    enabled: 'false'
+                  children: {}
+Puncture: 
+  name: 'Puncture'
+  type: 'Dynamic'
+  'max-level': 100
+  'skill-req-lvl': 0
+  'needs-permission': 'false'
+  'cooldown-message': 'true'
+  attributes: 
+    'level-base': '1'
+    'level-scale': '0'
+    'cost-base': '1'
+    'cost-scale': '0'
+    'cooldown-base': '1'
+    'cooldown-scale': '0'
+    'mana-base': '0'
+    'mana-scale': '0'
+    'points-spent-req-base': '0'
+    'points-spent-req-scale': '0'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'ARROW'
+  'icon-data': 0
+  'icon-durability': 0
+  'icon-lore': 
+  - '&d{name} &7({level}/{max})'
+  - '&2Type: &6{type}'
+  - ''
+  - '{req:level}Level: {attr:level}'
+  - '{req:cost}Cost: {attr:cost}'
+  - ''
+  - '&2Mana: {attr:mana}'
+  - '&2Cooldown: {attr:cooldown}'
+  desc: []
+  components: {}
+Bloodrage: 
+  name: 'Bloodrage'
+  type: 'Buff'
+  'max-level': 100
+  'skill-req-lvl': 1
+  'needs-permission': 'false'
+  'cooldown-message': 'true'
+  combo: 'L L L'
+  attributes: 
+    'level-base': '100'
+    'level-scale': '3'
+    'cost-base': '1'
+    'cost-scale': '0'
+    'cooldown-base': '5'
+    'cooldown-scale': '-0.1'
+    'mana-base': '10'
+    'mana-scale': '5'
+    'points-spent-req-base': '0'
+    'points-spent-req-scale': '0'
+  msg: '&4{player} &2has cast &4{skill}'
+  icon: 'REDSTONE_ORE'
+  'icon-data': 0
+  'icon-durability': 0
+  'icon-lore': 
+  - '&d{name} &7({level}/{max})'
+  - '&2Type: &6{type}'
+  - ''
+  - '{req:level}&2Level: {attr:level}'
+  - '{req:cost}&2Cost: {attr:cost}'
+  - ''
+  - '&2Draws power from the blood flows within vampire'
+  - '&2Increasing combat power'
+  - ''
+  - '&2Mana: {attr:mana}'
+  - '&2Cooldown: {attr:cooldown}'
+  desc: []
+  components: 
+    'Cast-0': 
+      type: 'trigger'
+      data: {}
+      preview: 
+        enabled: 'false'
+      children: 
+        Self: 
+          type: 'target'
+          data: 
+            'icon-key': ''
+            group: 'enemy'
+            wall: 'false'
+            invulnerable: 'false'
+            caster: 'false'
+          preview: 
+            enabled: 'false'
+          children: 
+            Health: 
+              type: 'condition'
+              data: 
+                'icon-key': 'threshold1'
+                type: 'Percent'
+                'min-value-base': '0'
+                'min-value-scale': '0'
+                'max-value-base': '30'
+                'max-value-scale': '0'
+              preview: 
+                enabled: 'false'
+              children: 
+                'Particle Animation': 
+                  type: 'mechanic'
+                  data: 
+                    'icon-key': 'particle1'
+                    counts: 'True'
+                    steps: '1'
+                    frequency: '0.05'
+                    angle: '0'
+                    start: '0'
+                    'duration-base': '5'
+                    'duration-scale': '1'
+                    'h-translation-base': '0'
+                    'h-translation-scale': '0'
+                    'v-translation-base': '0'
+                    'v-translation-scale': '0'
+                    'h-cycles': '1'
+                    'v-cycles': '1'
+                    particle: 'Angry Villager'
+                    arrangement: 'Sphere'
+                    'radius-base': '5'
+                    'radius-scale': '0'
+                    'particles-base': '20'
+                    'particles-scale': '0'
+                    'visible-radius': '25'
+                    dx: '0'
+                    dy: '0'
+                    dz: '0'
+                    amount: '1'
+                    speed: '1'
+                    forward: '0'
+                    upward: '0'
+                    right: '0'
+                    '-with-rotation': 'false'
+                  preview: 
+                    enabled: 'false'
+                  children: {}
+                Immunity: 
+                  type: 'mechanic'
+                  data: 
+                    'icon-key': 'immune1'
+                    counts: 'True'
+                    type: 'Entity Attack'
+                    'seconds-base': '5'
+                    'seconds-scale': '1'
+                    'multiplier-base': '0'
+                    'multiplier-scale': '0'
+                  preview: 
+                    enabled: 'false'
+                  children: {}
+                'Damage Buff': 
+                  type: 'mechanic'
+                  data: 
+                    'icon-key': 'damage1'
+                    counts: 'True'
+                    type: 'Multiplier'
+                    skill: 'false'
+                    'value-base': '20'
+                    'value-scale': '2'
+                    'seconds-base': '5'
+                    'seconds-scale': '1'
+                  preview: 
+                    enabled: 'false'
+                  children: {}
+            'Health-b': 
+              type: 'condition'
+              data: 
+                'icon-key': 'threshold2'
+                type: 'Percent'
+                'min-value-base': '30'
+                'min-value-scale': '0'
+                'max-value-base': '100'
+                'max-value-scale': '0'
+              preview: 
+                enabled: 'false'
+              children: 
+                'Damage Buff': 
+                  type: 'mechanic'
+                  data: 
+                    'icon-key': ''
+                    counts: 'True'
+                    type: 'Multiplier'
+                    skill: 'false'
+                    'value-base': '20'
+                    'value-scale': '2'
+                    'seconds-base': '5'
+                    'seconds-scale': '1'
+                  preview: 
+                    enabled: 'false'
+                  children: {}
+                'Particle Animation': 
+                  type: 'mechanic'
+                  data: 
+                    'icon-key': ''
+                    counts: 'True'
+                    steps: '1'
+                    frequency: '0.05'
+                    angle: '0'
+                    start: '0'
+                    'duration-base': '5'
+                    'duration-scale': '1'
+                    'h-translation-base': '0'
+                    'h-translation-scale': '0'
+                    'v-translation-base': '0'
+                    'v-translation-scale': '0'
+                    'h-cycles': '1'
+                    'v-cycles': '1'
+                    particle: 'Angry Villager'
+                    arrangement: 'Sphere'
+                    'radius-base': '5'
+                    'radius-scale': '0'
+                    'particles-base': '20'
+                    'particles-scale': '0'
+                    'visible-radius': '25'
+                    dx: '0'
+                    dy: '0'
+                    dz: '0'
+                    amount: '1'
+                    speed: '1'
+                    forward: '0'
+                    upward: '0'
+                    right: '0'
+                    '-with-rotation': 'false'
+                  preview: 
+                    enabled: 'false'
+                  children: {}
+Fireball: 
+  name: 'Fireball'
+  type: 'Dynamic'
+  'max-level': 100
+  'skill-req-lvl': 0
+  'needs-permission': 'false'
+  'cooldown-message': 'true'
+  attributes: 
+    'level-base': '5'
+    'level-scale': '0'
+    'cost-base': '1'
+    'cost-scale': '0'
+    'cooldown-base': '1.5'
+    'cooldown-scale': '0'
+    'mana-base': '3'
+    'mana-scale': '0'
+    'points-spent-req-base': '0'
+    'points-spent-req-scale': '0'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'FIRE_CHARGE'
+  'icon-data': 0
+  'icon-durability': 0
+  'icon-lore': 
+  - '&d{name} &7({level}/{max})'
+  - '&7Fire spell that causes burning'
+  - '&7damage.'
+  - ''
+  - '{req:level}Level: {attr:level}'
+  - '{req:cost}Cost: {attr:cost}'
+  - ''
+  - '&2Mana: {attr:mana}'
+  - '&2Cooldown: {attr:cooldown}'
+  desc: []
+  components: 
+    'Cast-0': 
+      type: 'trigger'
+      data: {}
+      preview: 
+        enabled: 'false'
+      children: 
+        Sound: 
+          type: 'mechanic'
+          data: 
+            'icon-key': ''
+            counts: 'true'
+            sound: 'Entity blaze shoot'
+            'volume-base': '100'
+            'volume-scale': '0'
+            'pitch-base': '1'
+            'pitch-scale': '0'
+          preview: 
+            enabled: 'false'
+          children: {}
+        'Particle Projectile': 
+          type: 'mechanic'
+          data: 
+            'icon-key': ''
+            counts: 'true'
+            pierce: 'false'
+            group: 'Enemy'
+            steps: '2'
+            'collision-radius-base': '0'
+            'collision-radius-scale': '0'
+            'gravity-base': '0'
+            'gravity-scale': '0'
+            'drag-base': '0'
+            'drag-scale': '0'
+            period: '2'
+            homing: 'false'
+            'velocity-base': '3'
+            'velocity-scale': '0'
+            'lifespan-base': '5'
+            'lifespan-scale': '0'
+            'distance-base': '0'
+            'distance-scale': '0'
+            'on-expire': 'false'
+            spread: 'Cone'
+            'amount-base': '1'
+            'amount-scale': '0'
+            'angle-base': '0'
+            'angle-scale': '0'
+            'forward-base': '0'
+            'forward-scale': '0'
+            'upward-base': '0'
+            'upward-scale': '0'
+            'right-base': '0'
+            'right-scale': '0'
+            particle: 'Flame'
+            arrangement: 'Sphere'
+            'radius-base': '0.1'
+            'radius-scale': '0'
+            'particles-base': '10'
+            'particles-scale': '0'
+            'visible-radius': '48'
+            dx: '0'
+            dy: '0'
+            dz: '0'
+            amount: '1'
+            speed: '0.01'
+            'use-effect': 'false'
+          preview: 
+            enabled: 'false'
+            period: '5'
+            'per-target': 'false'
+            path: 'false'
+          children: 
+            Particle: 
+              type: 'mechanic'
+              data: 
+                'icon-key': ''
+                counts: 'true'
+                particle: 'Ash'
+                arrangement: 'Sphere'
+                'radius-base': '1'
+                'radius-scale': '0'
+                'particles-base': '2'
+                'particles-scale': '0'
+                'visible-radius': '48'
+                dx: '0'
+                dy: '0'
+                dz: '0'
+                amount: '1'
+                speed: '1'
+                forward: '0'
+                upward: '0'
+                right: '0'
+              preview: 
+                enabled: 'false'
+              children: {}
+            'Particle-b': 
+              type: 'mechanic'
+              data: 
+                'icon-key': ''
+                counts: 'true'
+                particle: 'Ash'
+                arrangement: 'Sphere'
+                'radius-base': '2.5'
+                'radius-scale': '0'
+                'particles-base': '15'
+                'particles-scale': '0'
+                'visible-radius': '48'
+                dx: '0'
+                dy: '0'
+                dz: '0'
+                amount: '1'
+                speed: '0.2'
+                forward: '0'
+                upward: '0.5'
+                right: '0'
+              preview: 
+                enabled: 'false'
+              children: {}
+            'Particle-c': 
+              type: 'mechanic'
+              data: 
+                'icon-key': ''
+                counts: 'true'
+                particle: 'Flame'
+                arrangement: 'Sphere'
+                'radius-base': '2.5'
+                'radius-scale': '0'
+                'particles-base': '10'
+                'particles-scale': '0'
+                'visible-radius': '48'
+                dx: '0'
+                dy: '0'
+                dz: '0'
+                amount: '1'
+                speed: '0.1'
+                forward: '0'
+                upward: '0.2'
+                right: '0'
+              preview: 
+                enabled: 'false'
+              children: {}
+            Sound: 
+              type: 'mechanic'
+              data: 
+                'icon-key': ''
+                counts: 'true'
+                sound: 'Entity blaze shoot'
+                'volume-base': '100'
+                'volume-scale': '0'
+                'pitch-base': '1'
+                'pitch-scale': '0'
+              preview: 
+                enabled: 'false'
+              children: {}
+            Area: 
+              type: 'target'
+              data: 
+                'icon-key': ''
+                'radius-base': '2'
+                'radius-scale': '0'
+                group: 'Enemy'
+                wall: 'false'
+                invulnerable: 'false'
+                caster: 'false'
+                'max-base': '99'
+                'max-scale': '0'
+                random: 'false'
+              preview: 
+                enabled: 'false'
+                'per-target': 'false'
+                circle: 'false'
+                sphere: 'false'
+              children: 
+                Fire: 
+                  type: 'mechanic'
+                  data: 
+                    'icon-key': ''
+                    counts: 'true'
+                    'damage-base': '1'
+                    'damage-scale': '0'
+                    'seconds-base': '3'
+                    'seconds-scale': '0'
+                  preview: 
+                    enabled: 'false'
+                  children: {}
+                Damage: 
+                  type: 'mechanic'
+                  data: 
+                    'icon-key': ''
+                    counts: 'true'
+                    type: 'Damage'
+                    'value-base': '25'
+                    'value-scale': '0.22'
+                    true: 'false'
+                    classifier: 'fire'
+                    knockback: 'false'
+                    'ignore-divinity': 'false'
+                    cause: 'Entity Attack'
+                  preview: 
+                    enabled: 'false'
+                  children: {}
+ExtremeFocus: 
+  name: 'ExtremeFocus'
+  type: 'Dynamic'
+  'max-level': 100
+  'skill-req-lvl': 0
+  'needs-permission': 'false'
+  'cooldown-message': 'true'
+  attributes: 
+    'level-base': '100'
+    'level-scale': '0'
+    'cost-base': '1'
+    'cost-scale': '0'
+    'cooldown-base': '10'
+    'cooldown-scale': '0'
+    'mana-base': '0'
+    'mana-scale': '0'
+    'points-spent-req-base': '0'
+    'points-spent-req-scale': '0'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'ENCHANTED_BOOK'
+  'icon-data': 0
+  'icon-durability': 0
+  'icon-lore': 
+  - '&d{name} &7({level}/{max})'
+  - '&7Reset the cooldown of all'
+  - '&7your skills.'
+  - ''
+  - '{req:level}Level: {attr:level}'
+  - '{req:cost}Cost: {attr:cost}'
+  - ''
+  - '&2Mana: {attr:mana}'
+  - '&2Cooldown: {attr:cooldown}'
+  desc: []
+  components: 
+    'Cast-0': 
+      type: 'trigger'
+      data: {}
+      preview: 
+        enabled: 'false'
+      children: 
+        Self: 
+          type: 'target'
+          data: 
+            'icon-key': ''
+            group: 'enemy'
+            wall: 'false'
+            invulnerable: 'false'
+            caster: 'false'
+          preview: 
+            enabled: 'false'
+          children: 
+            Cooldown: 
+              type: 'mechanic'
+              data: 
+                'icon-key': ''
+                counts: 'true'
+                skill: 'Flurry'
+                type: 'Percent'
+                'value-base': '-100'
+                'value-scale': '0'
+              preview: 
+                enabled: 'false'
+              children: {}
+            'Cooldown-b': 
+              type: 'mechanic'
+              data: 
+                'icon-key': ''
+                counts: 'true'
+                skill: 'Lacerate'
+                type: 'Percent'
+                'value-base': '-100'
+                'value-scale': '0'
+              preview: 
+                enabled: 'false'
+              children: {}
+            'Cooldown-c': 
+              type: 'mechanic'
+              data: 
+                'icon-key': ''
+                counts: 'true'
+                skill: 'Lunge'
+                type: 'Percent'
+                'value-base': '-100'
+                'value-scale': '0'
+              preview: 
+                enabled: 'false'
+              children: {}
+            'Cooldown-d': 
+              type: 'mechanic'
+              data: 
+                'icon-key': ''
+                counts: 'true'
+                skill: 'Pummel'
+                type: 'Percent'
+                'value-base': '-100'
+                'value-scale': '0'
+              preview: 
+                enabled: 'false'
+              children: {}
+            Mana: 
+              type: 'mechanic'
+              data: 
+                'icon-key': ''
+                counts: 'true'
+                type: 'Percent'
+                'value-base': '30'
+                'value-scale': '0.3'
+              preview: 
+                enabled: 'false'
+              children: {}
+            'Damage Buff': 
+              type: 'mechanic'
+              data: 
+                'icon-key': ''
+                counts: 'true'
+                type: 'Multiplier'
+                skill: 'false'
+                'value-base': '25'
+                'value-scale': '0.2'
+                'seconds-base': '20'
+                'seconds-scale': '0'
+              preview: 
+                enabled: 'false'
+              children: {}
+Whirlwind: 
+  name: 'Whirlwind'
+  type: 'Dynamic'
+  'max-level': 100
+  'skill-req-lvl': 0
+  'needs-permission': 'false'
+  'cooldown-message': 'true'
+  attributes: 
+    'level-base': '1'
+    'level-scale': '0'
+    'cost-base': '1'
+    'cost-scale': '0'
+    'cooldown-base': '1'
+    'cooldown-scale': '0'
+    'mana-base': '0'
+    'mana-scale': '0'
+    'points-spent-req-base': '0'
+    'points-spent-req-scale': '0'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'FEATHER'
+  'icon-data': 0
+  'icon-durability': 0
+  'icon-lore': 
+  - '&d{name} &7({level}/{max})'
+  - '&2Type: &6{type}'
+  - ''
+  - '{req:level}Level: {attr:level}'
+  - '{req:cost}Cost: {attr:cost}'
+  - ''
+  - '&2Mana: {attr:mana}'
+  - '&2Cooldown: {attr:cooldown}'
+  desc: []
+  components: {}
+Spellbane: 
+  name: 'Spellbane'
+  type: 'Dynamic'
+  'max-level': 100
+  'skill-req-lvl': 0
+  'needs-permission': 'false'
+  'cooldown-message': 'true'
+  attributes: 
+    'level-base': '1'
+    'level-scale': '0'
+    'cost-base': '1'
+    'cost-scale': '0'
+    'cooldown-base': '1'
+    'cooldown-scale': '0'
+    'mana-base': '0'
+    'mana-scale': '0'
+    'points-spent-req-base': '0'
+    'points-spent-req-scale': '0'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'NETHERITE_INGOT'
+  'icon-data': 0
+  'icon-durability': 0
+  'icon-lore': 
+  - '&d{name} &7({level}/{max})'
+  - '&2Type: &6{type}'
+  - ''
+  - '{req:level}Level: {attr:level}'
+  - '{req:cost}Cost: {attr:cost}'
+  - ''
+  - '&2Mana: {attr:mana}'
+  - '&2Cooldown: {attr:cooldown}'
+  desc: []
+  components: {}
+AttunementToAir: 
+  name: 'AttunementToAir'
+  type: 'Dynamic'
+  'max-level': 100
+  'skill-req-lvl': 0
+  'needs-permission': 'false'
+  'cooldown-message': 'true'
+  attributes: 
+    'level-base': '25'
+    'level-scale': '0'
+    'cost-base': '1'
+    'cost-scale': '1'
+    'cooldown-base': '3'
+    'cooldown-scale': '1'
+    'mana-base': '5'
+    'mana-scale': '1'
+    'points-spent-req-base': '0'
+    'points-spent-req-scale': '0'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'FEATHER'
+  'icon-data': 0
+  'icon-durability': 0
+  'icon-lore': 
+  - '&6{name} &7({level}/{max})'
+  - '&7Gives the caster a defense buff'
+  - '&7to air damage.'
+  - ''
+  - '{req:level}Level: {attr:level}'
+  - '{req:cost}Cost: {attr:cost}'
+  - ''
+  - '&2Mana: {attr:mana}'
+  - '&2Cooldown: {attr:cooldown}'
+  desc: []
+  components: 
+    'Cast-0': 
+      type: 'trigger'
+      data: {}
+      preview: 
+        enabled: 'false'
+      children: 
+        Area: 
+          type: 'target'
+          data: 
+            'icon-key': ''
+            'radius-base': '5'
+            'radius-scale': '0'
+            group: 'Ally'
+            wall: 'false'
+            invulnerable: 'false'
+            caster: 'true'
+            'max-base': '99'
+            'max-scale': '0'
+            random: 'false'
+          preview: 
+            enabled: 'false'
+            'per-target': 'false'
+            circle: 'false'
+            sphere: 'false'
+          children: 
+            Buff: 
+              type: 'mechanic'
+              data: 
+                'icon-key': ''
+                counts: 'true'
+                immediate: 'false'
+                type: 'SKILL_DEFENSE'
+                modifier: 'Multiplier'
+                category: 'air'
+                'value-base': '15'
+                'value-scale': '0.25'
+                'seconds-base': '60'
+                'seconds-scale': '0.6'
+              preview: 
+                enabled: 'false'
+              children: {}
+Assasinated: 
+  name: 'Assasinated'
+  type: ' Critical Damage '
+  'max-level': 100
+  'skill-req-lvl': 1
+  'needs-permission': 'false'
+  'cooldown-message': 'true'
+  attributes: 
+    'level-base': '25'
+    'level-scale': '0'
+    'cost-base': '1'
+    'cost-scale': '0'
+    'cooldown-base': '5'
+    'cooldown-scale': '0'
+    'mana-base': '12'
+    'mana-scale': '0'
+    'points-spent-req-base': '0'
+    'points-spent-req-scale': '0'
+  msg: '&6{player} &2has gone invisible with &6{skill}'
+  icon: 'BLACK_BANNER'
+  'icon-data': 0
+  'icon-durability': 0
+  'icon-lore': 
+  - '&d{name} &7({level}/{max})'
+  - '&2Type: &6{type}'
+  - ''
+  - '{req:level}&2Level: {attr:level}'
+  - '{req:cost}&2Cost: {attr:cost}'
+  - ''
+  - '&2Warping to target and dealt massive damage.'
+  - ''
+  - '&2Damage: {att:&2damage.value}&2'
+  - '&2Mana: {attr:mana}'
+  - '&2Cooldown: {attr:cooldown}'
+  desc: []
+  components: 
+    'Cast-0': 
+      type: 'trigger'
+      data: {}
+      preview: 
+        enabled: 'false'
+      children: 
+        Item: 
+          type: 'condition'
+          data: 
+            'icon-key': ''
+            'check-mat': 'false'
+            'check-data': 'false'
+            'check-custom-data': 'false'
+            'check-lore': 'false'
+            'check-name': 'false'
+            regex: 'false'
+          preview: 
+            enabled: 'false'
+          children: 
+            Single: 
+              type: 'target'
+              data: 
+                'icon-key': ''
+                'range-base': '20'
+                'range-scale': '0'
+                'tolerance-base': '4'
+                'tolerance-scale': '0'
+                group: 'Enemy'
+                wall: 'false'
+                invulnerable: 'false'
+                caster: 'false'
+              preview: 
+                enabled: 'false'
+                'per-target': 'false'
+                line: 'false'
+                cylinder: 'false'
+              children: 
+                'Warp Target': 
+                  type: 'mechanic'
+                  data: 
+                    'icon-key': ''
+                    counts: 'True'
+                    type: 'Caster to Target'
+                    preserve: 'false'
+                    setYaw: 'false'
+                    setPitch: 'false'
+                  preview: 
+                    enabled: 'false'
+                  children: {}
+                'Particle Projectile': 
+                  type: 'mechanic'
+                  data: 
+                    'icon-key': ''
+                    counts: 'True'
+                    pierce: 'false'
+                    group: 'Enemy'
+                    steps: '0'
+                    'collision-radius-base': '0'
+                    'collision-radius-scale': '0'
+                    'gravity-base': '0'
+                    'gravity-scale': '0'
+                    'drag-base': '0'
+                    'drag-scale': '0'
+                    period: '0'
+                    homing: 'false'
+                    'velocity-base': '3'
+                    'velocity-scale': '0'
+                    'lifespan-base': '0'
+                    'lifespan-scale': '0'
+                    'distance-base': '0'
+                    'distance-scale': '0'
+                    'on-expire': 'false'
+                    spread: 'Cone'
+                    'amount-base': '1'
+                    'amount-scale': '0'
+                    'angle-base': '30'
+                    'angle-scale': '0'
+                    'forward-base': '0'
+                    'forward-scale': '0'
+                    'upward-base': '0'
+                    'upward-scale': '0'
+                    'right-base': '0'
+                    'right-scale': '0'
+                    particle: 'Crit'
+                    arrangement: 'Sphere'
+                    'radius-base': '4'
+                    'radius-scale': '0'
+                    'particles-base': '20'
+                    'particles-scale': '0'
+                    'visible-radius': '25'
+                    dx: '0'
+                    dy: '0'
+                    dz: '0'
+                    amount: '1'
+                    speed: '1'
+                    'use-effect': 'false'
+                  preview: 
+                    enabled: 'false'
+                    period: '5'
+                    'per-target': 'false'
+                    path: 'false'
+                  children: 
+                    Damage: 
+                      type: 'mechanic'
+                      data: 
+                        'icon-key': ''
+                        counts: 'True'
+                        type: 'Multiplier'
+                        'value-base': '70'
+                        'value-scale': '1'
+                        true: 'false'
+                        classifier: 'default'
+                        knockback: 'false'
+                        'ignore-divinity': 'false'
+                      preview: 
+                        enabled: 'false'
+                      children: {}
+                    Push: 
+                      type: 'mechanic'
+                      data: 
+                        'icon-key': ''
+                        counts: 'True'
+                        type: 'Fixed'
+                        'speed-base': '5'
+                        'speed-scale': '1'
+                        source: ''
+                      preview: 
+                        enabled: 'false'
+                      children: {}
+                    Sound: 
+                      type: 'mechanic'
+                      data: 
+                        'icon-key': ''
+                        counts: 'True'
+                        'volume-base': '100'
+                        'volume-scale': '0'
+                        'pitch-base': '1'
+                        'pitch-scale': '0'
+                      preview: 
+                        enabled: 'false'
+                      children: {}
+                    Self: 
+                      type: 'target'
+                      data: 
+                        'icon-key': ''
+                        group: 'enemy'
+                        wall: 'false'
+                        invulnerable: 'false'
+                        caster: 'false'
+                      preview: 
+                        enabled: 'false'
+                      children: 
+                        Launch: 
+                          type: 'mechanic'
+                          data: 
+                            'icon-key': ''
+                            counts: 'True'
+                            relative: 'Target'
+                            'reset-y': 'false'
+                            'forward-base': '1'
+                            'forward-scale': '0'
+                            'upward-base': '2'
+                            'upward-scale': '0.5'
+                            'right-base': '0'
+                            'right-scale': '0'
+                          preview: 
+                            enabled: 'false'
+                          children: {}
+                        Delay: 
+                          type: 'mechanic'
+                          data: 
+                            'icon-key': ''
+                            counts: 'True'
+                            'delay-base': '2'
+                            'delay-scale': '0'
+                            cleanup: 'false'
+                            'single-instance': 'false'
+                          preview: 
+                            enabled: 'false'
+                          children: 
+                            Warp: 
+                              type: 'mechanic'
+                              data: 
+                                'icon-key': ''
+                                counts: 'True'
+                                walls: 'false'
+                                open: 'false'
+                                'forward-base': '30'
+                                'forward-scale': '1'
+                                'upward-base': '0'
+                                'upward-scale': '0'
+                                'right-base': '0'
+                                'right-scale': '0'
+                                preserve: 'false'
+                                setYaw: 'false'
+                                setPitch: 'false'
+                              preview: 
+                                enabled: 'false'
+                                'per-target': 'false'
+                              children: {}
+Lacerate: 
+  name: 'Lacerate'
+  type: 'Dynamic'
+  'max-level': 100
+  'skill-req-lvl': 0
+  'needs-permission': 'false'
+  'cooldown-message': 'true'
+  attributes: 
+    'level-base': '25'
+    'level-scale': '0'
+    'cost-base': '1'
+    'cost-scale': '0'
+    'cooldown-base': '5'
+    'cooldown-scale': '0'
+    'mana-base': '0'
+    'mana-scale': '0'
+    'points-spent-req-base': '0'
+    'points-spent-req-scale': '0'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'REDSTONE'
+  'icon-data': 0
+  'icon-durability': 0
+  'icon-lore': 
+  - '&d{name} &7({level}/{max})'
+  - '&7Give the target bleeding'
+  - '&7damage.'
+  - ''
+  - '{req:level}Level: {attr:level}'
+  - '{req:cost}Cost: {attr:cost}'
+  - ''
+  - '&2Mana: {attr:mana}'
+  - '&2Cooldown: {attr:cooldown}'
+  desc: []
+  components: 
+    'Cast-0': 
+      type: 'trigger'
+      data: {}
+      preview: 
+        enabled: 'false'
+      children: 
+        Single: 
+          type: 'target'
+          data: 
+            'icon-key': ''
+            'range-base': '5'
+            'range-scale': '0'
+            'tolerance-base': '1'
+            'tolerance-scale': '0'
+            group: 'Enemy'
+            wall: 'false'
+            invulnerable: 'false'
+            caster: 'false'
+          preview: 
+            enabled: 'false'
+            'per-target': 'false'
+            line: 'false'
+            cylinder: 'false'
+          children: 
+            Repeat: 
+              type: 'mechanic'
+              data: 
+                'icon-key': ''
+                counts: 'true'
+                'repetitions-base': '7'
+                'repetitions-scale': '0'
+                period: '1'
+                delay: '0'
+                'stop-on-fail': 'false'
+              preview: 
+                enabled: 'false'
+              children: 
+                Damage: 
+                  type: 'mechanic'
+                  data: 
+                    'icon-key': ''
+                    counts: 'true'
+                    type: 'Damage'
+                    'value-base': '3'
+                    'value-scale': '0'
+                    true: 'true'
+                    classifier: 'physical'
+                    knockback: 'false'
+                    'ignore-divinity': 'false'
+                  preview: 
+                    enabled: 'false'
+                  children: {}
+MagmaBomb: 
+  name: 'MagmaBomb'
+  type: 'Dynamic'
+  'max-level': 100
+  'skill-req-lvl': 0
+  'needs-permission': 'false'
+  'cooldown-message': 'true'
+  attributes: 
+    'level-base': '75'
+    'level-scale': '0'
+    'cost-base': '1'
+    'cost-scale': '0'
+    'cooldown-base': '1.5'
+    'cooldown-scale': '0'
+    'mana-base': '3'
+    'mana-scale': '0'
+    'points-spent-req-base': '0'
+    'points-spent-req-scale': '0'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'MAGMA_CREAM'
+  'icon-data': 0
+  'icon-durability': 0
+  'icon-lore': 
+  - '&d{name} &7({level}/{max})'
+  - '&7Launches a large ball of magma'
+  - '&7with a long range and AOE damage.'
+  - ''
+  - '{req:level}Level: {attr:level}'
+  - '{req:cost}Cost: {attr:cost}'
+  - ''
+  - '&2Mana: {attr:mana}'
+  - '&2Cooldown: {attr:cooldown}'
+  desc: []
+  components: 
+    'Cast-0': 
+      type: 'trigger'
+      data: {}
+      preview: 
+        enabled: 'false'
+      children: 
+        Sound: 
+          type: 'mechanic'
+          data: 
+            'icon-key': ''
+            counts: 'true'
+            sound: 'Entity ghast shoot'
+            'volume-base': '100'
+            'volume-scale': '0'
+            'pitch-base': '1'
+            'pitch-scale': '0'
+          preview: 
+            enabled: 'false'
+          children: {}
+        'Particle Projectile': 
+          type: 'mechanic'
+          data: 
+            'icon-key': ''
+            counts: 'true'
+            pierce: 'false'
+            group: 'Enemy'
+            steps: '2'
+            'collision-radius-base': '0'
+            'collision-radius-scale': '0'
+            'gravity-base': '0'
+            'gravity-scale': '0'
+            'drag-base': '0'
+            'drag-scale': '0'
+            period: '2'
+            homing: 'false'
+            'velocity-base': '1'
+            'velocity-scale': '0'
+            'lifespan-base': '5'
+            'lifespan-scale': '0'
+            'distance-base': '0'
+            'distance-scale': '0'
+            'on-expire': 'false'
+            spread: 'Cone'
+            'amount-base': '1'
+            'amount-scale': '0'
+            'angle-base': '30'
+            'angle-scale': '0'
+            'forward-base': '0'
+            'forward-scale': '0'
+            'upward-base': '0'
+            'upward-scale': '0'
+            'right-base': '0'
+            'right-scale': '0'
+            particle: 'Smoke large'
+            arrangement: 'Sphere'
+            'radius-base': '0.5'
+            'radius-scale': '0'
+            'particles-base': '10'
+            'particles-scale': '0'
+            'visible-radius': '48'
+            dx: '0'
+            dy: '0'
+            dz: '0'
+            amount: '1'
+            speed: '0.01'
+            'use-effect': 'false'
+          preview: 
+            enabled: 'false'
+            period: '5'
+            'per-target': 'false'
+            path: 'false'
+          children: 
+            Particle: 
+              type: 'mechanic'
+              data: 
+                'icon-key': ''
+                counts: 'true'
+                particle: 'Ash'
+                arrangement: 'Sphere'
+                'radius-base': '1'
+                'radius-scale': '0'
+                'particles-base': '2'
+                'particles-scale': '0'
+                'visible-radius': '48'
+                dx: '0'
+                dy: '0'
+                dz: '0'
+                amount: '1'
+                speed: '1'
+                forward: '0'
+                upward: '0'
+                right: '0'
+              preview: 
+                enabled: 'false'
+              children: {}
+            'Particle-b': 
+              type: 'mechanic'
+              data: 
+                'icon-key': ''
+                counts: 'true'
+                particle: 'Falling lava'
+                arrangement: 'Sphere'
+                'radius-base': '0.25'
+                'radius-scale': '0'
+                'particles-base': '15'
+                'particles-scale': '0'
+                'visible-radius': '48'
+                dx: '0'
+                dy: '0'
+                dz: '0'
+                amount: '1'
+                speed: '0.2'
+                forward: '0'
+                upward: '0.5'
+                right: '0'
+              preview: 
+                enabled: 'false'
+              children: {}
+            'Particle-c': 
+              type: 'mechanic'
+              data: 
+                'icon-key': ''
+                counts: 'true'
+                particle: 'Flame'
+                arrangement: 'Sphere'
+                'radius-base': '2.5'
+                'radius-scale': '0'
+                'particles-base': '20'
+                'particles-scale': '0'
+                'visible-radius': '48'
+                dx: '0'
+                dy: '0'
+                dz: '0'
+                amount: '1'
+                speed: '0.1'
+                forward: '0'
+                upward: '0.2'
+                right: '0'
+              preview: 
+                enabled: 'false'
+              children: {}
+            Explosion: 
+              type: 'mechanic'
+              data: 
+                'icon-key': ''
+                counts: 'true'
+                'power-base': '1'
+                'power-scale': '0'
+                damage: 'false'
+                fire: 'false'
+              preview: 
+                enabled: 'false'
+              children: {}
+            Area: 
+              type: 'target'
+              data: 
+                'icon-key': ''
+                'radius-base': '5'
+                'radius-scale': '0'
+                group: 'Enemy'
+                wall: 'false'
+                invulnerable: 'false'
+                caster: 'false'
+                'max-base': '99'
+                'max-scale': '0'
+                random: 'false'
+              preview: 
+                enabled: 'false'
+                'per-target': 'false'
+                circle: 'false'
+                sphere: 'false'
+              children: 
+                Fire: 
+                  type: 'mechanic'
+                  data: 
+                    'icon-key': ''
+                    counts: 'true'
+                    'damage-base': '1'
+                    'damage-scale': '0'
+                    'seconds-base': '3'
+                    'seconds-scale': '0'
+                  preview: 
+                    enabled: 'false'
+                  children: {}
+                Damage: 
+                  type: 'mechanic'
+                  data: 
+                    'icon-key': ''
+                    counts: 'true'
+                    type: 'Damage'
+                    'value-base': '25'
+                    'value-scale': '0.22'
+                    true: 'false'
+                    classifier: 'fire'
+                    knockback: 'false'
+                    'ignore-divinity': 'false'
+                    cause: 'Entity Attack'
+                  preview: 
+                    enabled: 'false'
+                  children: {}
+Bandage: 
+  name: 'Bandage'
+  type: 'Dynamic'
+  'max-level': 100
+  'skill-req-lvl': 0
+  'needs-permission': 'false'
+  'cooldown-message': 'true'
+  attributes: 
+    'level-base': '5'
+    'level-scale': '0'
+    'cost-base': '1'
+    'cost-scale': '0'
+    'cooldown-base': '8'
+    'cooldown-scale': '0.08'
+    'mana-base': '70'
+    'mana-scale': '0.2'
+    'points-spent-req-base': '0'
+    'points-spent-req-scale': '0'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'WHITE_BANNER'
+  'icon-data': 0
+  'icon-durability': 0
+  'icon-lore': 
+  - '&f{name} &e({level}/{max})'
+  - '&7Recover health to repair'
+  - '&7your wounds.'
+  - ''
+  - '&3Mana: {attr:mana}'
+  - '&3Cooldown: {attr:cooldown}'
+  - ''
+  - '&2Unlock this skill at {req:level}level {attr:level}'
+  - '&2Each point {req:cost}costs {attr:cost} &2SP'
+  desc: []
+  components: 
+    'Cast-0': 
+      type: 'trigger'
+      data: {}
+      preview: 
+        enabled: 'false'
+      children: 
+        Sound: 
+          type: 'mechanic'
+          data: 
+            'icon-key': ''
+            counts: 'true'
+            sound: 'Entity player levelup'
+            'volume-base': '100'
+            'volume-scale': '0'
+            'pitch-base': '1'
+            'pitch-scale': '0'
+          preview: 
+            enabled: 'false'
+          children: {}
+        Heal: 
+          type: 'mechanic'
+          data: 
+            'icon-key': ''
+            counts: 'true'
+            type: 'Percent'
+            'value-base': '20'
+            'value-scale': '0.2'
+          preview: 
+            enabled: 'false'
+          children: {}
+Pummel: 
+  name: 'Pummel'
+  type: 'Dynamic'
+  'max-level': 100
+  'skill-req-lvl': 0
+  'needs-permission': 'false'
+  'cooldown-message': 'true'
+  attributes: 
+    'level-base': '75'
+    'level-scale': '0'
+    'cost-base': '1'
+    'cost-scale': '0'
+    'cooldown-base': '0'
+    'cooldown-scale': '0'
+    'mana-base': '0'
+    'mana-scale': '0'
+    'points-spent-req-base': '0'
+    'points-spent-req-scale': '0'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'SUGAR'
+  'icon-data': 0
+  'icon-durability': 0
+  'icon-lore': 
+  - '&d{name} &7({level}/{max})'
+  - '&7Blind the target and'
+  - '&7cause slowness.'
+  - ''
+  - '{req:level}Level: {attr:level}'
+  - '{req:cost}Cost: {attr:cost}'
+  - ''
+  - '&2Mana: {attr:mana}'
+  - '&2Cooldown: {attr:cooldown}'
+  desc: []
+  components: 
+    'Cast-0': 
+      type: 'trigger'
+      data: {}
+      preview: 
+        enabled: 'false'
+      children: 
+        Single: 
+          type: 'target'
+          data: 
+            'icon-key': ''
+            'range-base': '3'
+            'range-scale': '0'
+            'tolerance-base': '1'
+            'tolerance-scale': '0'
+            group: 'Enemy'
+            wall: 'false'
+            invulnerable: 'false'
+            caster: 'false'
+          preview: 
+            enabled: 'false'
+            'per-target': 'false'
+            line: 'false'
+            cylinder: 'false'
+          children: 
+            Potion: 
+              type: 'mechanic'
+              data: 
+                'icon-key': ''
+                counts: 'true'
+                potion: 'Slow'
+                ambient: 'true'
+                'tier-base': '1'
+                'tier-scale': '0'
+                'seconds-base': '4'
+                'seconds-scale': '1'
+              preview: 
+                enabled: 'false'
+              children: {}
+            'Potion-b': 
+              type: 'mechanic'
+              data: 
+                'icon-key': ''
+                counts: 'true'
+                potion: 'Blindness'
+                ambient: 'true'
+                'tier-base': '1'
+                'tier-scale': '0'
+                'seconds-base': '4'
+                'seconds-scale': '1'
+              preview: 
+                enabled: 'false'
+              children: {}
+Roar: 
+  name: 'Roar'
+  type: 'Dynamic'
+  'max-level': 100
+  'skill-req-lvl': 0
+  'needs-permission': 'false'
+  'cooldown-message': 'true'
+  attributes: 
+    'level-base': '1'
+    'level-scale': '0'
+    'cost-base': '1'
+    'cost-scale': '0'
+    'cooldown-base': '1'
+    'cooldown-scale': '0'
+    'mana-base': '0'
+    'mana-scale': '0'
+    'points-spent-req-base': '0'
+    'points-spent-req-scale': '0'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'DRAGON_HEAD'
+  'icon-data': 0
+  'icon-durability': 0
+  'icon-lore': 
+  - '&d{name} &7({level}/{max})'
+  - '&2Type: &6{type}'
+  - ''
+  - '{req:level}Level: {attr:level}'
+  - '{req:cost}Cost: {attr:cost}'
+  - ''
+  - '&2Mana: {attr:mana}'
+  - '&2Cooldown: {attr:cooldown}'
+  desc: []
+  components: {}
+Invigoration: 
+  name: 'Invigoration'
+  type: 'Dynamic'
+  'max-level': 100
+  'skill-req-lvl': 50
+  'needs-permission': 'false'
+  'cooldown-message': 'true'
+  attributes: 
+    'level-base': '25'
+    'level-scale': '0'
+    'cost-base': '1'
+    'cost-scale': '0'
+    'cooldown-base': '0'
+    'cooldown-scale': '0'
+    'mana-base': '0'
+    'mana-scale': '0'
+    'points-spent-req-base': '0'
+    'points-spent-req-scale': '0'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'JACK_O_LANTERN'
+  'icon-data': 0
+  'icon-durability': 0
+  'icon-lore': 
+  - '&d{name} &7({level}/{max})'
+  - '&7Using the stregnth of your faith'
+  - '&7you heal yourself from within.'
+  - ''
+  - '{req:level}Level: {attr:level}'
+  - '{req:cost}Cost: {attr:cost}'
+  - ''
+  - '&2Mana: {attr:mana}'
+  - '&2Cooldown: {attr:cooldown}'
+  desc: []
+  components: 
+    'Cast-0': 
+      type: 'trigger'
+      data: {}
+      preview: 
+        enabled: 'false'
+      children: 
+        Self: 
+          type: 'target'
+          data: 
+            'icon-key': ''
+            group: 'enemy'
+            wall: 'false'
+            invulnerable: 'false'
+            caster: 'false'
+          preview: 
+            enabled: 'false'
+          children: 
+            Repeat: 
+              type: 'mechanic'
+              data: 
+                'icon-key': ''
+                counts: 'true'
+                'repetitions-base': '7'
+                'repetitions-scale': '0'
+                period: '1'
+                delay: '0'
+                'stop-on-fail': 'false'
+              preview: 
+                enabled: 'false'
+              children: 
+                Heal: 
+                  type: 'mechanic'
+                  data: 
+                    'icon-key': ''
+                    counts: 'true'
+                    type: 'Percent'
+                    'value-base': '3'
+                    'value-scale': '0'
+                  preview: 
+                    enabled: 'false'
+                  children: {}
+Bloodbath: 
+  name: 'Bloodbath'
+  type: 'Passive Enchantment'
+  'max-level': 100
+  'skill-req-lvl': 1
+  'needs-permission': 'false'
+  'cooldown-message': 'true'
+  attributes: 
+    'level-base': '75'
+    'level-scale': '0'
+    'cost-base': '1'
+    'cost-scale': '0'
+    'cooldown-base': '5'
+    'cooldown-scale': '0'
+    'mana-base': '10'
+    'mana-scale': '0'
+    'points-spent-req-base': '0'
+    'points-spent-req-scale': '0'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'REDSTONE'
+  'icon-data': 0
+  'icon-durability': 0
+  'icon-lore': 
+  - '&d{name} &7({level}/{max})'
+  - '&2Type: &6{type}'
+  - ''
+  - '{req:level}Level: {attr:level}'
+  - '{req:cost}Cost: {attr:cost}'
+  - ''
+  - '&2Vampire are famous of their bloodbath ability'
+  - '&2Imbued attack with Lifesteal'
+  - '&2Lifesteal: {attr:heal.value}'
+  - '&2Threshold: &6Below 75%'
+  desc: []
+  components: 
+    'Physical Damage': 
+      type: 'trigger'
+      data: 
+        mana: 'false'
+        cooldown: 'false'
+        target: 'false'
+        type: 'Melee'
+        'dmg-min': '0'
+        'dmg-max': '999'
+      preview: 
+        enabled: 'false'
+      children: 
+        Single: 
+          type: 'target'
+          data: 
+            'icon-key': ''
+            'range-base': '3'
+            'range-scale': '0'
+            'tolerance-base': '4'
+            'tolerance-scale': '0'
+            group: 'Enemy'
+            wall: 'false'
+            invulnerable: 'false'
+            caster: 'false'
+          preview: 
+            enabled: 'false'
+            'per-target': 'false'
+            line: 'false'
+            cylinder: 'false'
+          children: 
+            Health: 
+              type: 'condition'
+              data: 
+                'icon-key': 'threshold'
+                type: 'Percent'
+                'min-value-base': '0'
+                'min-value-scale': '0'
+                'max-value-base': '75'
+                'max-value-scale': '2'
+              preview: 
+                enabled: 'false'
+              children: 
+                Heal: 
+                  type: 'mechanic'
+                  data: 
+                    'icon-key': 'heal'
+                    counts: 'True'
+                    type: 'Percent'
+                    'value-base': '1'
+                    'value-scale': '1'
+                  preview: 
+                    enabled: 'false'
+                  children: {}
+                Particle: 
+                  type: 'mechanic'
+                  data: 
+                    'icon-key': ''
+                    counts: 'True'
+                    particle: 'Happy Villager'
+                    arrangement: 'Circle'
+                    direction: 'XZ'
+                    'radius-base': '4'
+                    'radius-scale': '0'
+                    'particles-base': '4'
+                    'particles-scale': '0'
+                    'visible-radius': '25'
+                    dx: '0'
+                    dy: '0'
+                    dz: '0'
+                    amount: '1'
+                    speed: '1'
+                    forward: '0'
+                    upward: '0'
+                    right: '0'
+                  preview: 
+                    enabled: 'false'
+                  children: {}
+Stomp: 
+  name: 'Stomp'
+  type: 'Dynamic'
+  'max-level': 100
+  'skill-req-lvl': 0
+  'needs-permission': 'false'
+  'cooldown-message': 'true'
+  attributes: 
+    'level-base': '1'
+    'level-scale': '0'
+    'cost-base': '1'
+    'cost-scale': '0'
+    'cooldown-base': '1'
+    'cooldown-scale': '0'
+    'mana-base': '0'
+    'mana-scale': '0'
+    'points-spent-req-base': '0'
+    'points-spent-req-scale': '0'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'IRON_BOOTS'
+  'icon-data': 0
+  'icon-durability': 0
+  'icon-lore': 
+  - '&d{name} &7({level}/{max})'
+  - '&2Type: &6{type}'
+  - ''
+  - '{req:level}Level: {attr:level}'
+  - '{req:cost}Cost: {attr:cost}'
+  - ''
+  - '&2Mana: {attr:mana}'
+  - '&2Cooldown: {attr:cooldown}'
+  desc: []
+  components: {}
+Bringforth: 
+  name: 'Bringforth'
+  type: 'Dynamic'
+  'max-level': 100
+  'skill-req-lvl': 1
+  'needs-permission': 'false'
+  'cooldown-message': 'true'
+  attributes: 
+    'level-base': '50'
+    'level-scale': '0'
+    'cost-base': '1'
+    'cost-scale': '0'
+    'cooldown-base': '8'
+    'cooldown-scale': '-0.06'
+    'mana-base': '45'
+    'mana-scale': '0.2'
+    'points-spent-req-base': '0'
+    'points-spent-req-scale': '0'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'QUARTZ'
+  'icon-data': 0
+  'icon-durability': 0
+  'icon-lore': 
+  - '&f{name} &e({level}/{max})'
+  - '&7Pull your enemies towards'
+  - '&7you in a cone shape.'
+  - ''
+  - '&3Mana: {attr:mana}'
+  - '&3Cooldown: {attr:cooldown}'
+  - '&3Range: 3 Blocks'
+  - ''
+  - '&2Unlock this skill at {req:level}level {attr:level}'
+  - '&2Each point {req:cost}costs {attr:cost} &2SP'
+  desc: []
+  components: 
+    'Cast-0': 
+      type: 'trigger'
+      data: {}
+      preview: 
+        enabled: 'false'
+      children: 
+        Sound: 
+          type: 'mechanic'
+          data: 
+            'icon-key': ''
+            counts: 'true'
+            sound: 'Entity blaze shoot'
+            'volume-base': '100'
+            'volume-scale': '0'
+            'pitch-base': '1'
+            'pitch-scale': '0'
+          preview: 
+            enabled: 'false'
+          children: {}
+        Cone: 
+          type: 'target'
+          data: 
+            'icon-key': ''
+            'range-base': '3'
+            'range-scale': '0'
+            'angle-base': '45'
+            'angle-scale': '0'
+            'rotation-base': '0'
+            'rotation-scale': '0'
+            'reset-y': 'false'
+            group: 'Enemy'
+            wall: 'false'
+            invulnerable: 'false'
+            caster: 'true'
+            'max-base': '99'
+            'max-scale': '0'
+          preview: 
+            enabled: 'false'
+            'per-target': 'false'
+            triangle: 'false'
+            cone: 'false'
+          children: 
+            Launch: 
+              type: 'mechanic'
+              data: 
+                'icon-key': ''
+                counts: 'true'
+                relative: 'Caster'
+                'reset-y': 'false'
+                'forward-base': '-1.5'
+                'forward-scale': '0'
+                'upward-base': '0'
+                'upward-scale': '0'
+                'right-base': '0'
+                'right-scale': '0'
+              preview: 
+                enabled: 'false'
+              children: {}
+Bloodborne: 
+  name: 'Bloodborne'
+  type: 'Passive Enchantment'
+  'max-level': 100
+  'skill-req-lvl': 1
+  'needs-permission': 'false'
+  'cooldown-message': 'true'
+  attributes: 
+    'level-base': '10'
+    'level-scale': '0'
+    'cost-base': '1'
+    'cost-scale': '0'
+    'cooldown-base': '8'
+    'cooldown-scale': '0'
+    'mana-base': '0'
+    'mana-scale': '0'
+    'points-spent-req-base': '0'
+    'points-spent-req-scale': '0'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'REDSTONE_BLOCK'
+  'icon-data': 0
+  'icon-durability': 0
+  'icon-lore': 
+  - '&d{name} &7({level}/{max})'
+  - '&2Type: &6{type}'
+  - ''
+  - '{req:level}Level: {attr:level}'
+  - '{req:cost}Cost: {attr:cost}'
+  - ''
+  - "&2Using Vampire's Bloodborne, they can awaken their true power"
+  - '&2when in pinch'
+  - '&2Threshold: &640%'
+  - '&2Immune: {attr:immune.seconds}'
+  - '&2Aggro: {attr:aggro.amount}'
+  desc: []
+  components: 
+    'Initialize-0': 
+      type: 'trigger'
+      data: {}
+      preview: 
+        enabled: 'false'
+      children: 
+        Health: 
+          type: 'condition'
+          data: 
+            'icon-key': 'threshold'
+            type: 'Health'
+            'min-value-base': '0'
+            'min-value-scale': '0'
+            'max-value-base': '40'
+            'max-value-scale': '0'
+          preview: 
+            enabled: 'false'
+          children: 
+            Taunt: 
+              type: 'mechanic'
+              data: 
+                'icon-key': 'aggro'
+                counts: 'True'
+                'amount-base': '-2'
+                'amount-scale': '-1'
+              preview: 
+                enabled: 'false'
+              children: {}
+            'Particle Animation': 
+              type: 'mechanic'
+              data: 
+                'icon-key': ''
+                counts: 'True'
+                steps: '1'
+                frequency: '0.05'
+                angle: '0'
+                start: '0'
+                'duration-base': '5'
+                'duration-scale': '0'
+                'h-translation-base': '0'
+                'h-translation-scale': '0'
+                'v-translation-base': '0'
+                'v-translation-scale': '0'
+                'h-cycles': '1'
+                'v-cycles': '1'
+                particle: 'Angry Villager'
+                arrangement: 'Circle'
+                direction: 'XZ'
+                'radius-base': '4'
+                'radius-scale': '0'
+                'particles-base': '20'
+                'particles-scale': '0'
+                'visible-radius': '25'
+                dx: '0'
+                dy: '0'
+                dz: '0'
+                amount: '1'
+                speed: '1'
+                forward: '0'
+                upward: '0'
+                right: '0'
+                '-with-rotation': 'false'
+              preview: 
+                enabled: 'false'
+              children: {}
+            Immunity: 
+              type: 'mechanic'
+              data: 
+                'icon-key': 'immune'
+                counts: 'True'
+                type: 'Entity Attack'
+                'seconds-base': '3'
+                'seconds-scale': '0'
+                'multiplier-base': '0'
+                'multiplier-scale': '0'
+              preview: 
+                enabled: 'false'
+              children: {}
+HeatStroke: 
+  name: 'HeatStroke'
+  type: 'Dynamic'
+  'max-level': 100
+  'skill-req-lvl': 0
+  'needs-permission': 'false'
+  'cooldown-message': 'true'
+  attributes: 
+    'level-base': '100'
+    'level-scale': '0'
+    'cost-base': '1'
+    'cost-scale': '0'
+    'cooldown-base': '0'
+    'cooldown-scale': '0'
+    'mana-base': '0'
+    'mana-scale': '0'
+    'points-spent-req-base': '0'
+    'points-spent-req-scale': '0'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'BLAZE_POWDER'
+  'icon-data': 0
+  'icon-durability': 0
+  'icon-lore': 
+  - '&d{name} &7({level}/{max})'
+  - '&7A fireball drops from the sky'
+  - '&7causing a ring of fire that deals'
+  - '&7damage and drains mana.'
+  - ''
+  - '{req:level}Level: {attr:level}'
+  - '{req:cost}Cost: {attr:cost}'
+  - ''
+  - '&2Mana: {attr:mana}'
+  - '&2Cooldown: {attr:cooldown}'
+  desc: []
+  components: 
+    'Cast-0': 
+      type: 'trigger'
+      data: {}
+      preview: 
+        enabled: 'false'
+      children: 
+        Sound: 
+          type: 'mechanic'
+          data: 
+            'icon-key': ''
+            counts: 'true'
+            sound: 'Entity ghast shoot'
+            'volume-base': '100'
+            'volume-scale': '0'
+            'pitch-base': '1'
+            'pitch-scale': '0'
+          preview: 
+            enabled: 'false'
+          children: {}
+        'Particle Projectile': 
+          type: 'mechanic'
+          data: 
+            'icon-key': ''
+            counts: 'true'
+            pierce: 'false'
+            group: 'Enemy'
+            steps: '2'
+            'collision-radius-base': '0'
+            'collision-radius-scale': '0'
+            'gravity-base': '0'
+            'gravity-scale': '0'
+            'drag-base': '0'
+            'drag-scale': '0'
+            period: '2'
+            homing: 'false'
+            'velocity-base': '1'
+            'velocity-scale': '0'
+            'lifespan-base': '5'
+            'lifespan-scale': '0'
+            'distance-base': '0'
+            'distance-scale': '0'
+            'on-expire': 'false'
+            spread: 'Cone'
+            'amount-base': '1'
+            'amount-scale': '0'
+            'angle-base': '30'
+            'angle-scale': '0'
+            'forward-base': '0'
+            'forward-scale': '0'
+            'upward-base': '0'
+            'upward-scale': '0'
+            'right-base': '0'
+            'right-scale': '0'
+            particle: 'Flame'
+            arrangement: 'Sphere'
+            'radius-base': '0.2'
+            'radius-scale': '0'
+            'particles-base': '20'
+            'particles-scale': '0'
+            'visible-radius': '48'
+            dx: '0'
+            dy: '0'
+            dz: '0'
+            amount: '1'
+            speed: '0.01'
+            'use-effect': 'false'
+          preview: 
+            enabled: 'false'
+            period: '5'
+            'per-target': 'false'
+            path: 'false'
+          children: 
+            Particle: 
+              type: 'mechanic'
+              data: 
+                'icon-key': ''
+                counts: 'true'
+                particle: 'Ash'
+                arrangement: 'Sphere'
+                'radius-base': '1'
+                'radius-scale': '0'
+                'particles-base': '2'
+                'particles-scale': '0'
+                'visible-radius': '48'
+                dx: '0'
+                dy: '0'
+                dz: '0'
+                amount: '1'
+                speed: '1'
+                forward: '0'
+                upward: '0'
+                right: '0'
+              preview: 
+                enabled: 'false'
+              children: {}
+            'Particle-b': 
+              type: 'mechanic'
+              data: 
+                'icon-key': ''
+                counts: 'true'
+                particle: 'Falling lava'
+                arrangement: 'Sphere'
+                'radius-base': '0.25'
+                'radius-scale': '0'
+                'particles-base': '15'
+                'particles-scale': '0'
+                'visible-radius': '48'
+                dx: '0'
+                dy: '0'
+                dz: '0'
+                amount: '1'
+                speed: '0.2'
+                forward: '0'
+                upward: '0.5'
+                right: '0'
+              preview: 
+                enabled: 'false'
+              children: {}
+            'Particle-c': 
+              type: 'mechanic'
+              data: 
+                'icon-key': ''
+                counts: 'true'
+                particle: 'Flame'
+                arrangement: 'Sphere'
+                'radius-base': '2.5'
+                'radius-scale': '0'
+                'particles-base': '20'
+                'particles-scale': '0'
+                'visible-radius': '48'
+                dx: '0'
+                dy: '0'
+                dz: '0'
+                amount: '1'
+                speed: '0.1'
+                forward: '0'
+                upward: '0.2'
+                right: '0'
+              preview: 
+                enabled: 'false'
+              children: {}
+            Explosion: 
+              type: 'mechanic'
+              data: 
+                'icon-key': ''
+                counts: 'true'
+                'power-base': '1'
+                'power-scale': '0'
+                damage: 'false'
+                fire: 'false'
+              preview: 
+                enabled: 'false'
+              children: {}
+            Repeat: 
+              type: 'mechanic'
+              data: 
+                'icon-key': ''
+                counts: 'true'
+                'repetitions-base': '7'
+                'repetitions-scale': '0'
+                period: '0.5'
+                delay: '0'
+                'stop-on-fail': 'false'
+              preview: 
+                enabled: 'false'
+              children: 
+                'Particle Effect': 
+                  type: 'mechanic'
+                  data: 
+                    'icon-key': ''
+                    counts: 'true'
+                    'use-effect': 'false'
+                    'effect-key': 'heatstroke'
+                    'duration-base': '1'
+                    'duration-scale': '0'
+                    '-shape': 'still'
+                    '-shape-dir': 'XY'
+                    '-shape-size': '.15'
+                    '-animation': 'still'
+                    '-anim-dir': 'XZ'
+                    '-anim-size': '.15'
+                    '-interval': '1'
+                    '-view-range': '48'
+                    '-particle-type': 'Campfire cosy smoke'
+                    '-particle-amount': '1'
+                    '-particle-dx': '0'
+                    '-particle-dy': '0'
+                    '-particle-dz': '0'
+                    '-particle-speed': '0.1'
+                    '-initial-rotation': '0'
+                    '-with-rotation': 'true'
+                  preview: 
+                    enabled: 'false'
+                  children: {}
+                Area: 
+                  type: 'target'
+                  data: 
+                    'icon-key': ''
+                    'radius-base': '3'
+                    'radius-scale': '0'
+                    group: 'Enemy'
+                    wall: 'false'
+                    invulnerable: 'false'
+                    caster: 'false'
+                    'max-base': '99'
+                    'max-scale': '0'
+                    random: 'false'
+                  preview: 
+                    enabled: 'false'
+                    'per-target': 'false'
+                    circle: 'false'
+                    sphere: 'false'
+                  children: 
+                    Mana: 
+                      type: 'mechanic'
+                      data: 
+                        'icon-key': ''
+                        counts: 'true'
+                        type: 'Mana'
+                        'value-base': '-6'
+                        'value-scale': '-0.06'
+                      preview: 
+                        enabled: 'false'
+                      children: {}
+                    Fire: 
+                      type: 'mechanic'
+                      data: 
+                        'icon-key': ''
+                        counts: 'true'
+                        'damage-base': '1'
+                        'damage-scale': '0'
+                        'seconds-base': '3'
+                        'seconds-scale': '1'
+                      preview: 
+                        enabled: 'false'
+                      children: {}
+PrimalSurge: 
+  name: 'PrimalSurge'
+  type: 'Dynamic'
+  'max-level': 100
+  'skill-req-lvl': 25
+  'needs-permission': 'false'
+  'cooldown-message': 'true'
+  attributes: 
+    'level-base': '1'
+    'level-scale': '0'
+    'cost-base': '1'
+    'cost-scale': '0'
+    'cooldown-base': '0'
+    'cooldown-scale': '0'
+    'mana-base': '0'
+    'mana-scale': '0'
+    'points-spent-req-base': '0'
+    'points-spent-req-scale': '0'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'POISONOUS_POTATO'
+  'icon-data': 0
+  'icon-durability': 0
+  'icon-lore': 
+  - '&d{name} &7({level}/{max})'
+  - '&7Debuff the targets spell protection.'
+  - ''
+  - '{req:level}Level: {attr:level}'
+  - '{req:cost}Cost: {attr:cost}'
+  - ''
+  - '&2Mana: {attr:mana}'
+  - '&2Cooldown: {attr:cooldown}'
+  desc: []
+  components: 
+    'Cast-0': 
+      type: 'trigger'
+      data: {}
+      preview: 
+        enabled: 'false'
+      children: 
+        Single: 
+          type: 'target'
+          data: 
+            'icon-key': ''
+            'range-base': '7'
+            'range-scale': '0'
+            'tolerance-base': '0'
+            'tolerance-scale': '0'
+            group: 'Ally'
+            wall: 'false'
+            invulnerable: 'false'
+            caster: 'false'
+          preview: 
+            enabled: 'false'
+            'per-target': 'false'
+            line: 'false'
+            cylinder: 'false'
+          children: 
+            Buff: 
+              type: 'mechanic'
+              data: 
+                'icon-key': ''
+                counts: 'true'
+                immediate: 'false'
+                type: 'SKILL_DEFENSE'
+                modifier: 'Flat'
+                category: ''
+                'value-base': '0.7'
+                'value-scale': '0'
+                'seconds-base': '20'
+                'seconds-scale': '0'
+              preview: 
+                enabled: 'false'
+              children: {}
+Divinebolt: 
+  name: 'Divinebolt'
+  type: 'Dynamic'
+  'max-level': 100
+  'skill-req-lvl': 0
+  'needs-permission': 'false'
+  'cooldown-message': 'true'
+  attributes: 
+    'level-base': '5'
+    'level-scale': '0'
+    'cost-base': '1'
+    'cost-scale': '0'
+    'cooldown-base': '5'
+    'cooldown-scale': '0'
+    'mana-base': '0'
+    'mana-scale': '0'
+    'points-spent-req-base': '0'
+    'points-spent-req-scale': '0'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'TRIDENT'
+  'icon-data': 0
+  'icon-durability': 0
+  'icon-lore': 
+  - '&d{name} &7({level}/{max})'
+  - '&7Damage spell that that pushes'
+  - '&7the target back.'
+  - ''
+  - '{req:level}Level: {attr:level}'
+  - '{req:cost}Cost: {attr:cost}'
+  - ''
+  - '&2Mana: {attr:mana}'
+  - '&2Cooldown: {attr:cooldown}'
+  desc: []
+  components: 
+    'Cast-0': 
+      type: 'trigger'
+      data: {}
+      preview: 
+        enabled: 'false'
+      children: 
+        'Particle Projectile': 
+          type: 'mechanic'
+          data: 
+            'icon-key': ''
+            counts: 'true'
+            pierce: 'false'
+            group: 'Enemy'
+            steps: '2'
+            'collision-radius-base': '0'
+            'collision-radius-scale': '0'
+            'gravity-base': '0'
+            'gravity-scale': '0'
+            'drag-base': '0'
+            'drag-scale': '0'
+            period: '2'
+            homing: 'false'
+            'velocity-base': '3'
+            'velocity-scale': '0'
+            'lifespan-base': '5'
+            'lifespan-scale': '0'
+            'distance-base': '0'
+            'distance-scale': '0'
+            'on-expire': 'false'
+            spread: 'Cone'
+            'amount-base': '1'
+            'amount-scale': '0'
+            'angle-base': '0'
+            'angle-scale': '0'
+            'forward-base': '0'
+            'forward-scale': '0'
+            'upward-base': '0'
+            'upward-scale': '0'
+            'right-base': '0'
+            'right-scale': '0'
+            particle: 'Composter'
+            arrangement: 'Sphere'
+            'radius-base': '0.1'
+            'radius-scale': '0'
+            'particles-base': '10'
+            'particles-scale': '0'
+            'visible-radius': '48'
+            dx: '0'
+            dy: '0'
+            dz: '0'
+            amount: '1'
+            speed: '0.01'
+            'use-effect': 'false'
+          preview: 
+            enabled: 'false'
+            period: '5'
+            'per-target': 'false'
+            path: 'false'
+          children: 
+            Particle: 
+              type: 'mechanic'
+              data: 
+                'icon-key': ''
+                counts: 'true'
+                particle: 'End rod'
+                arrangement: 'Sphere'
+                'radius-base': '1'
+                'radius-scale': '0'
+                'particles-base': '2'
+                'particles-scale': '0'
+                'visible-radius': '48'
+                dx: '0'
+                dy: '0'
+                dz: '0'
+                amount: '1'
+                speed: '1'
+                forward: '0'
+                upward: '0'
+                right: '0'
+              preview: 
+                enabled: 'false'
+              children: {}
+            'Particle-b': 
+              type: 'mechanic'
+              data: 
+                'icon-key': ''
+                counts: 'true'
+                particle: 'Block crack'
+                material: 'Obsidian'
+                arrangement: 'Sphere'
+                'radius-base': '2.5'
+                'radius-scale': '0'
+                'particles-base': '10'
+                'particles-scale': '0'
+                'visible-radius': '48'
+                dx: '0'
+                dy: '0'
+                dz: '0'
+                amount: '1'
+                speed: '0.1'
+                forward: '0'
+                upward: '0.2'
+                right: '0'
+              preview: 
+                enabled: 'false'
+              children: {}
+            Area: 
+              type: 'target'
+              data: 
+                'icon-key': ''
+                'radius-base': '2'
+                'radius-scale': '0'
+                group: 'Enemy'
+                wall: 'false'
+                invulnerable: 'false'
+                caster: 'false'
+                'max-base': '99'
+                'max-scale': '0'
+                random: 'false'
+              preview: 
+                enabled: 'false'
+                'per-target': 'false'
+                circle: 'false'
+                sphere: 'false'
+              children: 
+                Damage: 
+                  type: 'mechanic'
+                  data: 
+                    'icon-key': ''
+                    counts: 'true'
+                    type: 'Damage'
+                    'value-base': '25'
+                    'value-scale': '0.22'
+                    true: 'false'
+                    classifier: 'air'
+                    knockback: 'false'
+                    'ignore-divinity': 'false'
+                    cause: 'Entity Attack'
+                  preview: 
+                    enabled: 'false'
+                  children: {}
+                Launch: 
+                  type: 'mechanic'
+                  data: 
+                    'icon-key': ''
+                    counts: 'true'
+                    relative: 'Target'
+                    'reset-y': 'false'
+                    'forward-base': '1'
+                    'forward-scale': '0.02'
+                    'upward-base': '0'
+                    'upward-scale': '0'
+                    'right-base': '0'
+                    'right-scale': '0'
+                  preview: 
+                    enabled: 'false'
+                  children: {}
+Consecrate: 
+  name: 'Consecrate'
+  type: 'Dynamic'
+  'max-level': 100
+  'skill-req-lvl': 0
+  'needs-permission': 'false'
+  'cooldown-message': 'true'
+  attributes: 
+    'level-base': '75'
+    'level-scale': '0'
+    'cost-base': '1'
+    'cost-scale': '0'
+    'cooldown-base': '5'
+    'cooldown-scale': '0'
+    'mana-base': '0'
+    'mana-scale': '0'
+    'points-spent-req-base': '0'
+    'points-spent-req-scale': '0'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'SPLASH_POTION'
+  'icon-data': 0
+  'icon-durability': 0
+  'icon-lore': 
+  - '&d{name} &7({level}/{max})'
+  - '&7Increase your defense for all damage'
+  - '&7and heal your allies in a radius.'
+  - ''
+  - '{req:level}Level: {attr:level}'
+  - '{req:cost}Cost: {attr:cost}'
+  - ''
+  - '&2Mana: {attr:mana}'
+  - '&2Cooldown: {attr:cooldown}'
+  desc: []
+  components: 
+    'Cast-0': 
+      type: 'trigger'
+      data: {}
+      preview: 
+        enabled: 'false'
+      children: 
+        Area: 
+          type: 'target'
+          data: 
+            'icon-key': ''
+            'radius-base': '3'
+            'radius-scale': '0'
+            group: 'Ally'
+            wall: 'false'
+            invulnerable: 'false'
+            caster: 'true'
+            'max-base': '99'
+            'max-scale': '0'
+            random: 'false'
+          preview: 
+            enabled: 'false'
+            'per-target': 'false'
+            circle: 'false'
+            sphere: 'false'
+          children: 
+            'Defense Buff': 
+              type: 'mechanic'
+              data: 
+                'icon-key': ''
+                counts: 'true'
+                type: 'Multiplier'
+                skill: 'true'
+                'value-base': '0.85'
+                'value-scale': '0'
+                'seconds-base': '30'
+                'seconds-scale': '0'
+              preview: 
+                enabled: 'false'
+              children: {}
+            'Defense Buff-b': 
+              type: 'mechanic'
+              data: 
+                'icon-key': ''
+                counts: 'true'
+                type: 'Multiplier'
+                skill: 'false'
+                'value-base': '0.85'
+                'value-scale': '0'
+                'seconds-base': '30'
+                'seconds-scale': '0'
+              preview: 
+                enabled: 'false'
+              children: {}
+        Repeat: 
+          type: 'mechanic'
+          data: 
+            'icon-key': ''
+            counts: 'true'
+            'repetitions-base': '7'
+            'repetitions-scale': '0'
+            period: '1'
+            delay: '0'
+            'stop-on-fail': 'false'
+          preview: 
+            enabled: 'false'
+          children: 
+            Repeat: 
+              type: 'mechanic'
+              data: 
+                'icon-key': ''
+                counts: 'true'
+                'repetitions-base': '1'
+                'repetitions-scale': '0'
+                period: '0'
+                delay: '0'
+                'stop-on-fail': 'false'
+              preview: 
+                enabled: 'false'
+              children: 
+                Area: 
+                  type: 'target'
+                  data: 
+                    'icon-key': ''
+                    'radius-base': '3'
+                    'radius-scale': '0'
+                    group: 'Enemy'
+                    wall: 'false'
+                    invulnerable: 'false'
+                    caster: 'true'
+                    'max-base': '99'
+                    'max-scale': '0'
+                    random: 'false'
+                  preview: 
+                    enabled: 'false'
+                    'per-target': 'false'
+                    circle: 'false'
+                    sphere: 'false'
+                  children: 
+                    Heal: 
+                      type: 'mechanic'
+                      data: 
+                        'icon-key': ''
+                        counts: 'true'
+                        type: 'Percent'
+                        'value-base': '5'
+                        'value-scale': '0'
+                      preview: 
+                        enabled: 'false'
+                      children: {}
+SpiritBond: 
+  name: 'SpiritBond'
+  type: 'Dynamic'
+  'max-level': 100
+  'skill-req-lvl': 0
+  'needs-permission': 'false'
+  'cooldown-message': 'true'
+  attributes: 
+    'level-base': '1'
+    'level-scale': '0'
+    'cost-base': '1'
+    'cost-scale': '0'
+    'cooldown-base': '1'
+    'cooldown-scale': '0'
+    'mana-base': '5'
+    'mana-scale': '0'
+    'points-spent-req-base': '0'
+    'points-spent-req-scale': '0'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'DIAMOND'
+  'icon-data': 0
+  'icon-durability': 0
+  'icon-lore': 
+  - '&d{name} &7({level}/{max})'
+  - '&2Type: &6{type}'
+  - ''
+  - '{req:level}Level: {attr:level}'
+  - '{req:cost}Cost: {attr:cost}'
+  - ''
+  - '&2Mana: {attr:mana}'
+  - '&2Cooldown: {attr:cooldown}'
+  desc: []
+  components: {}
+Maelstrom: 
+  name: 'Maelstrom'
+  type: 'Dynamic'
+  'max-level': 100
+  'skill-req-lvl': 0
+  'needs-permission': 'false'
+  'cooldown-message': 'true'
+  attributes: 
+    'level-base': '10'
+    'level-scale': '0'
+    'cost-base': '1'
+    'cost-scale': '0'
+    'cooldown-base': '6'
+    'cooldown-scale': '-0.02'
+    'mana-base': '50'
+    'mana-scale': '0.2'
+    'points-spent-req-base': '0'
+    'points-spent-req-scale': '0'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'SLIME_BALL'
+  'icon-data': 0
+  'icon-durability': 0
+  'icon-lore': 
+  - '&f{name} &e({level}/{max})'
+  - '&7Damage enemies in a V shape'
+  - '&7in front of you.'
+  - ''
+  - '&3Mana: {attr:mana}'
+  - '&3Cooldown: {attr:cooldown}'
+  - ''
+  - '&2Unlock this skill at {req:level}level {attr:level}'
+  - '&2Each point {req:cost}costs {attr:cost} &2SP'
+  desc: []
+  components: 
+    'Cast-0': 
+      type: 'trigger'
+      data: {}
+      preview: 
+        enabled: 'false'
+      children: 
+        Sound: 
+          type: 'mechanic'
+          data: 
+            'icon-key': ''
+            counts: 'true'
+            sound: 'Entity blaze shoot'
+            'volume-base': '100'
+            'volume-scale': '0'
+            'pitch-base': '2'
+            'pitch-scale': '0'
+          preview: 
+            enabled: 'false'
+          children: {}
+        Cone: 
+          type: 'target'
+          data: 
+            'icon-key': ''
+            'range-base': '3'
+            'range-scale': '0'
+            'angle-base': '90'
+            'angle-scale': '0'
+            'rotation-base': '0'
+            'rotation-scale': '0'
+            'reset-y': 'false'
+            group: 'Enemy'
+            wall: 'false'
+            invulnerable: 'false'
+            caster: 'true'
+            'max-base': '99'
+            'max-scale': '0'
+          preview: 
+            enabled: 'false'
+            'per-target': 'false'
+            triangle: 'false'
+            cone: 'false'
+          children: 
+            Damage: 
+              type: 'mechanic'
+              data: 
+                'icon-key': ''
+                counts: 'true'
+                type: 'Multiplier'
+                'value-base': '15'
+                'value-scale': '0.4'
+                true: 'false'
+                classifier: 'physical'
+                knockback: 'false'
+                'ignore-divinity': 'false'
+                cause: 'Entity Attack'
+              preview: 
+                enabled: 'false'
+              children: {}
+VirtuousWrath: 
+  name: 'VirtuousWrath'
+  type: 'Dynamic'
+  'max-level': 100
+  'skill-req-lvl': 0
+  'needs-permission': 'false'
+  'cooldown-message': 'true'
+  attributes: 
+    'level-base': '1'
+    'level-scale': '0'
+    'cost-base': '1'
+    'cost-scale': '0'
+    'cooldown-base': '1'
+    'cooldown-scale': '0'
+    'mana-base': '0'
+    'mana-scale': '0'
+    'points-spent-req-base': '0'
+    'points-spent-req-scale': '0'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'MAGMA_CREAM'
+  'icon-data': 0
+  'icon-durability': 0
+  'icon-lore': 
+  - '&d{name} &7({level}/{max})'
+  - '&2Type: &6{type}'
+  - ''
+  - '{req:level}Level: {attr:level}'
+  - '{req:cost}Cost: {attr:cost}'
+  - ''
+  - '&2Mana: {attr:mana}'
+  - '&2Cooldown: {attr:cooldown}'
+  desc: []
+  components: {}
+Sacrifice: 
+  name: 'Sacrifice'
+  type: 'Dynamic'
+  'max-level': 100
+  'skill-req-lvl': 0
+  'needs-permission': 'false'
+  'cooldown-message': 'true'
+  attributes: 
+    'level-base': '1'
+    'level-scale': '0'
+    'cost-base': '1'
+    'cost-scale': '0'
+    'cooldown-base': '1'
+    'cooldown-scale': '0'
+    'mana-base': '5'
+    'mana-scale': '0'
+    'points-spent-req-base': '0'
+    'points-spent-req-scale': '0'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'NETHER_STAR'
+  'icon-data': 0
+  'icon-durability': 0
+  'icon-lore': 
+  - '&d{name} &7({level}/{max})'
+  - '&2Type: &6{type}'
+  - ''
+  - '{req:level}Level: {attr:level}'
+  - '{req:cost}Cost: {attr:cost}'
+  - ''
+  - '&2Mana: {attr:mana}'
+  - '&2Cooldown: {attr:cooldown}'
+  desc: []
+  components: {}
+StunningShot: 
+  name: 'StunningShot'
+  type: 'Single Target'
+  'max-level': 100
+  'skill-req-lvl': 1
+  'needs-permission': 'false'
+  'cooldown-message': 'true'
+  combo: 'R R R'
+  attributes: 
+    'level-base': '50'
+    'level-scale': '0'
+    'cost-base': '1'
+    'cost-scale': '0'
+    'cooldown-base': '11'
+    'cooldown-scale': '-0.2'
+    'mana-base': '9'
+    'mana-scale': '1'
+    'points-spent-req-base': '0'
+    'points-spent-req-scale': '0'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'TIPPED_ARROW'
+  'icon-data': 0
+  'icon-durability': 0
+  'icon-lore': 
+  - '&d{name} &7({level}/{max})'
+  - '&2Type: &6{type}'
+  - ''
+  - '{req:level}Level: {attr:level}'
+  - '{req:cost}Cost: {attr:cost}'
+  - ''
+  - 'A Stunning Close Range shot'
+  - '&2Damage: {attr:damage.value}'
+  - '&2Stun Duration: {attr:stun.duration}'
+  - ''
+  - '&2Mana: {attr:mana}'
+  - '&2Cooldown: {attr:cooldown}'
+  desc: []
+  components: 
+    'Cast-0': 
+      type: 'trigger'
+      data: {}
+      preview: 
+        enabled: 'false'
+      children: 
+        Sound: 
+          type: 'mechanic'
+          data: 
+            'icon-key': ''
+            counts: 'true'
+            sound: 'Block amethyst block break'
+            'volume-base': '100'
+            'volume-scale': '0'
+            'pitch-base': '1'
+            'pitch-scale': '0'
+          preview: 
+            enabled: 'false'
+          children: {}
+        Location: 
+          type: 'target'
+          data: 
+            'icon-key': ''
+            'range-base': '5'
+            'range-scale': '0'
+            entities: 'true'
+            fluids: 'false'
+            passable: 'true'
+            center: 'false'
+            group: 'enemy'
+            wall: 'false'
+            invulnerable: 'false'
+            caster: 'false'
+          preview: 
+            enabled: 'false'
+            'per-target': 'false'
+          children: 
+            Projectile: 
+              type: 'mechanic'
+              data: 
+                'icon-key': ''
+                counts: 'true'
+                projectile: 'Arrow'
+                flaming: 'false'
+                cost: 'None'
+                'override-item': 'false'
+                homing: 'true'
+                target: 'Nearest'
+                'homing-distance-base': '15'
+                'homing-distance-scale': '0'
+                'correction-base': '0.5'
+                'correction-scale': '0'
+                wall: 'false'
+                'velocity-base': '6'
+                'velocity-scale': '0'
+                'lifespan-base': '5'
+                'lifespan-scale': '0'
+                'distance-base': '100'
+                'distance-scale': '0'
+                'on-expire': 'false'
+                spread: 'Cone'
+                'amount-base': '1'
+                'amount-scale': '0'
+                'angle-base': '30'
+                'angle-scale': '0'
+                'forward-base': '1'
+                'forward-scale': '0'
+                'upward-base': '0'
+                'upward-scale': '0'
+                'right-base': '0'
+                'right-scale': '0'
+                particle: 'Bubble pop'
+                arrangement: 'Sphere'
+                'radius-base': '5'
+                'radius-scale': '0'
+                'particles-base': '20'
+                'particles-scale': '0'
+                'visible-radius': '25'
+                dx: '0'
+                dy: '0'
+                dz: '0'
+                amount: '1'
+                speed: '0.1'
+                'use-effect': 'false'
+              preview: 
+                enabled: 'false'
+                period: '5'
+                'per-target': 'false'
+                path: 'false'
+              children: {}
+            Area: 
+              type: 'target'
+              data: 
+                'icon-key': ''
+                'radius-base': '3'
+                'radius-scale': '0'
+                group: 'Enemy'
+                wall: 'false'
+                invulnerable: 'false'
+                caster: 'False'
+                'max-base': '99'
+                'max-scale': '0'
+                random: 'false'
+              preview: 
+                enabled: 'false'
+                'per-target': 'false'
+                circle: 'false'
+                sphere: 'false'
+              children: 
+                'Damage Buff': 
+                  type: 'mechanic'
+                  data: 
+                    'icon-key': ''
+                    counts: 'true'
+                    type: 'Multiplier'
+                    skill: 'false'
+                    'value-base': '500'
+                    'value-scale': '0'
+                    'seconds-base': '3'
+                    'seconds-scale': '0'
+                  preview: 
+                    enabled: 'false'
+                  children: {}
+HealingBlast: 
+  name: 'HealingBlast'
+  type: 'Dynamic'
+  'max-level': 100
+  'skill-req-lvl': 0
+  'needs-permission': 'false'
+  'cooldown-message': 'true'
+  attributes: 
+    'level-base': '25'
+    'level-scale': '0'
+    'cost-base': '1'
+    'cost-scale': '0'
+    'cooldown-base': '1.5'
+    'cooldown-scale': '0'
+    'mana-base': '3'
+    'mana-scale': '0'
+    'points-spent-req-base': '0'
+    'points-spent-req-scale': '0'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'EMERALD'
+  'icon-data': 0
+  'icon-durability': 0
+  'icon-lore': 
+  - '&d{name} &7({level}/{max})'
+  - '&7Cast at your target to give them'
+  - '&7health.'
+  - ''
+  - '{req:level}Level: {attr:level}'
+  - '{req:cost}Cost: {attr:cost}'
+  - ''
+  - '&2Mana: {attr:mana}'
+  - '&2Cooldown: {attr:cooldown}'
+  desc: []
+  components: 
+    'Cast-0': 
+      type: 'trigger'
+      data: {}
+      preview: 
+        enabled: 'false'
+      children: 
+        Sound: 
+          type: 'mechanic'
+          data: 
+            'icon-key': ''
+            counts: 'true'
+            sound: 'Entity ghast shoot'
+            'volume-base': '100'
+            'volume-scale': '0'
+            'pitch-base': '1'
+            'pitch-scale': '0'
+          preview: 
+            enabled: 'false'
+          children: {}
+        'Particle Projectile': 
+          type: 'mechanic'
+          data: 
+            'icon-key': ''
+            counts: 'true'
+            pierce: 'false'
+            group: 'Enemy'
+            steps: '2'
+            'collision-radius-base': '0'
+            'collision-radius-scale': '0'
+            'gravity-base': '0'
+            'gravity-scale': '0'
+            'drag-base': '0'
+            'drag-scale': '0'
+            period: '2'
+            homing: 'false'
+            'velocity-base': '1'
+            'velocity-scale': '0'
+            'lifespan-base': '5'
+            'lifespan-scale': '0'
+            'distance-base': '0'
+            'distance-scale': '0'
+            'on-expire': 'false'
+            spread: 'Cone'
+            'amount-base': '1'
+            'amount-scale': '0'
+            'angle-base': '0'
+            'angle-scale': '0'
+            'forward-base': '0'
+            'forward-scale': '0'
+            'upward-base': '0'
+            'upward-scale': '0'
+            'right-base': '0'
+            'right-scale': '0'
+            particle: 'Villager happy'
+            arrangement: 'Sphere'
+            'radius-base': '0.5'
+            'radius-scale': '0'
+            'particles-base': '10'
+            'particles-scale': '0'
+            'visible-radius': '48'
+            dx: '0'
+            dy: '0'
+            dz: '0'
+            amount: '1'
+            speed: '0.01'
+            'use-effect': 'false'
+          preview: 
+            enabled: 'false'
+            period: '5'
+            'per-target': 'false'
+            path: 'false'
+          children: 
+            Particle: 
+              type: 'mechanic'
+              data: 
+                'icon-key': ''
+                counts: 'true'
+                particle: 'Villager happy'
+                arrangement: 'Sphere'
+                'radius-base': '0.5'
+                'radius-scale': '0'
+                'particles-base': '20'
+                'particles-scale': '0'
+                'visible-radius': '48'
+                dx: '0'
+                dy: '0'
+                dz: '0'
+                amount: '1'
+                speed: '0.1'
+                forward: '0'
+                upward: '2.2'
+                right: '0'
+              preview: 
+                enabled: 'false'
+              children: {}
+            Area: 
+              type: 'target'
+              data: 
+                'icon-key': ''
+                'radius-base': '2'
+                'radius-scale': '0'
+                group: 'Enemy'
+                wall: 'false'
+                invulnerable: 'false'
+                caster: 'false'
+                'max-base': '99'
+                'max-scale': '0'
+                random: 'false'
+              preview: 
+                enabled: 'false'
+                'per-target': 'false'
+                circle: 'false'
+                sphere: 'false'
+              children: 
+                Heal: 
+                  type: 'mechanic'
+                  data: 
+                    'icon-key': ''
+                    counts: 'true'
+                    type: 'Percent'
+                    'value-base': '10'
+                    'value-scale': '0'
+                  preview: 
+                    enabled: 'false'
+                  children: {}
+                Sound: 
+                  type: 'mechanic'
+                  data: 
+                    'icon-key': ''
+                    counts: 'true'
+                    sound: 'Entity player levelup'
+                    'volume-base': '100'
+                    'volume-scale': '0'
+                    'pitch-base': '1'
+                    'pitch-scale': '0'
+                  preview: 
+                    enabled: 'false'
+                  children: {}
+WallOfForce: 
+  name: 'WallOfForce'
+  type: 'Dynamic'
+  'max-level': 100
+  'skill-req-lvl': 0
+  'needs-permission': 'false'
+  'cooldown-message': 'true'
+  attributes: 
+    'level-base': '1'
+    'level-scale': '0'
+    'cost-base': '1'
+    'cost-scale': '0'
+    'cooldown-base': '1'
+    'cooldown-scale': '0'
+    'mana-base': '0'
+    'mana-scale': '0'
+    'points-spent-req-base': '0'
+    'points-spent-req-scale': '0'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'SHIELD'
+  'icon-data': 0
+  'icon-durability': 0
+  'icon-lore': 
+  - '&d{name} &7({level}/{max})'
+  - '&2Type: &6{type}'
+  - ''
+  - '{req:level}Level: {attr:level}'
+  - '{req:cost}Cost: {attr:cost}'
+  - ''
+  - '&2Mana: {attr:mana}'
+  - '&2Cooldown: {attr:cooldown}'
+  desc: []
+  components: {}
+Needles: 
+  name: 'Needles'
+  type: 'Dynamic'
+  'max-level': 100
+  'skill-req-lvl': 0
+  'needs-permission': 'false'
+  'cooldown-message': 'true'
+  attributes: 
+    'level-base': '75'
+    'level-scale': '0'
+    'cost-base': '1'
+    'cost-scale': '0'
+    'cooldown-base': '8'
+    'cooldown-scale': '0'
+    'mana-base': '40'
+    'mana-scale': '0.2'
+    'points-spent-req-base': '0'
+    'points-spent-req-scale': '0'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'END_CRYSTAL'
+  'icon-data': 0
+  'icon-durability': 0
+  'icon-lore': 
+  - '&f{name} &e({level}/{max})'
+  - '&7Returns damage back to'
+  - '&7the attacker.'
+  - ''
+  - '&3Mana: {attr:mana}'
+  - '&3Cooldown: {attr:cooldown}'
+  - ''
+  - '&2Unlock this skill at {req:level}level {attr:level}'
+  - '&2Each point {req:cost}costs {attr:cost} &2SP'
+  desc: []
+  components: 
+    'Cast-0': 
+      type: 'trigger'
+      data: {}
+      preview: 
+        enabled: 'false'
+      children: 
+        Sound: 
+          type: 'mechanic'
+          data: 
+            'icon-key': ''
+            counts: 'true'
+            sound: 'Entity blaze shoot'
+            'volume-base': '100'
+            'volume-scale': '0'
+            'pitch-base': '1'
+            'pitch-scale': '0'
+          preview: 
+            enabled: 'false'
+          children: {}
+        Delay: 
+          type: 'mechanic'
+          data: 
+            'icon-key': ''
+            counts: 'true'
+            'delay-base': '20'
+            'delay-scale': '0.1'
+            cleanup: 'false'
+            'single-instance': 'false'
+          preview: 
+            enabled: 'false'
+          children: 
+            Message: 
+              type: 'mechanic'
+              data: 
+                'icon-key': ''
+                counts: 'true'
+                message: '&cNeedles has worn off!'
+              preview: 
+                enabled: 'false'
+              children: {}
+        Trigger: 
+          type: 'mechanic'
+          data: 
+            'icon-key': ''
+            counts: 'true'
+            trigger: 'Took Physical Damage'
+            'duration-base': '20'
+            'duration-scale': '0.1'
+            stackable: 'true'
+            once: 'false'
+            type: 'Both'
+            target: 'false'
+            'dmg-min': '0'
+            'dmg-max': '999'
+          preview: 
+            enabled: 'false'
+          children: 
+            Damage: 
+              type: 'mechanic'
+              data: 
+                'icon-key': ''
+                counts: 'true'
+                type: 'Damage'
+                'value-base': '10'
+                'value-scale': '0.1'
+                true: 'false'
+                classifier: 'physical'
+                knockback: 'false'
+                'ignore-divinity': 'false'
+                cause: 'Entity Attack'
+              preview: 
+                enabled: 'false'
+              children: {}
+        'Trigger-b': 
+          type: 'mechanic'
+          data: 
+            'icon-key': ''
+            counts: 'true'
+            trigger: 'Took Skill Damage'
+            'duration-base': '20'
+            'duration-scale': '0.1'
+            stackable: 'true'
+            once: 'false'
+            category: ''
+            target: 'false'
+            'dmg-min': '0'
+            'dmg-max': '999'
+          preview: 
+            enabled: 'false'
+          children: 
+            Damage: 
+              type: 'mechanic'
+              data: 
+                'icon-key': ''
+                counts: 'true'
+                type: 'Damage'
+                'value-base': '10'
+                'value-scale': '0.1'
+                true: 'false'
+                classifier: 'default'
+                knockback: 'false'
+                'ignore-divinity': 'false'
+                cause: 'Entity Attack'
+              preview: 
+                enabled: 'false'
+              children: {}
+ExplosiveArrow: 
+  name: 'ExplosiveArrow'
+  type: 'Dynamic'
+  'max-level': 100
+  'skill-req-lvl': 50
+  'needs-permission': 'false'
+  'cooldown-message': 'true'
+  attributes: 
+    'level-base': '25'
+    'level-scale': '0'
+    'cost-base': '1'
+    'cost-scale': '0'
+    'cooldown-base': '1'
+    'cooldown-scale': '0'
+    'mana-base': '0'
+    'mana-scale': '0'
+    'points-spent-req-base': '0'
+    'points-spent-req-scale': '0'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'TNT'
+  'icon-data': 0
+  'icon-durability': 0
+  'icon-lore': 
+  - '&f{name} &e({level}/{max})'
+  - '&7Magical arrow that explodes'
+  - '&7on impact damaging anyone'
+  - '&7close by.'
+  - ''
+  - '&3Mana: {attr:mana}'
+  - '&3Cooldown: {attr:cooldown}'
+  - ''
+  - '&2Unlock this skill at {req:level}level {attr:level}'
+  - '&2Each point {req:cost}costs {attr:cost} &2SP'
+  desc: []
+  components: 
+    'Cast-0': 
+      type: 'trigger'
+      data: {}
+      preview: 
+        enabled: 'false'
+      children: 
+        Sound: 
+          type: 'mechanic'
+          data: 
+            'icon-key': ''
+            counts: 'true'
+            sound: 'Entity arrow shoot'
+            'volume-base': '100'
+            'volume-scale': '0'
+            'pitch-base': '1'
+            'pitch-scale': '0'
+          preview: 
+            enabled: 'false'
+          children: {}
+        Location: 
+          type: 'target'
+          data: 
+            'icon-key': ''
+            'range-base': '24'
+            'range-scale': '0'
+            entities: 'true'
+            fluids: 'false'
+            passable: 'true'
+            center: 'false'
+            group: 'enemy'
+            wall: 'false'
+            invulnerable: 'false'
+            caster: 'false'
+          preview: 
+            enabled: 'false'
+            'per-target': 'false'
+          children: 
+            Explosion: 
+              type: 'mechanic'
+              data: 
+                'icon-key': ''
+                counts: 'true'
+                'power-base': '1'
+                'power-scale': '0'
+                damage: 'false'
+                fire: 'false'
+              preview: 
+                enabled: 'false'
+              children: {}
+            Area: 
+              type: 'target'
+              data: 
+                'icon-key': ''
+                'radius-base': '2'
+                'radius-scale': '0'
+                group: 'Enemy'
+                wall: 'false'
+                invulnerable: 'false'
+                caster: 'false'
+                'max-base': '99'
+                'max-scale': '0'
+                random: 'false'
+              preview: 
+                enabled: 'false'
+                'per-target': 'false'
+                circle: 'false'
+                sphere: 'false'
+              children: 
+                Damage: 
+                  type: 'mechanic'
+                  data: 
+                    'icon-key': ''
+                    counts: 'true'
+                    type: 'Multiplier'
+                    'value-base': '500'
+                    'value-scale': '0.25'
+                    true: 'false'
+                    classifier: 'piercing'
+                    knockback: 'true'
+                    'ignore-divinity': 'false'
+                    cause: 'Entity Attack'
+                  preview: 
+                    enabled: 'false'
+                  children: {}
+                Sound: 
+                  type: 'mechanic'
+                  data: 
+                    'icon-key': ''
+                    counts: 'true'
+                    sound: 'Item crossbow hit'
+                    'volume-base': '100'
+                    'volume-scale': '0'
+                    'pitch-base': '1'
+                    'pitch-scale': '0'
+                  preview: 
+                    enabled: 'false'
+                  children: {}
+Invincible: 
+  name: 'Invincible'
+  type: 'Dynamic'
+  'max-level': 100
+  'skill-req-lvl': 0
+  'needs-permission': 'false'
+  'cooldown-message': 'true'
+  attributes: 
+    'level-base': '100'
+    'level-scale': '0'
+    'cost-base': '1'
+    'cost-scale': '0'
+    'cooldown-base': '10'
+    'cooldown-scale': '-0.4'
+    'mana-base': '70'
+    'mana-scale': '0.2'
+    'points-spent-req-base': '0'
+    'points-spent-req-scale': '0'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'NETHERITE_CHESTPLATE'
+  'icon-data': 0
+  'icon-durability': 0
+  'icon-lore': 
+  - '&f{name} &e({level}/{max})'
+  - '&7Become invincible to all'
+  - '&7damage.'
+  - ''
+  - '&3Mana: {attr:mana}'
+  - '&3Cooldown: {attr:cooldown}'
+  - ''
+  - '&2Unlock this skill at {req:level}level {attr:level}'
+  - '&2Each point {req:cost}costs {attr:cost} &2SP'
+  desc: []
+  components: 
+    'Cast-0': 
+      type: 'trigger'
+      data: {}
+      preview: 
+        enabled: 'false'
+      children: 
+        Sound: 
+          type: 'mechanic'
+          data: 
+            'icon-key': ''
+            counts: 'true'
+            sound: 'Entity blaze shoot'
+            'volume-base': '100'
+            'volume-scale': '0'
+            'pitch-base': '1'
+            'pitch-scale': '0'
+          preview: 
+            enabled: 'false'
+          children: {}
+        Self: 
+          type: 'target'
+          data: 
+            'icon-key': ''
+            group: 'enemy'
+            wall: 'false'
+            invulnerable: 'false'
+            caster: 'false'
+          preview: 
+            enabled: 'false'
+          children: 
+            'Damage Buff': 
+              type: 'mechanic'
+              data: 
+                'icon-key': ''
+                counts: 'true'
+                type: 'Multiplier'
+                skill: 'false'
+                'value-base': '100'
+                'value-scale': '0'
+                'seconds-base': '20'
+                'seconds-scale': '0.1'
+              preview: 
+                enabled: 'false'
+              children: {}
+            'Damage Buff-b': 
+              type: 'mechanic'
+              data: 
+                'icon-key': ''
+                counts: 'true'
+                type: 'Multiplier'
+                skill: 'true'
+                'value-base': '100'
+                'value-scale': '0'
+                'seconds-base': '20'
+                'seconds-scale': '0.1'
+              preview: 
+                enabled: 'false'
+              children: {}
+            Delay: 
+              type: 'mechanic'
+              data: 
+                'icon-key': ''
+                counts: 'true'
+                'delay-base': '20'
+                'delay-scale': '0.1'
+                cleanup: 'false'
+                'single-instance': 'false'
+              preview: 
+                enabled: 'false'
+              children: 
+                Message: 
+                  type: 'mechanic'
+                  data: 
+                    'icon-key': ''
+                    counts: 'true'
+                    message: '&cInvincible has worn off!'
+                  preview: 
+                    enabled: 'false'
+                  children: {}
+_rainofarrows: 
+  name: 'rainofarrows'
+  type: 'Dynamic'
+  'max-level': 100
+  'skill-req-lvl': 0
+  'needs-permission': 'false'
+  'cooldown-message': 'true'
+  attributes: 
+    'level-base': '100'
+    'level-scale': '0'
+    'cost-base': '1'
+    'cost-scale': '0'
+    'cooldown-base': '10'
+    'cooldown-scale': '0'
+    'mana-base': '0'
+    'mana-scale': '0'
+    'points-spent-req-base': '0'
+    'points-spent-req-scale': '0'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'ARROW'
+  'icon-data': 0
+  'icon-durability': 0
+  'icon-lore': 
+  - '&d{name} &7({level}/{max})'
+  - '&2Type: &6{type}'
+  - ''
+  - '{req:level}Level: {attr:level}'
+  - '{req:cost}Cost: {attr:cost}'
+  - ''
+  - '&2Mana: {attr:mana}'
+  - '&2Cooldown: {attr:cooldown}'
+  desc: []
+  components: 
+    'Cast-0': 
+      type: 'trigger'
+      data: {}
+      preview: 
+        enabled: 'false'
+      children: 
+        Sound: 
+          type: 'mechanic'
+          data: 
+            'icon-key': ''
+            counts: 'true'
+            sound: 'Ambient Cave'
+            'volume-base': '100'
+            'volume-scale': '0'
+            'pitch-base': '1'
+            'pitch-scale': '0'
+          preview: 
+            enabled: 'false'
+          children: {}
+        Location: 
+          type: 'target'
+          data: 
+            'icon-key': ''
+            'range-base': '5'
+            'range-scale': '0'
+            entities: 'true'
+            fluids: 'false'
+            passable: 'true'
+            center: 'false'
+            group: 'enemy'
+            wall: 'false'
+            invulnerable: 'false'
+            caster: 'false'
+          preview: 
+            enabled: 'false'
+            'per-target': 'false'
+          children: 
+            Projectile: 
+              type: 'mechanic'
+              data: 
+                'icon-key': ''
+                counts: 'true'
+                projectile: 'Arrow'
+                flaming: 'true'
+                cost: 'None'
+                'override-item': 'false'
+                homing: 'true'
+                target: 'Nearest'
+                'homing-distance-base': '10'
+                'homing-distance-scale': '0'
+                'correction-base': '0.5'
+                'correction-scale': '0'
+                wall: 'false'
+                'velocity-base': '5'
+                'velocity-scale': '0'
+                'lifespan-base': '5'
+                'lifespan-scale': '0'
+                'distance-base': '50'
+                'distance-scale': '0'
+                'on-expire': 'false'
+                spread: 'Cone'
+                'amount-base': '80'
+                'amount-scale': '0'
+                'angle-base': '30'
+                'angle-scale': '0'
+                'forward-base': '0'
+                'forward-scale': '0'
+                'upward-base': '0'
+                'upward-scale': '0'
+                'right-base': '0'
+                'right-scale': '0'
+                particle: 'Ash'
+                arrangement: 'Sphere'
+                'radius-base': '5'
+                'radius-scale': '0'
+                'particles-base': '20'
+                'particles-scale': '0'
+                'visible-radius': '25'
+                dx: '0'
+                dy: '0'
+                dz: '0'
+                amount: '10'
+                speed: '0.1'
+                'use-effect': 'false'
+              preview: 
+                enabled: 'false'
+                period: '5'
+                'per-target': 'false'
+                path: 'false'
+              children: 
+                Area: 
+                  type: 'target'
+                  data: 
+                    'icon-key': ''
+                    'radius-base': '5'
+                    'radius-scale': '0'
+                    group: 'Enemy'
+                    wall: 'false'
+                    invulnerable: 'false'
+                    caster: 'False'
+                    'max-base': '99'
+                    'max-scale': '0'
+                    random: 'false'
+                  preview: 
+                    enabled: 'false'
+                    'per-target': 'false'
+                    circle: 'false'
+                    sphere: 'false'
+                  children: 
+                    Damage: 
+                      type: 'mechanic'
+                      data: 
+                        'icon-key': ''
+                        counts: 'true'
+                        type: 'Damage'
+                        'value-base': '500'
+                        'value-scale': '1'
+                        true: 'false'
+                        classifier: 'default'
+                        knockback: 'true'
+                        'ignore-divinity': 'false'
+                        cause: 'Custom'
+                      preview: 
+                        enabled: 'false'
+                      children: {}
+Thunderbolt: 
+  name: 'Thunderbolt'
+  type: 'Dynamic'
+  'max-level': 100
+  'skill-req-lvl': 0
+  'needs-permission': 'false'
+  'cooldown-message': 'true'
+  attributes: 
+    'level-base': '1'
+    'level-scale': '0'
+    'cost-base': '1'
+    'cost-scale': '0'
+    'cooldown-base': '1'
+    'cooldown-scale': '0'
+    'mana-base': '0'
+    'mana-scale': '0'
+    'points-spent-req-base': '0'
+    'points-spent-req-scale': '0'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'JACK_O_LANTERN'
+  'icon-data': 0
+  'icon-durability': 0
+  'icon-lore': 
+  - '&d{name} &7({level}/{max})'
+  - '&2Type: &6{type}'
+  - ''
+  - '{req:level}Level: {attr:level}'
+  - '{req:cost}Cost: {attr:cost}'
+  - ''
+  - '&2Mana: {attr:mana}'
+  - '&2Cooldown: {attr:cooldown}'
+  desc: []
+  components: {}
+TrueShot: 
+  name: 'TrueShot'
+  type: 'Dynamic'
+  'max-level': 100
+  'skill-req-lvl': 0
+  'needs-permission': 'false'
+  'cooldown-message': 'true'
+  attributes: 
+    'level-base': '50'
+    'level-scale': '0'
+    'cost-base': '1'
+    'cost-scale': '0'
+    'cooldown-base': '0'
+    'cooldown-scale': '0'
+    'mana-base': '0'
+    'mana-scale': '0'
+    'points-spent-req-base': '0'
+    'points-spent-req-scale': '0'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'BOW'
+  'icon-data': 0
+  'icon-durability': 0
+  'icon-lore': 
+  - '&6{name} &7({level}/{max})'
+  - '&2Type: &6{type}'
+  - '&7Extremely fast traveling arrow'
+  - '&7dealing damage to its target.'
+  - ''
+  - '{req:level}Level: {attr:level}'
+  - '{req:cost}Cost: {attr:cost}'
+  - ''
+  - '&2Mana: {attr:mana}'
+  - '&2Cooldown: {attr:cooldown}'
+  desc: []
+  components: 
+    'Cast-0': 
+      type: 'trigger'
+      data: {}
+      preview: 
+        enabled: 'false'
+      children: 
+        Sound: 
+          type: 'mechanic'
+          data: 
+            'icon-key': ''
+            counts: 'true'
+            sound: 'Entity arrow shoot'
+            'volume-base': '100'
+            'volume-scale': '0'
+            'pitch-base': '1'
+            'pitch-scale': '0'
+          preview: 
+            enabled: 'false'
+          children: {}
+        Single: 
+          type: 'target'
+          data: 
+            'icon-key': ''
+            'range-base': '24'
+            'range-scale': '0'
+            'tolerance-base': '.5'
+            'tolerance-scale': '0'
+            group: 'Enemy'
+            wall: 'false'
+            invulnerable: 'false'
+            caster: 'false'
+          preview: 
+            enabled: 'false'
+            'per-target': 'false'
+            line: 'false'
+            cylinder: 'false'
+          children: 
+            Damage: 
+              type: 'mechanic'
+              data: 
+                'icon-key': ''
+                counts: 'true'
+                type: 'Damage'
+                'value-base': '15'
+                'value-scale': '0.4'
+                true: 'true'
+                classifier: 'piercing'
+                knockback: 'false'
+                'ignore-divinity': 'false'
+              preview: 
+                enabled: 'false'
+              children: {}
+            Sound: 
+              type: 'mechanic'
+              data: 
+                'icon-key': ''
+                counts: 'true'
+                sound: 'Item crossbow hit'
+                'volume-base': '100'
+                'volume-scale': '0'
+                'pitch-base': '1'
+                'pitch-scale': '0'
+              preview: 
+                enabled: 'false'
+              children: {}
+Stampede: 
+  name: 'Stampede'
+  type: 'Dynamic'
+  'max-level': 100
+  'skill-req-lvl': 0
+  'needs-permission': 'false'
+  'cooldown-message': 'true'
+  attributes: 
+    'level-base': '1'
+    'level-scale': '0'
+    'cost-base': '1'
+    'cost-scale': '0'
+    'cooldown-base': '1'
+    'cooldown-scale': '0'
+    'mana-base': '0'
+    'mana-scale': '0'
+    'points-spent-req-base': '0'
+    'points-spent-req-scale': '0'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'PRISMARINE_SHARD'
+  'icon-data': 0
+  'icon-durability': 0
+  'icon-lore': 
+  - '&d{name} &7({level}/{max})'
+  - '&2Type: &6{type}'
+  - ''
+  - '{req:level}Level: {attr:level}'
+  - '{req:cost}Cost: {attr:cost}'
+  - ''
+  - '&2Mana: {attr:mana}'
+  - '&2Cooldown: {attr:cooldown}'
+  desc: []
+  components: {}
+StaticField: 
+  name: 'StaticField'
+  type: 'Dynamic'
+  'max-level': 100
+  'skill-req-lvl': 0
+  'needs-permission': 'false'
+  'cooldown-message': 'true'
+  attributes: 
+    'level-base': '1'
+    'level-scale': '0'
+    'cost-base': '1'
+    'cost-scale': '0'
+    'cooldown-base': '1'
+    'cooldown-scale': '0'
+    'mana-base': '0'
+    'mana-scale': '0'
+    'points-spent-req-base': '0'
+    'points-spent-req-scale': '0'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'HEART_OF_THE_SEA'
+  'icon-data': 0
+  'icon-durability': 0
+  'icon-lore': 
+  - '&d{name} &7({level}/{max})'
+  - '&2Type: &6{type}'
+  - ''
+  - '{req:level}Level: {attr:level}'
+  - '{req:cost}Cost: {attr:cost}'
+  - ''
+  - '&2Mana: {attr:mana}'
+  - '&2Cooldown: {attr:cooldown}'
+  desc: []
+  components: {}
+Bastion: 
+  name: 'Bastion'
+  type: 'Dynamic'
+  'max-level': 100
+  'skill-req-lvl': 0
+  'needs-permission': 'false'
+  'cooldown-message': 'true'
+  attributes: 
+    'level-base': '75'
+    'level-scale': '0'
+    'cost-base': '1'
+    'cost-scale': '0'
+    'cooldown-base': '8'
+    'cooldown-scale': '0'
+    'mana-base': '0'
+    'mana-scale': '0'
+    'points-spent-req-base': '0'
+    'points-spent-req-scale': '0'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'POTION'
+  'icon-data': 0
+  'icon-durability': 0
+  'icon-lore': 
+  - '&d{name} &7({level}/{max})'
+  - '&7Creates an aura around you'
+  - '&7that restores health, mana,'
+  - '&7and stamina.'
+  - ''
+  - '{req:level}Level: {attr:level}'
+  - '{req:cost}Cost: {attr:cost}'
+  - ''
+  - '&2Mana: {attr:mana}'
+  - '&2Cooldown: {attr:cooldown}'
+  desc: []
+  components: 
+    'Cast-0': 
+      type: 'trigger'
+      data: {}
+      preview: 
+        enabled: 'false'
+      children: 
+        Self: 
+          type: 'target'
+          data: 
+            'icon-key': ''
+            group: 'enemy'
+            wall: 'false'
+            invulnerable: 'false'
+            caster: 'false'
+          preview: 
+            enabled: 'false'
+          children: 
+            Buff: 
+              type: 'mechanic'
+              data: 
+                'icon-key': ''
+                counts: 'true'
+                immediate: 'false'
+                type: 'SKILL_DEFENSE'
+                modifier: 'Multiplier'
+                category: ''
+                'value-base': '0.7'
+                'value-scale': '0'
+                'seconds-base': '20'
+                'seconds-scale': '0'
+              preview: 
+                enabled: 'false'
+              children: {}
+            'Buff-b': 
+              type: 'mechanic'
+              data: 
+                'icon-key': ''
+                counts: 'true'
+                immediate: 'false'
+                type: 'DEFENSE'
+                modifier: 'Multiplier'
+                'value-base': '0.7'
+                'value-scale': '0'
+                'seconds-base': '20'
+                'seconds-scale': '0'
+              preview: 
+                enabled: 'false'
+              children: {}
+Flurry: 
+  name: 'Flurry'
+  type: 'Dynamic'
+  'max-level': 100
+  'skill-req-lvl': 0
+  'needs-permission': 'false'
+  'cooldown-message': 'true'
+  attributes: 
+    'level-base': '5'
+    'level-scale': '0'
+    'cost-base': '1'
+    'cost-scale': '0'
+    'cooldown-base': '3'
+    'cooldown-scale': '0'
+    'mana-base': '0'
+    'mana-scale': '0'
+    'points-spent-req-base': '0'
+    'points-spent-req-scale': '0'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'NETHER_STAR'
+  'icon-data': 0
+  'icon-durability': 0
+  'icon-lore': 
+  - '&d{name} &7({level}/{max})'
+  - '&7Debuff your targets defense'
+  - '&7and cause them slowness.'
+  - ''
+  - '{req:level}Level: {attr:level}'
+  - '{req:cost}Cost: {attr:cost}'
+  - ''
+  - '&2Mana: {attr:mana}'
+  - '&2Cooldown: {attr:cooldown}'
+  desc: []
+  components: 
+    'Cast-0': 
+      type: 'trigger'
+      data: {}
+      preview: 
+        enabled: 'false'
+      children: 
+        Single: 
+          type: 'target'
+          data: 
+            'icon-key': ''
+            'range-base': '5'
+            'range-scale': '0'
+            'tolerance-base': '1'
+            'tolerance-scale': '0'
+            group: 'Enemy'
+            wall: 'false'
+            invulnerable: 'false'
+            caster: 'false'
+          preview: 
+            enabled: 'false'
+            'per-target': 'false'
+            line: 'false'
+            cylinder: 'false'
+          children: 
+            Buff: 
+              type: 'mechanic'
+              data: 
+                'icon-key': ''
+                counts: 'true'
+                immediate: 'false'
+                type: 'DEFENSE'
+                modifier: 'Multiplier'
+                'value-base': '0.8'
+                'value-scale': '0'
+                'seconds-base': '7'
+                'seconds-scale': '0'
+              preview: 
+                enabled: 'false'
+              children: {}
+            Potion: 
+              type: 'mechanic'
+              data: 
+                'icon-key': ''
+                counts: 'true'
+                potion: 'Slow'
+                ambient: 'true'
+                'tier-base': '1'
+                'tier-scale': '0'
+                'seconds-base': '3'
+                'seconds-scale': '0'
+              preview: 
+                enabled: 'false'
+              children: {}

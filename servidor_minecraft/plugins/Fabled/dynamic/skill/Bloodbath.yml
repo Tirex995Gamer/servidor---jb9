@@ -1,0 +1,112 @@
+Bloodbath: 
+  name: 'Bloodbath'
+  type: 'Passive Enchantment'
+  'max-level': 100
+  'skill-req-lvl': 1
+  'needs-permission': 'false'
+  'cooldown-message': 'true'
+  attributes: 
+    'level-base': '75'
+    'level-scale': '0'
+    'cost-base': '1'
+    'cost-scale': '0'
+    'cooldown-base': '5'
+    'cooldown-scale': '0'
+    'mana-base': '10'
+    'mana-scale': '0'
+    'points-spent-req-base': '0'
+    'points-spent-req-scale': '0'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'REDSTONE'
+  'icon-data': 0
+  'icon-durability': 0
+  'icon-lore': 
+  - '&d{name} &7({level}/{max})'
+  - '&2Type: &6{type}'
+  - ''
+  - '{req:level}Level: {attr:level}'
+  - '{req:cost}Cost: {attr:cost}'
+  - ''
+  - '&2Vampire are famous of their bloodbath ability'
+  - '&2Imbued attack with Lifesteal'
+  - '&2Lifesteal: {attr:heal.value}'
+  - '&2Threshold: &6Below 75%'
+  desc: []
+  components: 
+    'Physical Damage': 
+      type: 'trigger'
+      data: 
+        mana: 'false'
+        cooldown: 'false'
+        target: 'false'
+        type: 'Melee'
+        'dmg-min': '0'
+        'dmg-max': '999'
+      preview: 
+        enabled: 'false'
+      children: 
+        Single: 
+          type: 'target'
+          data: 
+            'icon-key': ''
+            'range-base': '3'
+            'range-scale': '0'
+            'tolerance-base': '4'
+            'tolerance-scale': '0'
+            group: 'Enemy'
+            wall: 'false'
+            invulnerable: 'false'
+            caster: 'false'
+          preview: 
+            enabled: 'false'
+            'per-target': 'false'
+            line: 'false'
+            cylinder: 'false'
+          children: 
+            Health: 
+              type: 'condition'
+              data: 
+                'icon-key': 'threshold'
+                type: 'Percent'
+                'min-value-base': '0'
+                'min-value-scale': '0'
+                'max-value-base': '75'
+                'max-value-scale': '2'
+              preview: 
+                enabled: 'false'
+              children: 
+                Heal: 
+                  type: 'mechanic'
+                  data: 
+                    'icon-key': 'heal'
+                    counts: 'True'
+                    type: 'Percent'
+                    'value-base': '1'
+                    'value-scale': '1'
+                  preview: 
+                    enabled: 'false'
+                  children: {}
+                Particle: 
+                  type: 'mechanic'
+                  data: 
+                    'icon-key': ''
+                    counts: 'True'
+                    particle: 'Happy Villager'
+                    arrangement: 'Circle'
+                    direction: 'XZ'
+                    'radius-base': '4'
+                    'radius-scale': '0'
+                    'particles-base': '4'
+                    'particles-scale': '0'
+                    'visible-radius': '25'
+                    dx: '0'
+                    dy: '0'
+                    dz: '0'
+                    amount: '1'
+                    speed: '1'
+                    forward: '0'
+                    upward: '0'
+                    right: '0'
+                  preview: 
+                    enabled: 'false'
+                  children: {}

@@ -1,0 +1,64 @@
+Duelist: 
+  name: 'Duelist'
+  'action-bar': ''
+  prefix: '&6Duelist'
+  group: 'class'
+  mana: '&2Mana'
+  'max-level': 500
+  parent: ''
+  'needs-permission': 'false'
+  attributes: 
+    'health-base': '30'
+    'health-scale': '1'
+    'mana-base': '60'
+    'mana-scale': '1'
+    'dexterity-base': '8'
+    'dexterity-scale': '1'
+    'intelligence-base': '9'
+    'intelligence-scale': '1'
+    'spirit-base': '5'
+    'spirit-scale': '1'
+    'strength-base': '5'
+    'strength-scale': '1'
+    'vitality-base': '5'
+    'vitality-scale': '1'
+  'mana-regen': 8.0
+  'skill-tree': 'REQUIREMENT'
+  blacklist: []
+  skills: 
+  - 'Flurry'
+  - 'Lacerate'
+  - 'Lunge'
+  - 'Pummel'
+  - 'ExtremeFocus'
+  icon: 'ENCHANTED_BOOK'
+  'icon-data': 0
+  'icon-durability': 0
+  'icon-lore': 
+  - 'Duelist'
+  'exp-source': 447
+  'combo-starters': 
+    Q: 
+      inverted: 'true'
+      whitelist: []
+    LS: 
+      inverted: 'true'
+      whitelist: []
+    RS: 
+      inverted: 'true'
+      whitelist: []
+    F: 
+      inverted: 'true'
+      whitelist: []
+    S: 
+      inverted: 'true'
+      whitelist: []
+    R: 
+      inverted: 'true'
+      whitelist: []
+    L: 
+      inverted: 'true'
+      whitelist: []
+    P: 
+      inverted: 'true'
+      whitelist: []

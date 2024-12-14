@@ -1,0 +1,131 @@
+AttunementToFire: 
+  name: 'AttunementToFire'
+  type: 'Dynamic'
+  'max-level': 100
+  'skill-req-lvl': 0
+  'needs-permission': 'false'
+  'cooldown-message': 'true'
+  attributes: 
+    'level-base': '25'
+    'level-scale': '0'
+    'cost-base': '1'
+    'cost-scale': '1'
+    'cooldown-base': '3'
+    'cooldown-scale': '0'
+    'mana-base': '5'
+    'mana-scale': '1'
+    'points-spent-req-base': '0'
+    'points-spent-req-scale': '0'
+  msg: '&6{player} &2has cast &6{skill}'
+  icon: 'BLAZE_ROD'
+  'icon-data': 0
+  'icon-durability': 0
+  'icon-lore': 
+  - '&d{name} &7({level}/{max})'
+  - '&2Type: &6{type}&7Gives the caster a defense buff'
+  - '&7to air damage.'
+  - ''
+  - '{req:level}Level: {attr:level}'
+  - '{req:cost}Cost: {attr:cost}'
+  - ''
+  - '&2Mana: {attr:mana}'
+  - '&2Cooldown: {attr:cooldown}'
+  desc: []
+  components: 
+    'Cast-0': 
+      type: 'trigger'
+      data: {}
+      preview: 
+        enabled: 'false'
+      children: 
+        Buff: 
+          type: 'mechanic'
+          data: 
+            'icon-key': ''
+            counts: 'true'
+            immediate: 'false'
+            type: 'SKILL_DAMAGE'
+            modifier: 'Flat'
+            category: ''
+            'value-base': '10'
+            'value-scale': '5'
+            'seconds-base': '15'
+            'seconds-scale': '5'
+          preview: 
+            enabled: 'false'
+          children: {}
+        Particle: 
+          type: 'mechanic'
+          data: 
+            'icon-key': ''
+            counts: 'true'
+            particle: 'Drip lava'
+            arrangement: 'Sphere'
+            'radius-base': '2'
+            'radius-scale': '1'
+            'particles-base': '10'
+            'particles-scale': '1'
+            'visible-radius': '20'
+            dx: '0'
+            dy: '0'
+            dz: '0'
+            amount: '1'
+            speed: '0.1'
+            forward: '0'
+            upward: '0'
+            right: '0'
+          preview: 
+            enabled: 'false'
+          children: {}
+        Immunity: 
+          type: 'mechanic'
+          data: 
+            'icon-key': ''
+            counts: 'true'
+            type: 'Fire tick'
+            'seconds-base': '15'
+            'seconds-scale': '5'
+            'multiplier-base': '0'
+            'multiplier-scale': '0'
+          preview: 
+            enabled: 'false'
+          children: {}
+        'Immunity-b': 
+          type: 'mechanic'
+          data: 
+            'icon-key': ''
+            counts: 'true'
+            type: 'Fire'
+            'seconds-base': '15'
+            'seconds-scale': '5'
+            'multiplier-base': '0'
+            'multiplier-scale': '0'
+          preview: 
+            enabled: 'false'
+          children: {}
+        'Immunity-c': 
+          type: 'mechanic'
+          data: 
+            'icon-key': ''
+            counts: 'true'
+            type: 'Hot floor'
+            'seconds-base': '15'
+            'seconds-scale': '5'
+            'multiplier-base': '0'
+            'multiplier-scale': '0'
+          preview: 
+            enabled: 'false'
+          children: {}
+        'Immunity-d': 
+          type: 'mechanic'
+          data: 
+            'icon-key': ''
+            counts: 'true'
+            type: 'Lava'
+            'seconds-base': '15'
+            'seconds-scale': '5'
+            'multiplier-base': '0'
+            'multiplier-scale': '0'
+          preview: 
+            enabled: 'false'
+          children: {}
